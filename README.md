@@ -6,10 +6,8 @@
 [![][commit]](https://github.com/tag/eitri-tech)
 [![][license]](https://github.com/tag/eitri-tech/blob/master/LICENSE)  
 [![][stars]](https://github.com/tag/eitri-tech)
-[![][installs]](https://www.npmjs.com/package/luminus)
-[![][jsdelivr]](https://cdn.jsdelivr.net/npm/luminus/dist/full.min.css)  
-[![][discord]](https://eitri.tech/discord/)
-[![][opencollectivebadge]](https://opencollective.com/luminus)
+<!-- [![][installs]](https://www.npmjs.com/package/luminus) -->
+
 
 Luminus is a suite of visual components for building interfaces. It is the official library used by Eitri for building Eitri-apps.
 
