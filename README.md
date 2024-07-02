@@ -13,7 +13,7 @@ Luminus is a suite of visual components for building interfaces. It is the offic
 
 Status: under development
 
-License: Apache 2.0
+License: MIT
 
 ### 📌 [Official website →](https://eitri.tech/)
 
