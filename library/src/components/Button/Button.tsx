@@ -6,10 +6,13 @@ interface ButtonProps {
   className?: string;
 }
 
+/**
+ * Display a Button
+ */
 const Button: React.FC<ButtonProps> & {
   Primary: React.FC<ButtonProps>;
   Secondary: React.FC<ButtonProps>;
-} = ({ children, onClick, className }:ButtonProps) => {
+} = ({ children, onClick, className }) => {
   return (
     <button type="button" data-element="Button" onClick={onClick} className={`btn ${className}`}>
       {children}
@@ -18,16 +21,12 @@ const Button: React.FC<ButtonProps> & {
 };
 
 function withVariants(
-  C: React.FC<ButtonProps>,
-  flavorClass: string
+  Component: React.FC<ButtonProps>,
+  variantClass: string
 ): React.FC<ButtonProps> {
-  const EnhancedComponent: React.FC<ButtonProps> = ({ children, onClick, className }) => (
-    <C onClick={onClick} className={`${flavorClass} ${className || ''}`}>
-      {children}
-    </C>
+  return (props) => (
+    <Component {...props} className={`${variantClass} ${props.className || ''}`} />
   );
-  EnhancedComponent.displayName = `Button${flavorClass}`;
-  return EnhancedComponent;
 }
 
 Button.Primary = withVariants(Button, 'btn-primary');
