@@ -33,12 +33,12 @@ License: MIT
 Simple install
 
 ```
-npm install luminus-ui
+npm install luminus-daisy
 ```
 and use it
 
 ```jsx
-import { Button } from "luminus-ui"
+import { Button } from "luminus-daisy"
 
 ...
 
