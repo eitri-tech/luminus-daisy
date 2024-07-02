@@ -7,7 +7,6 @@ interface TextProps {
   style?: React.CSSProperties;
 }
 
-// Declaração do componente Text, incluindo os subcomponentes
 interface TextComponent extends React.FC<TextProps> {
   H1: React.FC<Omit<TextProps, 'as'>>;
   H2: React.FC<Omit<TextProps, 'as'>>;
@@ -32,7 +31,7 @@ interface TextComponent extends React.FC<TextProps> {
   Sup: React.FC<Omit<TextProps, 'as'>>;
 }
 
-const Text: TextComponent = ({ as = 'span', children, className, style }) => {
+const Text: TextComponent = ({ as = 'span', children, className, style }: TextProps) => {
   const Component = as;
   return <Component className={className} style={style} data-element={`Text.${as}`}>{children}</Component>;
 };

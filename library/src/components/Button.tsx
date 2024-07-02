@@ -3,13 +3,13 @@ import React from 'react';
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  className?: string; // Tornando className opcional
+  className?: string;
 }
 
 const Button: React.FC<ButtonProps> & {
   Primary: React.FC<ButtonProps>;
   Secondary: React.FC<ButtonProps>;
-} = ({ children, onClick, className }) => {
+} = ({ children, onClick, className }:ButtonProps) => {
   return (
     <button type="button" data-element="Button" onClick={onClick} className={`btn ${className}`}>
       {children}
@@ -17,17 +17,19 @@ const Button: React.FC<ButtonProps> & {
   );
 };
 
-// HOC para criar os sabores
 function withVariants(
-  Component: React.FC<ButtonProps>,
+  C: React.FC<ButtonProps>,
   flavorClass: string
 ): React.FC<ButtonProps> {
-  return (props) => (
-    <Component {...props} className={`${flavorClass} ${props.className || ''}`} />
+  const EnhancedComponent: React.FC<ButtonProps> = ({ children, onClick, className }) => (
+    <C onClick={onClick} className={`${flavorClass} ${className || ''}`}>
+      {children}
+    </C>
   );
+  EnhancedComponent.displayName = `Button${flavorClass}`;
+  return EnhancedComponent;
 }
 
-// Criando os sabores
 Button.Primary = withVariants(Button, 'btn-primary');
 Button.Secondary = withVariants(Button, 'btn-secondary');
 
