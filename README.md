@@ -1,3 +1,5 @@
+# LUMINUS
+
 **Free and Open Souce UI Components**
 
 [![][version]](https://www.npmjs.com/package/luminus)
@@ -9,11 +11,10 @@
 [![][discord]](https://eitri.tech/discord/)
 [![][opencollectivebadge]](https://opencollective.com/luminus)
 
-# luminus
-
 Luminus is a suite of visual components for building interfaces. It is the official library used by Eitri for building Eitri-apps.
 
 Status: under development
+
 License: Apache 2.0
 
 ### 📌 [Official website →](https://eitri.tech/)
