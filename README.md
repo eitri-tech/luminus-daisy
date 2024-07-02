@@ -1,4 +1,4 @@
-# LUMINUS
+# LUMINUS DAISY
 
 **Free and Open Souce UI Components**
 
@@ -9,7 +9,9 @@
 <!-- [![][installs]](https://www.npmjs.com/package/luminus) -->
 
 
-Luminus is a suite of visual components for building interfaces. It is the official library used by Eitri for building Eitri-apps.
+Luminus Daisy is a suite of visual components for building interfaces. 
+
+It is the official library used by Eitri for building Eitri-apps.
 
 Status: under development
 
