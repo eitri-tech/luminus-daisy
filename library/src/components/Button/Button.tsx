@@ -3,9 +3,12 @@ import React from 'react';
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
-  className?: string; // Tornando className opcional
+  className?: string;
 }
 
+/**
+ * Display a Button
+ */
 const Button: React.FC<ButtonProps> & {
   Primary: React.FC<ButtonProps>;
   Secondary: React.FC<ButtonProps>;
@@ -17,17 +20,15 @@ const Button: React.FC<ButtonProps> & {
   );
 };
 
-// HOC para criar os sabores
 function withVariants(
   Component: React.FC<ButtonProps>,
-  flavorClass: string
+  variantClass: string
 ): React.FC<ButtonProps> {
   return (props) => (
-    <Component {...props} className={`${flavorClass} ${props.className || ''}`} />
+    <Component {...props} className={`${variantClass} ${props.className || ''}`} />
   );
 }
 
-// Criando os sabores
 Button.Primary = withVariants(Button, 'btn-primary');
 Button.Secondary = withVariants(Button, 'btn-secondary');
 
