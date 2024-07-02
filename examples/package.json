@@ -15,10 +15,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "daisyui": "4.12.2",
-    "luminus": "file:../library",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "daisyui": "4.12.2",
+    "luminus-daisy": "file:../library"
   },
   "devDependencies": {
     "@eslint/js": "9.6.0",
