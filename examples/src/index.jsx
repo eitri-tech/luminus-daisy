@@ -1,12 +1,12 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import "./index.css"
-import { View, Text } from "luminus-daisy"
+import { View, Text, Page } from "luminus-daisy"
 import ButtonBlock from "./blocks/button"
 
 function App() {
   return (
-    <View className="bg-slate-100">
+    <Page className="bg-slate-100">
       <View className="p-4 container max-w-5xl m-auto">
         <View className="prose prose-slate mb-4">
           <Text.H1>Luminus Daisy</Text.H1>
@@ -18,7 +18,7 @@ function App() {
         </View>
         <ButtonBlock />
       </View>
-    </View>
+    </Page>
   );
 }
 
