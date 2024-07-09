@@ -4,11 +4,11 @@ export type insets = {
   bottom: number
 }
 
-export class windowMetrics {
+export class WindowMetrics {
   static async getInsets(): Promise<insets> {
     const { EITRI } = window
     if (EITRI) {
-      const { superAppData } = await EITRI.miniAppConfigs
+      const { superAppData } = EITRI.miniAppConfigs
       const { safeAreaInsets, platform } = superAppData
       const { top, bottom } = safeAreaInsets
       const windowComponent = window.document.querySelector(".w")

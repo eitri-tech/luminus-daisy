@@ -5,7 +5,7 @@
  *
  * @group Properties
  */
-export interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface PageProps {
   /**
    * Sets the page title; this feature is intended to be used when building web applications with Eitri.
    */
@@ -69,4 +69,6 @@ export interface PageProps extends React.HTMLAttributes<HTMLDivElement> {
    * ```
    */
   statusBarTextColor?: "white" | "black"
+
+  children: React.ReactNode;
 }

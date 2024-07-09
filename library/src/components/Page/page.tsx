@@ -1,96 +1,102 @@
-import React, { useEffect, useState } from "react";
-import { windowMetrics } from "../../utilities/WindowMetrics"
-import { PageProps } from "./types"
+import React, { Component } from "react";
+import { WindowMetrics } from "../../utilities/WindowMetrics";
+import { PageProps } from "./types";
 
-/**
- * The Window component controls layout aspects of the application.
- *
- * This component needs to wrap your entire page.
- *
- * Important: **Do not use it inside other components**.
- *
- * Basic example:
- *
- * ```jsx
- * <Window topInset bottomInset>
- *   <View>
- *     <Text.H1>
- *       According to the stories, the Bifrost Bridge was created by the Norse gods
- *       as a link between different planes of existence.
- *       It is described as a solid yet ethereal structure that
- *       allows the gods to travel between Asgard, their divine home, and Earth.
- *     </Text.H1>
- *   </View>
- * </Window>
- * ```
- * @param props Window Properties
- * @hasChildren
- */
+interface PageState {
+  paddingTop: number;
+  paddingBottom: number;
+}
 
-const Page: React.FC<PageProps> = ({
-  title,
-  viewportColor,
-  topInset,
-  bottomInset,
-  statusBarTextColor,
-  children,
-  ...rest
-}) => {
-  const [paddingTop, setPaddingTop] = useState(0);
-  const [paddingBottom, setPaddingBottom] = useState(0);
+class Page extends Component<PageProps, PageState> {
 
-  useEffect(() => {
-    window.document.title = title || "";
-  }, [title]);
-
-  useEffect(() => {
-    const calcInsets = async () => {
-      const { top, bottom } = await windowMetrics.getInsets();
-      if (topInset) {
-        setPaddingTop(top);
-      }
-      if (bottomInset) {
-        setPaddingBottom(bottom);
-      }
-      return {top, bottom}
+  constructor(props: PageProps) {
+    super(props);
+    this.state = {
+      paddingTop: 0,
+      paddingBottom: 0,
     };
-    calcInsets()
-  }, [
-    topInset,
-    bottomInset
-  ])
+  }
 
-  useEffect(() => {
+  async componentDidMount() {
+    await this.calcInsets();
+    this.updateViewportColor();
+    this.updateStatusBarTextColor();
+    this.updateTitle();
+  }
+
+  async componentDidUpdate(prevProps: PageProps) {
+    if (
+      prevProps.topInset !== this.props.topInset ||
+      prevProps.bottomInset !== this.props.bottomInset
+    ) {
+      await this.calcInsets();
+    }
+
+    if (prevProps.viewportColor !== this.props.viewportColor) {
+      this.updateViewportColor();
+    }
+
+    if (prevProps.statusBarTextColor !== this.props.statusBarTextColor) {
+      this.updateStatusBarTextColor();
+    }
+
+    if (prevProps.title !== this.props.title) {
+      this.updateTitle();
+    }
+  }
+
+  async calcInsets() {
+    try {
+      const { top, bottom } = await WindowMetrics.getInsets();
+      this.setState({
+        paddingTop: this.props.topInset ? top : 0,
+        paddingBottom: this.props.bottomInset ? bottom : 0,
+      });
+    } catch (error) {
+      console.error("Error calculating insets:", error);
+    }
+  }
+
+  updateViewportColor() {
+    const { viewportColor } = this.props;
     if (viewportColor) {
       const style = `background-color: var(--${viewportColor})`;
-      window.document.querySelector("html")?.setAttribute("style", style);
-      window.document.querySelector("body")?.setAttribute("style", style);
+      window.document.documentElement.setAttribute("style", style);
+      window.document.body.setAttribute("style", style);
     }
-  }, [viewportColor])
+  }
 
-  useEffect(()=>{
-    if (statusBarTextColor) {
+  updateStatusBarTextColor() {
+    const { statusBarTextColor } = this.props;
+    const connector = window?.EITRI?.connector?.invokeMethod
+    if (statusBarTextColor && connector) {
       const method =
         statusBarTextColor === "white"
           ? "setStatusBarTextWhite"
           : "setStatusBarTextBlack";
-      window?.EITRI?.connector?.invokeMethod(method);
+          connector(method);
     }
-  }, [statusBarTextColor])
+  }
 
-  delete rest.style
-  
+  updateTitle() {
+    document.title = this.props.title ?? "";
+  }
 
-  return (
-    <main
-      id="window"
-      data-cy="window"
-      style={{paddingTop, paddingBottom}}
-      {...rest}
-    >
-      {children}
-    </main>
-  );
-};
+  render() {
+    const { paddingTop, paddingBottom } = this.state;
+    const { children, ...rest } = this.props;
+
+    return (
+      <div
+        id="page"
+        data-cy="page"
+        style={{ paddingTop, paddingBottom }}
+        {...rest}
+      >
+        {children}
+      </div>
+    );
+  }
+}
 
 export default Page;

@@ -7,6 +7,7 @@ const postcss = require('esbuild-postcss');
 esbuild.build({
     entryPoints: ['src/index.jsx'],
     bundle: true,
+    sourcemap: 'inline',
     outfile: 'dist/bundle.js',
     minify: process.env.NODE_ENV === 'production',
     plugins: [
