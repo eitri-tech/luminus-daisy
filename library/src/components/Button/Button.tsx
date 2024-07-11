@@ -1,39 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
 import CommonProps from '../commonProps';
 
 interface ButtonProps extends CommonProps {
   onClick?: () => void;
+  linkToModal?: string;
 }
 
+class Button extends Component<ButtonProps> {
 
-/**
- * Display a Button
- */
-const Button: React.FC<ButtonProps> & {
-  Primary: React.FC<ButtonProps>;
-  Secondary: React.FC<ButtonProps>;
-} = ({ children, onClick, className = "", id }:ButtonProps) => {
-  return (
-    <button data-e="Button" id={id} type="button" data-element="Button" onClick={onClick} className={`btn ${className}`}>
-      {children}
-    </button>
-  );
-};
+  clickHandle = () => {
+    const { onClick, linkToModal } = this.props;
+    if (onClick) {
+      onClick();
+    }
+    if (linkToModal) {
+      try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const modal: any = window.document.getElementById(linkToModal);
+        if (modal) {
+          modal.showModal();
+        }
+      } catch (error) {
+        console.error('Error opening modal:', error);
+      }
+    }
+  };
 
-function withVariants(
-  C: React.FC<ButtonProps>,
-  variantClass: string
-): React.FC<ButtonProps> {
-  const EnhancedComponent: React.FC<ButtonProps> = ({ children, onClick, className = "", id }) => (
-    <C data-e="Button" id={id} onClick={onClick} className={`${variantClass} ${className || ''}`}>
-      {children}
-    </C>
-  );
-  EnhancedComponent.displayName = `Button${variantClass}`;
-  return EnhancedComponent;
+  render() {
+    const { children, className = "", id } = this.props;
+
+    return (
+      <button data-e="Button" id={id} type="button" data-element="Button" onClick={this.clickHandle} className={`btn ${className}`}>
+        {children}
+      </button>
+    );
+  }
 }
-
-Button.Primary = withVariants(Button, 'btn-primary');
-Button.Secondary = withVariants(Button, 'btn-secondary');
 
 export default Button;

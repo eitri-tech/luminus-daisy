@@ -13,6 +13,7 @@ export { default as AvatarGroup } from './components/Avatar/avatarGroup';
 export { default as Badge } from './components/Badge/badge';
 export { default as Carousel } from './components/Carousel/carousel';
 export { default as Dropdown } from './components/Dropdown/dropdown';
+export { default as Modal } from './components/Modal/modal';
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';

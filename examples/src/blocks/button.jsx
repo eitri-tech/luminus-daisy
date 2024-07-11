@@ -10,9 +10,9 @@ export default function ButtonBlock() {
           <Text render="p">Display a button</Text>
           <Button>Botão</Button>
           <Text render="p">Button can be primary</Text>
-          <Button.Primary>Botão</Button.Primary>
+          <Button className="btn-primary">Botão</Button>
           <Text render="p">And can use Daisy or Tailwind Classes</Text>
-          <Button.Primary className="w-full">Botão</Button.Primary>
+          <Button className="btn-secondary w-full">Botão</Button>
         </View>
       </View>
   );
