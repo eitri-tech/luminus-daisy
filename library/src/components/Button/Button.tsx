@@ -1,9 +1,8 @@
 import React from 'react';
+import CommonProps from '../commonProps';
 
-interface ButtonProps {
-  children: React.ReactNode;
+interface ButtonProps extends CommonProps {
   onClick?: () => void;
-  className?: string;
 }
 
 
@@ -13,9 +12,9 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> & {
   Primary: React.FC<ButtonProps>;
   Secondary: React.FC<ButtonProps>;
-} = ({ children, onClick, className }:ButtonProps) => {
+} = ({ children, onClick, className = "", id }:ButtonProps) => {
   return (
-    <button type="button" data-element="Button" onClick={onClick} className={`btn ${className}`}>
+    <button data-e="Button" id={id} type="button" data-element="Button" onClick={onClick} className={`btn ${className}`}>
       {children}
     </button>
   );
@@ -25,8 +24,8 @@ function withVariants(
   C: React.FC<ButtonProps>,
   variantClass: string
 ): React.FC<ButtonProps> {
-  const EnhancedComponent: React.FC<ButtonProps> = ({ children, onClick, className }) => (
-    <C onClick={onClick} className={`${variantClass} ${className || ''}`}>
+  const EnhancedComponent: React.FC<ButtonProps> = ({ children, onClick, className = "", id }) => (
+    <C data-e="Button" id={id} onClick={onClick} className={`${variantClass} ${className || ''}`}>
       {children}
     </C>
   );

@@ -4,15 +4,17 @@ import './index.css';
 export { default as Page } from './components/Page/page';
 export { default as Button } from './components/Button/button';
 export { default as View } from './components/View/view';
+export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
 export { default as Alert } from './components/Alert/alert';
 export { default as Avatar } from './components/Avatar/avatar';
 export { default as AvatarGroup } from './components/Avatar/avatarGroup';
 export { default as Badge } from './components/Badge/badge';
-// export { default as Badge } from './Badge';
+export { default as Carousel } from './components/Carousel/carousel';
+export { default as Dropdown } from './components/Dropdown/dropdown';
+
 // export { default as Card } from './Card';
-// export { default as Carousel } from './Carousel';
 // export { default as Checkbox } from './Checkbox';
 // export { default as Collapse } from './Collapse';
 // export { default as Countdown } from './Countdown';

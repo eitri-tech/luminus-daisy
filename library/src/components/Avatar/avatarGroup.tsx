@@ -5,9 +5,9 @@ interface AvatarGroupProps extends CommonProps {}
 
 class AvatarGroup extends Component<AvatarGroupProps> {
   render() {
-    const { children, className } = this.props;
+    const { children, className = "", id } = this.props;
     return (
-      <div className={`avatar-group ${className}`}>
+      <div data-e="AvatarGroup" id={id} className={`avatar-group ${className}`}>
         {children}
       </div>
     );

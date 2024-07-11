@@ -89,7 +89,7 @@ class Page extends Component<PageProps, PageState> {
     return (
       <div
         id="page"
-        data-cy="page"
+        data-e="Page"
         style={{ paddingTop, paddingBottom }}
         {...rest}
       >

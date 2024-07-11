@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
+import CommonProps from '../commonProps';
 
-interface ViewProps {
-  children?: React.ReactNode;  
-  className?: string;
-}
+interface ViewProps extends CommonProps { }
 
 class View extends Component<ViewProps> {
   render() {
-    const { children, className } = this.props;
+    const { id, children, className = "" } = this.props;
     return (
-      <div data-element="View" className={className}>
+      <div id={id} data-e="View" className={className}>
         {children}
       </div>
     );

@@ -5,9 +5,9 @@ interface AvatarProps extends CommonProps {}
 
 class Avatar extends Component<AvatarProps> {
   render() {
-    const { children, className } = this.props;
+    const { children, className = "", id } = this.props;
     return (
-      <div className={`avatar ${className}`}>
+      <div data-e="Avatar" id={id} className={`avatar ${className}`}>
         {children}
       </div>
     );

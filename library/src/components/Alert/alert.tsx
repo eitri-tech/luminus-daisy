@@ -5,9 +5,9 @@ interface AlertProps extends CommonProps {}
 
 class Alert extends Component<AlertProps> {
   render() {
-    const { children, className } = this.props;
+    const { children, className = "", id } = this.props;
     return (
-      <div role="alert" className={`alert ${className}`}>
+      <div data-e="Alert" id={id} role="alert" className={`alert ${className}`}>
         {children}
       </div>
     );

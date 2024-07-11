@@ -7,12 +7,12 @@ interface BadgeProps extends CommonProps {
 
 class Badge extends Component<BadgeProps> {
   render() {
-    const { children, className } = this.props;
+    const { children, className = "", id } = this.props;
     
     const isReactComponent = children != null; 
 
     return (
-      <div className={`badge ${className}`}>
+      <div data-e="Badge" id={id} className={`badge ${className}`}>
         {isReactComponent ? children : <span>{children}</span>}
       </div>
     );
