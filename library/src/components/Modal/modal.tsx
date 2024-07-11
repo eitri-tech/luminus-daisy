@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CommonProps from '../commonProps';
 
 interface ModalProps extends CommonProps {
-  
+  backdrop?:boolean
 }
 
 class Modal extends Component<ModalProps> {
@@ -10,7 +10,8 @@ class Modal extends Component<ModalProps> {
     const { 
       id,
       className = "", 
-      children
+      children,
+      backdrop = true
     } = this.props;
 
     return (
@@ -18,6 +19,13 @@ class Modal extends Component<ModalProps> {
         <div className="modal-box">
           {children}
         </div>
+        {
+          backdrop && (
+            <form method="dialog" className="modal-backdrop">
+              <button>close</button>
+            </form>
+          )
+        }
       </dialog>
     );
   }
