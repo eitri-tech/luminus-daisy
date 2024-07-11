@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const esbuild = require('esbuild');
 const postcss = require('esbuild-postcss');
-const { clean } = require('esbuild-plugin-clean');
 const tscPlugin = require('esbuild-plugin-tsc');
 
 esbuild.build({
@@ -18,9 +17,6 @@ esbuild.build({
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
   plugins: [
-    clean({
-      patterns: ['./dist/*'],
-    }),
     tscPlugin(),
     postcss({
       config: './postcss.config.js',

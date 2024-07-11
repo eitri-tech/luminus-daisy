@@ -2,6 +2,7 @@
 
 const chokidar = require('chokidar');
 const { exec } = require('child_process');
+const path = require('path');
 
 exec('node build.js', (error, stdout) => {
     if (error) {
@@ -11,8 +12,11 @@ exec('node build.js', (error, stdout) => {
     console.log(stdout);
 });
 
+const project = path.join(__dirname, 'src')
+const library = path.join(__dirname, '..', 'library', 'dist')
+
 chokidar
-    .watch(['src', '../library/dist'], { ignored: /(^|[/\\])\../ })
+    .watch([project, library])
     .on('change', (a) => {
         console.log(`⚠️ File [${a}] was changed`)
         // exec('eslint ./src/**/*.jsx', (error) => {
@@ -20,7 +24,7 @@ chokidar
         //         console.error(`ESLint error: ${JSON.stringify(error)}`);
         //         return;
         //     }
-            
+
         // });
         exec('node build.js', (error, stdout) => {
             if (error) {

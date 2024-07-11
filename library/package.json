@@ -26,7 +26,6 @@
     "daisyui": "4.12.2",
     "esbuild": "0.21.5",
     "esbuild-css-modules-plugin": "3.1.2",
-    "esbuild-plugin-clean": "1.0.1",
     "esbuild-plugin-tsc": "0.4.0",
     "esbuild-plugin-umd-wrapper": "2.0.0",
     "esbuild-postcss": "0.0.4",

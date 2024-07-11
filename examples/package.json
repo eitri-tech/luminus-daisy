@@ -27,7 +27,7 @@
     "autoprefixer": "10.4.19",
     "browser-sync": "3.0.2",
     "chokidar": "3.6.0",
-    "daisyui": "4.12.2",
+    "daisyui": "4.12.2", 
     "esbuild": "0.21.5",
     "esbuild-postcss": "0.0.4",
     "eslint": "8.57.0",
