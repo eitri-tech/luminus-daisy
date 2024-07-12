@@ -4,8 +4,10 @@ import { Alert, View, Text, Button } from "@luminus/daisy"
 export default function AlertBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white prose prose-slate">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white block w-100">
+      <View className="prose prose-slate">
         <Text render="h3">Alert</Text>
+        </View>
         <Alert role="alert" className="alert">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,6 +40,7 @@ export default function AlertBlock() {
             <Button className="btn-sm btn-secondary">Right</Button>
           </View>
         </Alert>
+        
     </View>
   );
 }

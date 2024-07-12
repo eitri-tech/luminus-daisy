@@ -4,8 +4,10 @@ import { Badge, View, Text } from "@luminus/daisy"
 export default function BadgeBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white prose prose-slate">
-        <Text render="h3">Badge</Text>
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white">
+        <View className="prose prose-slate">
+          <Text render="h3">Badge</Text>
+        </View>
         <View className="m-2 mt-10 gap-2 flex">
           <Badge className="badge-outline">default</Badge>
           <Badge className="badge-primary badge-outline">primary</Badge>
