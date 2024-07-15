@@ -1,0 +1,38 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'npm'
+      - run: npm ci
+      - name: Check Version
+        if: github.ref == 'refs/heads/main' 
+        id: check_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [[ $VERSION == *"alpha"* || $VERSION == *"beta"* ]]; then
+            echo "::error::Version contains alpha or beta tag. Cannot publish to main."
+            exit 1
+          fi
+      - name: Publish
+        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+            npm publish --access public
+          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
+            npm publish --tag beta --access public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
