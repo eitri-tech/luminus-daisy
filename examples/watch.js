@@ -13,7 +13,7 @@ exec('node build.js', (error, stdout) => {
 });
 
 const project = path.join(__dirname, 'src')
-const library = path.join(__dirname, '..', 'library', 'dist')
+const library = path.join(__dirname, '..', 'dist')
 
 chokidar
     .watch([project, library])

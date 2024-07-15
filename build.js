@@ -31,7 +31,7 @@ esbuild.build({
   .finally(() => {
     fs.copyFile(
       path.join('dist', 'index.css'),
-      path.join('../examples/dist', 'luminus.css'),
+      path.join('./examples/dist', 'luminus.css'),
       (err) => {
         if (err) {
           console.error('File copy error:', err);
