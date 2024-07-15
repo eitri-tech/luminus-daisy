@@ -1,21 +1,20 @@
+
 # LUMINUS DAISY
 
-**Free and Open Souce UI Components**
+**Free and Open Source UI Components**
 
-[![][version]](https://www.npmjs.com/package/luminus)
-[![][commit]](https://github.com/tag/eitri-tech)
-[![][license]](https://github.com/tag/eitri-tech/blob/master/LICENSE)  
-[![][stars]](https://github.com/tag/eitri-tech)
-<!-- [![][installs]](https://www.npmjs.com/package/luminus) -->
+[![Version](https://badgen.net/github/tag/eitri-tech/luminus-daisy?label=Version&color=1AD1A5)](https://github.com/eitri-tech/luminus-daisy)
+[![Last Commit](https://badgen.net/github/last-commit/eitri-tech/luminus-daisy?label=Last%20commit&color=1AD1A5)](https://github.com/eitri-tech/luminus-daisy)
+[![License](https://badgen.net/github/license/eitri-tech/luminus-daisy?label=License&color=1AD1A5)](https://github.com/eitri-tech/luminus-daisy/blob/master/LICENSE)
+[![GitHub Stars](https://badgen.net/github/stars/eitri-tech/luminus-daisy?label=GitHub%20stars&color=1AD1A5)](https://github.com/eitri-tech/luminus-daisy)
 
-
-Luminus Daisy is a suite of visual components for building interfaces. 
+Luminus Daisy is a suite of visual components for building interfaces.
 
 It is the official library used by Eitri for building Eitri-apps.
 
-Status: under development
+**Status**: Under development
 
-License: MIT
+**License**: MIT
 
 ### 📌 [Official website →](https://eitri.tech/)
 
@@ -23,34 +22,37 @@ License: MIT
 
 ### 📌 [Meet Eitri →](https://docs.eitri.tech/en/)
 
-<!-- Animated Gif -->
+## Installation
 
-<!-- Link to demo -->
+Simple install:
 
-## Instalation
-
-
-Simple install
-
-```
+```sh
 npm install luminus-daisy
 ```
-and use it
+
+and use:
 
 ```jsx
 import { Button } from "luminus-daisy"
 
 ...
 
-<Button />
-
+<Button>Click on me</Button>
 ```
 
-[version]: https://badgen.net/github/tag/eitri-tech/luminus-2?label=Version&color=1AD1A5
-[commit]: https://badgen.net/github/last-commit/tag/eitri-tech?label=Last%20commit&color=1AD1A5
-[license]: https://badgen.net/github/license/tag/eitri-tech?label=License&color=1AD1A5
-[stars]: https://badgen.net/github/stars/tag/eitri-tech?label=GitHub%20stars&color=1AD1A5
-[docs-url]: https://docs.eitri.tech/en/
-<!-- [contribute]: https://github.com/tag/eitri-tech/blob/master/.github/CONTRIBUTING.md -->
-<!-- [contributors_img]: https://contrib.rocks/image?repo=tag/eitri-tech&columns=25&anon=1&max=300 -->
-<!-- [contributors]: https://github.com/tag/eitri-tech/graphs/contributors -->
+## Contributing
+
+Want to contribute? Follow the instructions in our [contribution guide](https://github.com/tag/eitri-tech/luminus-daisy/blob/master/.github/CONTRIBUTING.md).
+
+## Additional Resources
+
+- **Complete Documentation**: [Documentation](https://docs.eitri.tech/en/)
+- **Live Demo**: [Demo](https://eitri.tech/demo)
+- **Style Guide**: [Style Guide](https://eitri.tech/style-guide)
+
+## Contact
+
+- **Email**: support@eitri.tech
+- **Instagram**: [@calindraoficial](https://instagram.com/calindraoficial)
+
+
