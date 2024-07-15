@@ -17,17 +17,17 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm ci
-      # - name: Check Version
-      #   if: github.ref == 'refs/heads/main' 
-      #   id: check_version
-      #   run: |
-      #     VERSION=$(node -p "require('./package.json').version")
-      #     if [[ $VERSION == *"alpha"* || $VERSION == *"beta"* ]]; then
-      #       echo "::error::Version contains alpha or beta tag. Cannot publish to main."
-      #       exit 1
-      #     fi
+      - name: Check Version
+        if: github.ref == 'refs/heads/main' 
+        id: check_version
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if [[ $VERSION == *"alpha"* || $VERSION == *"beta"* ]]; then
+            echo "::error::Version contains alpha or beta tag. Cannot publish to main."
+            exit 1
+          fi
       - name: Publish
-        # if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
+        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
         run: |
           if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
             npm publish --access public
