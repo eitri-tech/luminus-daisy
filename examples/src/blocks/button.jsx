@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, View, Text } from "@luminus/daisy"
+import { Button, View, Text } from "luminus-daisy"
 
 export default function ButtonBlock() {
 

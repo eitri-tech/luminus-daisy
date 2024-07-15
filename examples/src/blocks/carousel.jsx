@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Carousel, Image } from "@luminus/daisy"
+import { View, Text, Carousel, Image } from "luminus-daisy"
 
 export default function CarouselBlock() {
 

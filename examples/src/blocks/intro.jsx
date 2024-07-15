@@ -1,5 +1,5 @@
 import React from 'react';
-import { Badge, View, Text } from "@luminus/daisy"
+import { Badge, View, Text } from "luminus-daisy"
 
 export default function IntroBlock() {
 

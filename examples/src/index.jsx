@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Page } from "@luminus/daisy"
+import { View, Page } from "luminus-daisy"
 import { createRoot } from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';

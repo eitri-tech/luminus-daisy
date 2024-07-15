@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Dropdown } from "@luminus/daisy"
+import { View, Text, Dropdown } from "luminus-daisy"
 
 export default function DropdownBlock() {
 
