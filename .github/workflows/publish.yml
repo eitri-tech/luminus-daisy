@@ -27,7 +27,7 @@ jobs:
             exit 1
           fi
       - name: Publish
-        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
+        # if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
         run: |
           if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
             npm publish --access public
