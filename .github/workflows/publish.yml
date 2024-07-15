@@ -11,18 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: cd library
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
-          cache-dependency-path: library/package-lock.json
+          working-directory: library
       - run: npm ci
-
-      # Verifica a versão apenas na branch main
       - name: Check Version
-        if: github.ref == 'refs/heads/main' # Executa apenas na branch main
+        if: github.ref == 'refs/heads/main' 
         id: check_version
         run: |
           VERSION=$(node -p "require('./package.json').version")
@@ -30,9 +27,8 @@ jobs:
             echo "::error::Version contains alpha or beta tag. Cannot publish to main."
             exit 1
           fi
-
       - name: Publish
-        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' # Publica se a verificação passou ou se for a branch develop
+        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
         run: |
           if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
             npm publish
