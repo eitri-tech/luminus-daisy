@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Modal, Button } from "@luminus/daisy"
+import { View, Text, Modal, Button } from "luminus-daisy"
 
 export default function ModalBlock() {
 

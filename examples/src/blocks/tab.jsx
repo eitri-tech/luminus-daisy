@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Tab } from "@luminus/daisy"
+import { View, Text, Tab } from "luminus-daisy"
 
 export default function TabBlock() {
 

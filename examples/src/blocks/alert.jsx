@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, View, Text, Button } from "@luminus/daisy"
+import { Alert, View, Text, Button } from "luminus-daisy"
 
 export default function AlertBlock() {
 
