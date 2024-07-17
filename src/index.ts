@@ -15,6 +15,7 @@ export { default as Carousel } from './components/Carousel/carousel';
 export { default as Dropdown } from './components/Dropdown/dropdown';
 export { default as Modal } from './components/Modal/modal';
 export { default as Tab } from './components/Tab/tab';
+export { default as Link } from './components/Link/link';
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';

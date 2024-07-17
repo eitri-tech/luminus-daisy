@@ -10,6 +10,7 @@ import CarouselBlock from './blocks/carousel';
 import DropdownBlock from './blocks/dropdown';
 import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
+import LinkBlock from './blocks/link';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <BadgeBlock />
         <TabBlock />
         <ButtonBlock />
+        <LinkBlock />
         <CarouselBlock />
       </View>
     </Page>
