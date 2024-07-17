@@ -42,7 +42,7 @@ import { Button } from "luminus-daisy"
 
 ## Contributing
 
-Want to contribute? Follow the instructions in our [contribution guide](https://github.com/tag/eitri-tech/luminus-daisy/blob/master/.github/CONTRIBUTING.md).
+Want to contribute? Follow the instructions in our [contribution guide](https://github.com/eitri-tech/luminus-daisy/blob/main/CONTRIBUTING.md).
 
 ## Additional Resources
 
