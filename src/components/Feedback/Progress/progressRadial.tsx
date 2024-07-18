@@ -1,5 +1,5 @@
 import {Component, CSSProperties} from 'react';
-import CommonProps from '../commonProps';
+import CommonProps from '../../commonProps';
 
 interface ProgressRadialProps extends CommonProps {
     value: number,

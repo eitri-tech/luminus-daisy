@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommonProps from '../commonProps'
+import CommonProps from '../../commonProps'
 
 interface AlertProps extends CommonProps {}
 

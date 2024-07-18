@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Page, Text } from "luminus-daisy"
-import { createRoot } from 'react-dom/client';
+import {View, Page, Text} from "luminus-daisy"
+import {createRoot} from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';
 import ButtonBlock from "./blocks/button"
@@ -13,6 +13,7 @@ import TabBlock from './blocks/tab';
 import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
 import StepsBlock from './blocks/navigation/steps';
+
 import SwapBlock from './blocks/actions/swap';
 
 function App() {
@@ -21,21 +22,30 @@ function App() {
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
 
-        <Text className="text-2xl font-bold text-slate-900">Actions</Text>
-        <SwapBlock />
 
+        <Text className="card-title text-4xl font-bold text-slate-900">Actions</Text>
+        <SwapBlock />
         <DropdownBlock />
         <ModalBlock />
-        <AlertBlock />
-        <BadgeBlock />
-        <TabBlock />
         <ButtonBlock />
-        <LinkBlock />
+
+        <div className="divider"></div>
+
+        <Text className="card-title text-4xl font-bold text-slate-900">Data Display</Text>
+        <BadgeBlock />
         <CarouselBlock />
+
+        <div className="divider"></div>
+
+        <Text className="text-4xl font-bold text-slate-900">Feedback</Text>
+        <AlertBlock />
         <ProgressBlock />
 
+        <div className="divider"></div>
 
         <Text className="text-2xl font-bold text-slate-900">Navigation</Text>
+        <TabBlock />
+        <LinkBlock />
         <StepsBlock />
       </View>
     </Page>
