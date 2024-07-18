@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Page } from "luminus-daisy"
+import { View, Page, Text } from "luminus-daisy"
 import { createRoot } from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';
@@ -12,6 +12,7 @@ import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
 import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
+import StepsBlock from './blocks/navigation/steps';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
         <LinkBlock />
         <CarouselBlock />
         <ProgressBlock />
+
+
+        <Text className="text-2xl font-bold text-slate-900">Navigation</Text>
+        <StepsBlock />
       </View>
     </Page>
   );
