@@ -1,5 +1,4 @@
-import { ChangeEvent } from 'react';
-import {Component} from 'react';
+import { ChangeEvent, Component } from 'react';
 import CommonProps from '../../commonProps';
 
 interface SwapProps extends CommonProps {
