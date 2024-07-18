@@ -16,6 +16,7 @@ import StepsBlock from './blocks/navigation/steps';
 
 import SwapBlock from './blocks/actions/swap';
 import CheckboxBlock from './blocks/dataInput/checbox';
+import RatingBlock from './blocks/dataInput/rating';
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Data input</Text>
         <CheckboxBlock />
+        <RatingBlock />
       </View>
     </Page>
   );
