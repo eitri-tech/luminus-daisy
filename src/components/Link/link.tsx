@@ -7,7 +7,7 @@ class Link extends Component<LinkProps> {
     render() {
         const {children, className = "", id} = this.props;
         return (
-            <a data-e="Link" id={id} className={className}>
+            <a data-e="Link" id={id} className={`link ${className}`}>
                 {children}
             </a>
         );
