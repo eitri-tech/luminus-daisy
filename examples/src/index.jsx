@@ -10,6 +10,7 @@ import CarouselBlock from './blocks/carousel';
 import DropdownBlock from './blocks/dropdown';
 import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
+import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <ButtonBlock />
         <LinkBlock />
         <CarouselBlock />
+        <ProgressBlock />
       </View>
     </Page>
   );
