@@ -33,6 +33,7 @@ export { default as Text } from './components/Text/text';
 
 export { default as Tab } from './components/Tab/tab';
 export { default as Link } from './components/Link/link';
+export { default as Steps } from './components/Navigation/Steps/steps';
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';

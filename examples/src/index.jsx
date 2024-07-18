@@ -12,6 +12,8 @@ import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
 import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
+import StepsBlock from './blocks/navigation/steps';
+
 import SwapBlock from './blocks/actions/swap';
 
 function App() {
@@ -41,8 +43,10 @@ function App() {
 
         <div className="divider"></div>
 
+        <Text className="text-2xl font-bold text-slate-900">Navigation</Text>
         <TabBlock />
         <LinkBlock />
+        <StepsBlock />
       </View>
     </Page>
   );
