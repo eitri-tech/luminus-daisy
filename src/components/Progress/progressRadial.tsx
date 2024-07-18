@@ -1,12 +1,12 @@
 import {Component, CSSProperties} from 'react';
 import CommonProps from '../commonProps';
 
-interface ProgressProps extends CommonProps {
+interface ProgressRadialProps extends CommonProps {
     value: number,
-    displayValue: string,
+    displayValue?: string,
 }
 
-class ProgressRadial extends Component<ProgressProps> {
+class ProgressRadial extends Component<ProgressRadialProps> {
     render() {
         const {
             id,
@@ -22,7 +22,7 @@ class ProgressRadial extends Component<ProgressProps> {
                 className={`radial-progress ${className}`}
                 role='progressbar'
                 style={{"--value": value} as CSSProperties}>
-                {displayValue}
+                {displayValue ?? value}
             </div>
         );
     }
