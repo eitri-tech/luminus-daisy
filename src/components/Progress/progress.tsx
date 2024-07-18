@@ -2,9 +2,8 @@ import {Component} from 'react';
 import CommonProps from '../commonProps';
 
 interface ProgressProps extends CommonProps {
-    value: number,
-    max: number
-
+    value?: number,
+    max?: number
 }
 
 class Progress extends Component<ProgressProps> {
@@ -12,8 +11,8 @@ class Progress extends Component<ProgressProps> {
         const {
             id,
             className = "",
-            value = 0,
-            max
+            value = undefined,
+            max = undefined
         } = this.props;
 
         return (
