@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CommonProps from '../commonProps';
+import CommonProps from '../../commonProps';
 
 interface DropdownProps extends CommonProps {}
 interface DropdownButtonProps extends CommonProps {}
