@@ -11,6 +11,7 @@ import DropdownBlock from './blocks/dropdown';
 import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
 import ProgressBlock from './blocks/progress';
+import LinkBlock from './blocks/link';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <BadgeBlock />
         <TabBlock />
         <ButtonBlock />
+        <LinkBlock />
         <CarouselBlock />
         <ProgressBlock />
       </View>

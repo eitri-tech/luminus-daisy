@@ -17,6 +17,7 @@ export { default as Modal } from './components/Modal/modal';
 export { default as Tab } from './components/Tab/tab';
 export { default as Progress } from './components/Progress/progress';
 export { default as ProgressRadial } from './components/Progress/progressRadial';
+export { default as Link } from './components/Link/link';
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';
