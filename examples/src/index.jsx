@@ -10,6 +10,7 @@ import CarouselBlock from './blocks/carousel';
 import DropdownBlock from './blocks/dropdown';
 import ModalBlock from './blocks/modal';
 import TabBlock from './blocks/tab';
+import ProgressBlock from './blocks/progress';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <TabBlock />
         <ButtonBlock />
         <CarouselBlock />
+        <ProgressBlock />
       </View>
     </Page>
   );
