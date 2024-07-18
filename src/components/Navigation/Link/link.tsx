@@ -1,5 +1,5 @@
 import {Component} from 'react';
-import CommonProps from '../commonProps';
+import CommonProps from '../../commonProps';
 
 interface LinkProps extends CommonProps { }
 

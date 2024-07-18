@@ -26,14 +26,28 @@ export { default as Alert } from './components/Feedback/Alert/alert';
 export { default as Progress } from './components/Feedback/Progress/progress';
 export { default as ProgressRadial } from './components/Feedback/Progress/progressRadial';
 
+
+/**
+ * Navigation
+ */
+export { default as Tab } from './components/Navigation/Tab/tab';
+export { default as Link } from './components/Navigation/Link/link';
+export { default as Steps } from './components/Navigation/Steps/steps';
+
+/**
+ * Data input
+ */
+export { default as Checkbox } from './components/DataInput/Checkbox/checkbox';
+
+/**
+ * Others
+ */
 export { default as Page } from './components/Page/page';
 export { default as View } from './components/View/view';
 export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
-export { default as Tab } from './components/Tab/tab';
-export { default as Link } from './components/Link/link';
-export { default as Steps } from './components/Navigation/Steps/steps';
+
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';
