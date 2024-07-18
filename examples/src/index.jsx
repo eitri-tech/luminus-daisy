@@ -13,12 +13,17 @@ import TabBlock from './blocks/tab';
 import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
 import StepsBlock from './blocks/navigation/steps';
+import SwapBlock from './blocks/actions/swap';
 
 function App() {
   return (
     <Page className="bg-slate-100">
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
+
+        <Text className="text-2xl font-bold text-slate-900">Actions</Text>
+        <SwapBlock />
+
         <DropdownBlock />
         <ModalBlock />
         <AlertBlock />
