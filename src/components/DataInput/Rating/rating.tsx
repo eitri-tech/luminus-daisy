@@ -11,18 +11,17 @@ interface RatingProps extends CommonProps {
 
 interface RateItemProps extends CommonProps {
     name?: string;
-    defaultChecked?: boolean;
     checked?: boolean;
     value?: number;
-    onClick?: (value: number) => void;
+    onChange?: (value: number) => void;
     disabled?: boolean;
 }
 
 class RateItem extends Component<RateItemProps> {
-    handleClick = () => {
-        const { value, onClick } = this.props;
-        if (onClick) {
-            onClick(value || 0);
+    handleChange = () => {
+        const { value, onChange } = this.props;
+        if (onChange) {
+            onChange(value || 0);
         }
     }
 
@@ -31,7 +30,6 @@ class RateItem extends Component<RateItemProps> {
             className = '',
             id,
             name = '',
-            defaultChecked,
             checked,
             value,
         } = this.props;
@@ -40,12 +38,11 @@ class RateItem extends Component<RateItemProps> {
                 data-e="RateItem"
                 type="radio"
                 name={name}
-                defaultChecked={defaultChecked}
                 checked={checked}
                 id={id}
                 value={value}
                 className={`mask mask-star ${className}`}
-                onClick={this.handleClick}
+                onChange={this.handleChange}
             />
         );
     }
@@ -66,7 +63,7 @@ class Rating extends Component<RatingProps, RatingState> {
         };
     }
 
-    handleClick = (value: number) => {
+    handleChange = (value: number) => {
         this.setState({ value });
         if (this.props.onChange) {
             this.props.onChange(value);
@@ -87,7 +84,7 @@ class Rating extends Component<RatingProps, RatingState> {
             if (React.isValidElement(child)) {
                 return React.cloneElement(child, {
                     checked: child.props.value === value,
-                    onClick: this.handleClick,
+                    onChange: this.handleChange,
                     disabled: readonly,
                 });
             }

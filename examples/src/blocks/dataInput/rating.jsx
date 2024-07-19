@@ -3,7 +3,7 @@ import React from "react";
 import {Rating, View, Text} from "luminus-daisy"
 
 export default function RatingBlock() {
-    const [rating, setRating] = React.useState(0);
+    const [rating, setRating] = React.useState(3);
     return (
         <View className="bg-white p-4 ">
             <View className="prose prose-slate mb-4 rounded-sm container max-w-5xl m-auto">
@@ -20,7 +20,7 @@ export default function RatingBlock() {
 
 
                 <Text render="p">A rating with onChange: {rating}</Text>
-                <Rating onChange={value => setRating(value)}>
+                <Rating value={rating}  onChange={value => setRating(value)}>
                     <Rating.Item name="rating-1" value={1} />
                     <Rating.Item name="rating-2" value={2} />
                     <Rating.Item name="rating-3" value={3} />
@@ -29,12 +29,12 @@ export default function RatingBlock() {
                 </Rating>
 
                 <Text render="h2">Rating with mask-star-2 with warning color</Text>
-                <Rating className="warning">
-                    <Rating.Item name="rating-1" className="mask-star-2 bg-orange-400" />
-                    <Rating.Item name="rating-2" className="mask-star-2 bg-orange-400" defaultChecked />
-                    <Rating.Item name="rating-3" className="mask-star-2 bg-orange-400" />
-                    <Rating.Item name="rating-4" className="mask-star-2 bg-orange-400" />
-                    <Rating.Item name="rating-5" className="mask-star-2 bg-orange-400" />
+                <Rating value={2} className="warning">
+                    <Rating.Item name="rating-1" value={1} className="mask-star-2 bg-orange-400" />
+                    <Rating.Item name="rating-2" value={2} className="mask-star-2 bg-orange-400" defaultChecked />
+                    <Rating.Item name="rating-3" value={3} className="mask-star-2 bg-orange-400" />
+                    <Rating.Item name="rating-4" value={4} className="mask-star-2 bg-orange-400" />
+                    <Rating.Item name="rating-5" value={5} className="mask-star-2 bg-orange-400" />
                 </Rating>
 
 
