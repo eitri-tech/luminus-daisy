@@ -38,6 +38,7 @@ export { default as Steps } from './components/Navigation/Steps/steps';
  * Data input
  */
 export { default as Checkbox } from './components/DataInput/Checkbox/checkbox';
+export { default as Range } from './components/DataInput/Range/range';
 
 /**
  * Others
