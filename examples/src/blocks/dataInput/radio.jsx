@@ -4,8 +4,8 @@ import {Radio, View, Text} from "luminus-daisy"
 export default function RadioBlock() {
 
     const [checked, setChecked] = React.useState("");
-    const handleChange = (event) => {
-        setChecked(event.target.value);
+    const handleChange = (value) => {
+        setChecked(value);
     };
 
     return (

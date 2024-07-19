@@ -5,7 +5,7 @@ interface RadioProps extends CommonProps {
     name: string;
     value: string;
     checked?: boolean;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (value: string) => void;
     defaultChecked?: boolean;
     disabled?: boolean;
     readonly?: boolean;
@@ -34,7 +34,7 @@ export default class Radio extends Component<RadioProps> {
                 name={name}
                 value={value}
                 checked={checked}
-                onChange={onChange}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange && onChange(e?.target?.value ?? "")}
                 defaultChecked={defaultChecked}
                 id={id}
                 disabled={disabled}
