@@ -16,6 +16,7 @@ import StepsBlock from './blocks/navigation/steps';
 
 import SwapBlock from './blocks/actions/swap';
 import CheckboxBlock from './blocks/dataInput/checbox';
+import RangeBlock from './blocks/dataInput/range';
 import FileInputBlock from './blocks/dataInput/fileInput';
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Data input</Text>
         <CheckboxBlock />
+        <RangeBlock />
         <FileInputBlock />
       </View>
     </Page>
