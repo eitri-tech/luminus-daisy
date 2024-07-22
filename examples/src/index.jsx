@@ -20,6 +20,7 @@ import RatingBlock from './blocks/dataInput/rating';
 import RadioBlock from './blocks/dataInput/radio';
 import RangeBlock from './blocks/dataInput/range';
 import FileInputBlock from './blocks/dataInput/fileInput';
+import ToggleBlock from './blocks/dataInput/toggle';
 
 function App() {
   return (
@@ -59,6 +60,7 @@ function App() {
         <RadioBlock />
         <RangeBlock />
         <FileInputBlock />
+        <ToggleBlock />
       </View>
     </Page>
   );
