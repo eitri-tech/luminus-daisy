@@ -21,6 +21,7 @@ import RadioBlock from './blocks/dataInput/radio';
 import RangeBlock from './blocks/dataInput/range';
 import FileInputBlock from './blocks/dataInput/fileInput';
 import ToggleBlock from './blocks/dataInput/toggle';
+import TextareaBlock from './blocks/dataInput/textarea';
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
         <RangeBlock />
         <FileInputBlock />
         <ToggleBlock />
+        <TextareaBlock />
       </View>
     </Page>
   );
