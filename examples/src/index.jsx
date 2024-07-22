@@ -16,6 +16,7 @@ import StepsBlock from './blocks/navigation/steps';
 
 import SwapBlock from './blocks/actions/swap';
 import CheckboxBlock from './blocks/dataInput/checbox';
+import RatingBlock from './blocks/dataInput/rating';
 import RadioBlock from './blocks/dataInput/radio';
 import RangeBlock from './blocks/dataInput/range';
 import FileInputBlock from './blocks/dataInput/fileInput';
@@ -54,6 +55,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Data input</Text>
         <CheckboxBlock />
+        <RatingBlock />
         <RadioBlock />
         <RangeBlock />
         <FileInputBlock />
