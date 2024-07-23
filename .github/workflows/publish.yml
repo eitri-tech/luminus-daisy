@@ -40,7 +40,6 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -48,14 +47,22 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: Upload CSS Prd
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: | 
           aws s3 cp dist/luminusdaisy.umd.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
       - name: Upload CSS Dev
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
           aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
       - name: Upload JS Prd
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
           aws s3 cp dist/luminusdaisy.umd.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
       - name: Upload JS Dev
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
           aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
