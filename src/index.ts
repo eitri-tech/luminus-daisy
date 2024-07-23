@@ -43,6 +43,7 @@ export { default as Radio } from './components/DataInput/Radio/radio';
 export { default as Range } from './components/DataInput/Range/range';
 export { default as FileInput } from './components/DataInput/FileInput/fileInput';
 export { default as Toggle } from './components/DataInput/Toggle/toggle';
+export { default as Textarea } from './components/DataInput/Textarea/Textarea';
 
 /**
  * Others
