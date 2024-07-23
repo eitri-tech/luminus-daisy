@@ -30,16 +30,16 @@ jobs:
             echo "::error::Version contains alpha or beta tag. Cannot publish to main."
             exit 1
           fi
-      - name: Publish
-        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
-        run: |
-          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
-            npm publish --access public
-          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
-            npm publish --tag beta --access public
-          fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: Publish
+      #   if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
+      #   run: |
+      #     if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+      #       npm publish --access public
+      #     elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
+      #       npm publish --tag beta --access public
+      #     fi
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -50,19 +50,19 @@ jobs:
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: | 
-          aws s3 cp dist/luminusdaisy.umd.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
+          aws s3 cp dist/luminusdaisy.umd.css s3://${{ $S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
       - name: Upload CSS Dev
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
+          aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ $S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
       - name: Upload JS Prd
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 cp dist/luminusdaisy.umd.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
+          aws s3 cp dist/luminusdaisy.umd.js s3://${{ $S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
       - name: Upload JS Dev
         env:
           S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
         run: |
-          aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
+          aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ $S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
