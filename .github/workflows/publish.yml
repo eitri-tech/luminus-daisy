@@ -48,13 +48,13 @@ jobs:
           aws-region: us-east-1
       - name: Upload CSS Prd
         run: | 
-          aws s3 cp dist/luminusdaisy.umd.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
+          aws s3 cp dist/luminusdaisy.umd.css s3://${{ secrets.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
       - name: Upload CSS Dev
         run: |
-          aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
+          aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ secrets.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
       - name: Upload JS Prd
         run: |
-          aws s3 cp dist/luminusdaisy.umd.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
+          aws s3 cp dist/luminusdaisy.umd.js s3://${{ secrets.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
       - name: Upload JS Dev
         run: |
-          aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
+          aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ secrets.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
