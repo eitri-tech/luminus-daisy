@@ -47,17 +47,13 @@ jobs:
 
       - name: Upload CSS Prd
         run: | 
-          VERSION=$(node -p "require('./package.json').version")
           aws s3 cp dist/luminusdaisy.umd.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ $VERSION }}/assets/luminusdaisy.umd.css
       - name: Upload CSS Dev
         run: |
-          VERSION=$(node -p "require('./package.json').version")
           aws s3 cp dist/luminusdaisy.umd.dev.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ $VERSION }}/assets/luminusdaisy.umd.dev.css
       - name: Upload JS Prd
         run: |
-          VERSION=$(node -p "require('./package.json').version")
           aws s3 cp dist/luminusdaisy.umd.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ $VERSION }}/assets/luminusdaisy.umd.js
       - name: Upload JS Dev
         run: |
-          VERSION=$(node -p "require('./package.json').version")
           aws s3 cp dist/luminusdaisy.umd.dev.js s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ $VERSION }}/assets/luminusdaisy.umd.dev.js
