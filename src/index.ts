@@ -1,20 +1,59 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import './index.css';
 
+
+/**
+ * Actions
+ */
+export { default as Button } from './components/Actions/Button/button';
+export { default as Dropdown } from './components/Actions/Dropdown/dropdown';
+export { default as Swap } from './components/Actions/Swap/swap';
+export { default as Modal } from './components/Actions/Modal/modal';
+
+
+/**
+ * Data display
+ */
+export { default as Avatar } from './components/DataDisplay/Avatar/avatar';
+export { default as AvatarGroup } from './components/DataDisplay/Avatar/avatarGroup';
+export { default as Badge } from './components/DataDisplay/Badge/badge';
+export { default as Carousel } from './components/DataDisplay/Carousel/carousel';
+
+/**
+ * Feedback
+ */
+export { default as Alert } from './components/Feedback/Alert/alert';
+export { default as Progress } from './components/Feedback/Progress/progress';
+export { default as ProgressRadial } from './components/Feedback/Progress/progressRadial';
+
+
+/**
+ * Navigation
+ */
+export { default as Tab } from './components/Navigation/Tab/tab';
+export { default as Link } from './components/Navigation/Link/link';
+export { default as Steps } from './components/Navigation/Steps/steps';
+
+/**
+ * Data input
+ */
+export { default as Checkbox } from './components/DataInput/Checkbox/checkbox';
+export { default as Rating } from './components/DataInput/Rating/rating';
+export { default as Radio } from './components/DataInput/Radio/radio';
+export { default as Range } from './components/DataInput/Range/range';
+export { default as FileInput } from './components/DataInput/FileInput/fileInput';
+export { default as Toggle } from './components/DataInput/Toggle/toggle';
+export { default as Textarea } from './components/DataInput/Textarea/Textarea';
+
+/**
+ * Others
+ */
 export { default as Page } from './components/Page/page';
-export { default as Button } from './components/Button/button';
 export { default as View } from './components/View/view';
 export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
-export { default as Alert } from './components/Alert/alert';
-export { default as Avatar } from './components/Avatar/avatar';
-export { default as AvatarGroup } from './components/Avatar/avatarGroup';
-export { default as Badge } from './components/Badge/badge';
-export { default as Carousel } from './components/Carousel/carousel';
-export { default as Dropdown } from './components/Dropdown/dropdown';
-export { default as Modal } from './components/Modal/modal';
-export { default as Tab } from './components/Tab/tab';
+
 
 // export { default as Card } from './Card';
 // export { default as Checkbox } from './Checkbox';

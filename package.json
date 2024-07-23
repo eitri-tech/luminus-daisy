@@ -6,7 +6,8 @@
   "module": "dist/index.js",
   "scripts": {
     "start": "node watch.js",
-    "build": "node build.js"
+    "build": "node build.js",
+    "build-umd": "node buildUMD.js"
   },
   "keywords": [],
   "author": "Eitri",
@@ -27,7 +28,7 @@
     "esbuild": "0.21.5",
     "esbuild-css-modules-plugin": "3.1.2",
     "esbuild-plugin-tsc": "0.4.0",
-    "esbuild-plugin-umd-wrapper": "2.0.0",
+    "esbuild-plugin-umd-wrapper": "^2.0.0",
     "esbuild-postcss": "0.0.4",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
