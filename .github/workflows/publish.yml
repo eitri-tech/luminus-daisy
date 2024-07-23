@@ -45,7 +45,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: use-east-1
       - name: Upload CSS Prd
         run: | 
           aws s3 cp dist/luminusdaisy.umd.css s3://${{ env.S3_BUCKET_NAME }}/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
