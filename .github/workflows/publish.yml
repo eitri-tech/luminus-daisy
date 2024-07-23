@@ -30,16 +30,16 @@ jobs:
             echo "::error::Version contains alpha or beta tag. Cannot publish to main."
             exit 1
           fi
-      # - name: Publish
-      #   if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
-      #   run: |
-      #     if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
-      #       npm publish --access public
-      #     elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
-      #       npm publish --tag beta --access public
-      #     fi
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish
+        if: steps.check_version.outcome == 'success' || github.ref == 'refs/heads/develop' 
+        run: |
+          if [[ ${{ github.ref }} == 'refs/heads/main' ]]; then
+            npm publish --access public
+          elif [[ ${{ github.ref }} == 'refs/heads/develop' ]]; then
+            npm publish --tag beta --access public
+          fi
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
