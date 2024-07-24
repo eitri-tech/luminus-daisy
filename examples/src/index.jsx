@@ -14,6 +14,8 @@ import ProgressBlock from './blocks/progress';
 import LinkBlock from './blocks/link';
 import StepsBlock from './blocks/navigation/steps';
 
+import TooltipBlock from './blocks/feedback/tooltip';
+
 import SwapBlock from './blocks/actions/swap';
 import CheckboxBlock from './blocks/dataInput/checbox';
 import RatingBlock from './blocks/dataInput/rating';
@@ -47,6 +49,7 @@ function App() {
         <Text className="text-4xl font-bold text-slate-900">Feedback</Text>
         <AlertBlock />
         <ProgressBlock />
+        <TooltipBlock />
 
         <div className="divider"></div>
 
