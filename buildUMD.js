@@ -6,6 +6,9 @@ const { umdWrapper } = require("esbuild-plugin-umd-wrapper");
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  format: 'iife',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.dev.js',
   format: 'umd',
@@ -30,12 +33,15 @@ esbuild.build({
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.js',
   format: 'umd',
-  external: ['react', 'react-dom'],
   globalName: 'luminusdaisy',
-  minify: true,
+  minify: false,
+  minifySyntax: false,
+  minifyWhitespace: true,
   sourcemap: false,
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
