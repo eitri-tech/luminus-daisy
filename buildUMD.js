@@ -33,6 +33,7 @@ esbuild.build({
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.js',
   format: 'umd',
+  external: ['react', 'react-dom'],
   globalName: 'luminusdaisy',
   minify: true,
   sourcemap: false,
