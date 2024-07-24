@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import CommonProps from '../../commonProps';
 
 interface LoadingProps extends CommonProps {
-  size?: string
-  color?: string
+  name: string;
 }
 
 class Loading extends Component<LoadingProps> {
   render() {
-    const { size = '',   className="" , color=''} = this.props;
+    const {name, id,  className="" } = this.props;
 
     return (
-      <span className={`loading ${className} ${size} ${color}`}></span>
+      <span id={id} data-e="Loading" name={name} className={`loading ${className}`}></span>
     );
   }
 }
