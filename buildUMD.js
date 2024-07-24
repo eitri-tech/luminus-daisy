@@ -12,14 +12,14 @@ esbuild.build({
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.dev.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
+  globalName: 'luminus',
   minify: false,
   sourcemap: 'inline',
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper({libraryName: "luminusdaisy"}),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })
@@ -38,7 +38,7 @@ esbuild.build({
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
+  globalName: 'luminus',
   minify: false,
   minifySyntax: false,
   minifyWhitespace: true,
@@ -47,7 +47,7 @@ esbuild.build({
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper({libraryName: "luminusdaisy"}),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })
