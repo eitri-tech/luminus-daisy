@@ -16,7 +16,7 @@ esbuild.build({
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminusdaisy"}),
     postcss({
       config: './postcss.config.js',
     })
@@ -40,7 +40,7 @@ esbuild.build({
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminusdaisy"}),
     postcss({
       config: './postcss.config.js',
     })
