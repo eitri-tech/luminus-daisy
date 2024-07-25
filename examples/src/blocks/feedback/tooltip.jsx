@@ -9,100 +9,127 @@ export default function TooltipBlock() {
                 <Text render="h3">Tooltip</Text>
 
                 <Text render="p">Display a basic tooltip</Text>
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    onClick={() => console.log("clicked")}
-                />
+                <Tooltip dataTip="foo:bar">
+                    <button className="btn">Hover me</button>
+                </Tooltip>
 
                 <Text render="p">Display a forced open</Text>
                 <Tooltip
                     dataTip="foo:bar"
-                    content="This is a tooltip"
+                    content=""
                     className="tooltip-open tooltip-right"
-                />
+                >
+                    <button className="btn">Force open</button>
+                </Tooltip>
 
                 <Text render="p">Display a top</Text>
                 <Tooltip
                     dataTip="foo:bar"
-                    content="This is a tooltip"
                     className="tooltip-top"
-                />
+                >
+                    <button className="btn">Top</button>
+                </Tooltip>
 
                 <Text render="p">Display a right</Text>
                 <Tooltip
                     dataTip="foo:bar"
-                    content="This is a tooltip"
                     className="tooltip-right"
-                />
+                >
+                    <button className="btn">Right</button>
+                </Tooltip>
 
                 <Text render="p">Display a bottom</Text>
                 <Tooltip
                     dataTip="foo:bar"
-                    content="This is a tooltip"
                     className="tooltip-bottom"
-                />
+                >
+                    <button className="btn">Bottom</button>
+                </Tooltip>
 
                 <Text render="p">Display a left</Text>
                 <Tooltip
                     dataTip="foo:bar"
-                    content="This is a tooltip"
                     className="tooltip-left"
-                />
+                >
+                    <button className="btn">Left</button>
+                </Tooltip>
 
-
-                <Text render="p">Display a disabled</Text>
-                <Tooltip
-                    disabled
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-disabled"
-                />
 
                 <Text render="p">Display a colors</Text>
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-primary"
-                />
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-secondary"
-                />
-                <Tooltip
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-primary"
+                    >
+                        <Text className="text-primary">primary</Text>
+                    </Tooltip>
+                </div>
 
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-success"
-                />
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-accent"
-                />
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-info"
-                />
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-warning"
-                />
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="tooltip-error"
-                />
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-secondary"
+                    >
+                        <Text className="text-secondary">secondary</Text>
+                    </Tooltip>
+                </div>
+
+
+
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-success"
+                    >
+                        <Text className="text-success">success</Text>
+                    </Tooltip>
+                </div>
+
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-accent"
+                    >
+                        <Text className="text-accent">accent</Text>
+                    </Tooltip>
+                </div>
+
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-info"
+                    >
+                        <Text className="text-info">info</Text>
+                    </Tooltip>
+                </div>
+
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-warning"
+                    >
+                        <Text className="text-warning">warning</Text>
+                    </Tooltip>
+                </div>
+
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="tooltip-error"
+                    >
+                        <Text className="text-error">error</Text>
+                    </Tooltip>
+                </div>
 
                 <Text render="p">Responsive tooltip. only show for large screen</Text>
-                <Tooltip
-                    dataTip="foo:bar"
-                    content="This is a tooltip"
-                    className="lg:tooltip"
-                />
+                <div className="mt-5">
+                    <Tooltip
+                        dataTip="foo:bar"
+                        className="lg:tooltip"
+                    >
+                        <button className="btn">Hover me</button>
+                    </Tooltip>
+                </div>
 
 
             </View>
