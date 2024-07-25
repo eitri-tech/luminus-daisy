@@ -27,7 +27,7 @@ import DividerBlock from './blocks/layout/divider';
 
 function App() {
   return (
-    <Page className="bg-slate-100">
+    <Page className="bg-slate-100" topInset={true} title="teste">
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
 
