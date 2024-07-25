@@ -23,6 +23,8 @@ import FileInputBlock from './blocks/dataInput/fileInput';
 import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 
+import DividerBlock from './blocks/layout/divider';
+
 function App() {
   return (
     <Page className="bg-slate-100">
@@ -63,6 +65,9 @@ function App() {
         <FileInputBlock />
         <ToggleBlock />
         <TextareaBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Layout</Text>
+        <DividerBlock />
       </View>
     </Page>
   );
