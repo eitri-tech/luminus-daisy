@@ -53,6 +53,11 @@ export { default as View } from './components/View/view';
 export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
+/**
+ * Layout
+ */
+export { default as Divider } from './components/Layout/Divider/divider';
+
 
 
 // export { default as Card } from './Card';
