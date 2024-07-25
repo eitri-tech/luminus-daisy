@@ -57,6 +57,7 @@ export { default as Text } from './components/Text/text';
  * Layout
  */
 export { default as Divider } from './components/Layout/Divider/divider';
+export { default as Indicator } from './components/Layout/Indicator/indicator';
 
 
 
