@@ -24,6 +24,7 @@ import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 
 import DividerBlock from './blocks/layout/divider';
+import MaskBlock from './blocks/layout/mask';
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
+        <MaskBlock />
       </View>
     </Page>
   );
