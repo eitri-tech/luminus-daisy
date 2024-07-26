@@ -18,6 +18,7 @@ export { default as Avatar } from './components/DataDisplay/Avatar/avatar';
 export { default as AvatarGroup } from './components/DataDisplay/Avatar/avatarGroup';
 export { default as Badge } from './components/DataDisplay/Badge/badge';
 export { default as Carousel } from './components/DataDisplay/Carousel/carousel';
+export { default as Card } from './components/DataDisplay/Card/card';
 
 /**
  * Feedback

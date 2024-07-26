@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Page, Text} from "luminus-daisy"
-import {createRoot} from 'react-dom/client';
+import { View, Page, Text } from "luminus-daisy"
+import { createRoot } from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';
 import ButtonBlock from "./blocks/button"
@@ -23,6 +23,8 @@ import FileInputBlock from './blocks/dataInput/fileInput';
 import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 
+import CardBlock from './blocks/dataDisplay/card';
+
 import DividerBlock from './blocks/layout/divider';
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
         <Text className="card-title text-4xl font-bold text-slate-900">Data Display</Text>
         <BadgeBlock />
         <CarouselBlock />
+        <CardBlock />
 
         <div className="divider"></div>
 
