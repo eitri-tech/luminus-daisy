@@ -58,6 +58,11 @@ export { default as Text } from './components/Text/text';
  */
 export { default as Divider } from './components/Layout/Divider/divider';
 
+/**
+ * Mockup
+ */
+export { default as Browser } from './components/Mockup/Browser/browser';
+
 
 
 // export { default as Card } from './Card';

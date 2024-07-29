@@ -25,6 +25,8 @@ import TextareaBlock from './blocks/dataInput/textarea';
 
 import DividerBlock from './blocks/layout/divider';
 
+import BrowserBlock from './blocks/mockup/browser';
+
 function App() {
   return (
     <Page className="bg-slate-100">
@@ -68,6 +70,9 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
+        <BrowserBlock />
       </View>
     </Page>
   );
