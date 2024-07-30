@@ -24,6 +24,7 @@ import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 
 import DividerBlock from './blocks/layout/divider';
+import ArtboardBlock from './blocks/layout/artboard';
 
 function App() {
   return (
@@ -68,6 +69,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
+        <ArtboardBlock />
       </View>
     </Page>
   );
