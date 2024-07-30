@@ -22,6 +22,7 @@ class Progress extends Component<ProgressProps> {
                 className={`progress ${className}`}
                 value={value}
                 max={max}
+                role="progressbar"
             >
             </progress>
         );
