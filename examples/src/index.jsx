@@ -29,6 +29,8 @@ import ArtboardBlock from './blocks/layout/artboard';
 
 import BrowserBlock from './blocks/mockup/browser';
 
+import AccordionBlock from './blocks/dataDisplay/accordion';
+
 function App() {
   return (
     <Page className="bg-slate-100">
@@ -77,6 +79,9 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Data Display</Text>
+        <AccordionBlock />
       </View>
     </Page>
   );
