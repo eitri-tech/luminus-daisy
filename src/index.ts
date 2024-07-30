@@ -70,6 +70,7 @@ export { default as Artboard } from './components/Layout/Artboard/artboard';
 export { default as Mask } from './components/Layout/Mask/mask';
 
 
+export { default as Indicator } from './components/Layout/Indicator/indicator';
 
 
 

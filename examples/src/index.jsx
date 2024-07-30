@@ -32,6 +32,7 @@ import BrowserBlock from './blocks/mockup/browser';
 import AccordionBlock from './blocks/dataDisplay/accordion';
 import StatsBlock from './blocks/dataDisplay/stats';
 import MaskBlock from './blocks/layout/mask';
+import IndicatorBlock from './blocks/layout/indicator';
 
 function App() {
   return (
@@ -86,6 +87,7 @@ function App() {
         <AccordionBlock />
         <StatsBlock />
         <MaskBlock />
+        <IndicatorBlock />
       </View>
     </Page>
   );
