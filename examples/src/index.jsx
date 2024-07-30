@@ -22,6 +22,7 @@ import RangeBlock from './blocks/dataInput/range';
 import FileInputBlock from './blocks/dataInput/fileInput';
 import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
+import TextInputBlock from './blocks/dataInput/textInput';
 
 import DividerBlock from './blocks/layout/divider';
 import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
@@ -79,6 +80,7 @@ function App() {
         <FileInputBlock />
         <ToggleBlock />
         <TextareaBlock />
+        <TextInputBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
