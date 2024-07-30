@@ -25,6 +25,7 @@ import TextareaBlock from './blocks/dataInput/textarea';
 
 import DividerBlock from './blocks/layout/divider';
 import StatsBlock from './blocks/dataDisplay/stats';
+import ArtboardBlock from './blocks/layout/artboard';
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Data Display</Text>
         <StatsBlock />
+        <ArtboardBlock />
       </View>
     </Page>
   );
