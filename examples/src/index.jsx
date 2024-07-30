@@ -52,6 +52,10 @@ function App() {
         <Text className="card-title text-4xl font-bold text-slate-900">Data Display</Text>
         <BadgeBlock />
         <CarouselBlock />
+        <AccordionBlock />
+        <StatsBlock />
+        <MaskBlock />
+        <IndicatorBlock />
 
         <div className="divider"></div>
 
@@ -83,11 +87,6 @@ function App() {
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
 
-        <Text className="text-2xl font-bold text-slate-900">Data Display</Text>
-        <AccordionBlock />
-        <StatsBlock />
-        <MaskBlock />
-        <IndicatorBlock />
       </View>
     </Page>
   );
