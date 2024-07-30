@@ -24,9 +24,20 @@ import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 import TextInputBlock from './blocks/dataInput/textInput';
 
+import DividerBlock from './blocks/layout/divider';
+import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
+import ArtboardBlock from './blocks/layout/artboard';
+
+import BrowserBlock from './blocks/mockup/browser';
+
+import AccordionBlock from './blocks/dataDisplay/accordion';
+import StatsBlock from './blocks/dataDisplay/stats';
+import MaskBlock from './blocks/layout/mask';
+import IndicatorBlock from './blocks/layout/indicator';
+
 function App() {
   return (
-    <Page className="bg-slate-100">
+    <Page className="bg-slate-100" topInset={true} title="teste">
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
 
@@ -42,6 +53,10 @@ function App() {
         <Text className="card-title text-4xl font-bold text-slate-900">Data Display</Text>
         <BadgeBlock />
         <CarouselBlock />
+        <AccordionBlock />
+        <StatsBlock />
+        <MaskBlock />
+        <IndicatorBlock />
 
         <div className="divider"></div>
 
@@ -55,6 +70,7 @@ function App() {
         <TabBlock />
         <LinkBlock />
         <StepsBlock />
+        <BreadcrumbsBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Data input</Text>
         <CheckboxBlock />
@@ -65,6 +81,14 @@ function App() {
         <ToggleBlock />
         <TextareaBlock />
         <TextInputBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Layout</Text>
+        <DividerBlock />
+        <ArtboardBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
+        <BrowserBlock />
+
       </View>
     </Page>
   );

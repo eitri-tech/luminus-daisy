@@ -18,6 +18,9 @@ export { default as Avatar } from './components/DataDisplay/Avatar/avatar';
 export { default as AvatarGroup } from './components/DataDisplay/Avatar/avatarGroup';
 export { default as Badge } from './components/DataDisplay/Badge/badge';
 export { default as Carousel } from './components/DataDisplay/Carousel/carousel';
+export { default as Accordion } from './components/DataDisplay/Accordion/accordion';
+export { default as Stats } from './components/DataDisplay/Stats/stats';
+export { default as Stat } from './components/DataDisplay/Stats/stat';
 
 /**
  * Feedback
@@ -33,6 +36,7 @@ export { default as ProgressRadial } from './components/Feedback/Progress/progre
 export { default as Tab } from './components/Navigation/Tab/tab';
 export { default as Link } from './components/Navigation/Link/link';
 export { default as Steps } from './components/Navigation/Steps/steps';
+export { default as Breadcrumbs } from './components/Navigation/Breadcrumbs/breadcrumbs';
 
 /**
  * Data input
@@ -53,6 +57,21 @@ export { default as Page } from './components/Page/page';
 export { default as View } from './components/View/view';
 export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
+
+/**
+ * Mockup
+ */
+export { default as Browser } from './components/Mockup/Browser/browser';
+
+/**
+ * Layout
+ */
+export { default as Divider } from './components/Layout/Divider/divider';
+export { default as Artboard } from './components/Layout/Artboard/artboard';
+export { default as Mask } from './components/Layout/Mask/mask';
+
+
+export { default as Indicator } from './components/Layout/Indicator/indicator';
 
 
 

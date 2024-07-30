@@ -86,6 +86,11 @@ class Page extends Component<PageProps, PageState> {
     const { paddingTop, paddingBottom } = this.state;
     const { children, ...rest } = this.props;
 
+    delete rest.topInset
+    delete rest.bottomInset
+    delete rest.statusBarTextColor
+    delete rest.viewportColor
+
     return (
       <div
         id="page"

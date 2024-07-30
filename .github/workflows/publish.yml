@@ -17,11 +17,15 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           cache: 'npm'
       - run: npm ci
+      - name: Get Version from package.json
+        id: get_version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+      - name: Build UMD
+        run: npm run build-umd
       - name: Check Version
-        if: github.ref == 'refs/heads/main' 
-        id: check_version
+        if: github.ref == 'refs/heads/main'
         run: |
-          VERSION=$(node -p "require('./package.json').version")
+          VERSION=${{ steps.get_version.outputs.version }}
           if [[ $VERSION == *"alpha"* || $VERSION == *"beta"* ]]; then
             echo "::error::Version contains alpha or beta tag. Cannot publish to main."
             exit 1
@@ -36,3 +40,29 @@ jobs:
           fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - name: Upload CSS Prd
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: | 
+          aws s3 cp dist/luminusdaisy.umd.css s3://$S3_BUCKET_NAME/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.css
+      - name: Upload CSS Dev
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 cp dist/luminusdaisy.umd.dev.css s3://$S3_BUCKET_NAME/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.css
+      - name: Upload JS Prd
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 cp dist/luminusdaisy.umd.js s3://$S3_BUCKET_NAME/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.js
+      - name: Upload JS Dev
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 cp dist/luminusdaisy.umd.dev.js s3://$S3_BUCKET_NAME/library/luminus-daisy/${{ steps.get_version.outputs.version }}/assets/luminusdaisy.umd.dev.js
