@@ -19,6 +19,8 @@ export { default as AvatarGroup } from './components/DataDisplay/Avatar/avatarGr
 export { default as Badge } from './components/DataDisplay/Badge/badge';
 export { default as Carousel } from './components/DataDisplay/Carousel/carousel';
 export { default as Accordion } from './components/DataDisplay/Accordion/accordion';
+export { default as Stats } from './components/DataDisplay/Stats/stats';
+export { default as Stat } from './components/DataDisplay/Stats/stat';
 
 /**
  * Feedback

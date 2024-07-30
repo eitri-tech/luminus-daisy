@@ -30,6 +30,7 @@ import ArtboardBlock from './blocks/layout/artboard';
 import BrowserBlock from './blocks/mockup/browser';
 
 import AccordionBlock from './blocks/dataDisplay/accordion';
+import StatsBlock from './blocks/dataDisplay/stats';
 
 function App() {
   return (
@@ -82,6 +83,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Data Display</Text>
         <AccordionBlock />
+        <StatsBlock />
       </View>
     </Page>
   );
