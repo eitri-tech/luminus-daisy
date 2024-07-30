@@ -27,6 +27,8 @@ import DividerBlock from './blocks/layout/divider';
 import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
 import ArtboardBlock from './blocks/layout/artboard';
 
+import BrowserBlock from './blocks/mockup/browser';
+
 function App() {
   return (
     <Page className="bg-slate-100">
@@ -72,6 +74,9 @@ function App() {
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
         <ArtboardBlock />
+
+        <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
+        <BrowserBlock />
       </View>
     </Page>
   );
