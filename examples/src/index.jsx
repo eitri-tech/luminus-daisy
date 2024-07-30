@@ -24,6 +24,7 @@ import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 
 import DividerBlock from './blocks/layout/divider';
+import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
 import ArtboardBlock from './blocks/layout/artboard';
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <TabBlock />
         <LinkBlock />
         <StepsBlock />
+        <BreadcrumbsBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Data input</Text>
         <CheckboxBlock />

@@ -33,6 +33,7 @@ export { default as ProgressRadial } from './components/Feedback/Progress/progre
 export { default as Tab } from './components/Navigation/Tab/tab';
 export { default as Link } from './components/Navigation/Link/link';
 export { default as Steps } from './components/Navigation/Steps/steps';
+export { default as Breadcrumbs } from './components/Navigation/Breadcrumbs/breadcrumbs';
 
 /**
  * Data input
