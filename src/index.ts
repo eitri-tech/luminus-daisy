@@ -58,15 +58,18 @@ export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
 /**
+ * Mockup
+ */
+export { default as Browser } from './components/Mockup/Browser/browser';
+
+/**
  * Layout
  */
 export { default as Divider } from './components/Layout/Divider/divider';
 export { default as Artboard } from './components/Layout/Artboard/artboard';
+export { default as Mask } from './components/Layout/Mask/mask';
 
-/**
- * Mockup
- */
-export { default as Browser } from './components/Mockup/Browser/browser';
+
 
 
 
