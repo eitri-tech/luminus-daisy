@@ -2,13 +2,13 @@ import {Component} from "react";
 import CommonProps from "../../commonProps";
 
 interface BrowserProps extends CommonProps {
-    addressBar: string;
+    url: string;
 }
 
 export default class Browser extends Component<BrowserProps> {
     render() {
         const {
-            addressBar,
+            url,
             children,
             className,
             id
@@ -16,9 +16,11 @@ export default class Browser extends Component<BrowserProps> {
 
         return (
             <div id={id} className={`mockup-browser border-base-300 border ${className}`}>
-                <div className="mockup-browser-toolbar">
-                    <div className="input border-base-300 border">{addressBar}</div>
-                </div>
+                {url && (
+                    <div className="mockup-browser-toolbar">
+                        <div className="input border-base-300 border">{url}</div>
+                    </div>
+                )}
                 {children}
             </div>
         );

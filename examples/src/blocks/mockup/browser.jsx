@@ -8,17 +8,17 @@ export default function BrowserBlock() {
                 <Text render="h3">Browser</Text>
 
                 <Text render="p">Display a basic browser</Text>
-                <Browser addressBar="https://daisyui.com">
+                <Browser url="https://daisyui.com">
                     <div className="border-base-300 flex justify-center border-t px-4 py-16">Hello!</div>
                 </Browser>
 
                 <Text render="p">browser mockup with background color</Text>
-                <Browser addressBar="https://daisyui.com" className="bg-base-300">
+                <Browser url="https://daisyui.com" className="bg-base-300">
                     <div className="bg-base-200 flex justify-center px-4 py-16">Hello!</div>
                 </Browser>
 
                 <Text render="p">browser mockup with text and image</Text>
-                <Browser addressBar="https://daisyui.com">
+                <Browser url="https://daisyui.com">
                     <div className="px-4 py-4 flex-col lg:flex-row-reverse">
                         <Text render="h1" className="text-center">hello world</Text>
                         <Image src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp" alt="Burger" />

@@ -61,7 +61,6 @@ export default class Accordion extends Component<AccordionProps> {
                 id={id}
                 data-e="Accordion"
                 className={`collapse ${className}`}
-            // onClick={this.toggle}
             >
                 <input
                     type="radio"
