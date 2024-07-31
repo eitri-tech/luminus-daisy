@@ -11,6 +11,7 @@ interface ImageProps extends Omit<CommonProps, 'children'> {
   title?: string;
   srcSet?: string;
   sizes?: string;
+  onLoad?: () => void;
 }
 
 class Image extends Component<ImageProps> {
@@ -35,7 +36,8 @@ class Image extends Component<ImageProps> {
       height, 
       title, 
       srcSet, 
-      sizes 
+      sizes ,
+      onLoad,
     } = this.props;
 
     if (this.state.imageError) {
@@ -76,6 +78,7 @@ class Image extends Component<ImageProps> {
         srcSet={srcSet}
         sizes={sizes}
         onError={this.handleError}
+        onLoad={onLoad}
       />
     );
   }

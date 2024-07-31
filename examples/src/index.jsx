@@ -34,6 +34,7 @@ import AccordionBlock from './blocks/dataDisplay/accordion';
 import StatsBlock from './blocks/dataDisplay/stats';
 import MaskBlock from './blocks/layout/mask';
 import IndicatorBlock from './blocks/layout/indicator';
+import ImageBlock from './blocks/image/image';
 
 function App() {
   return (
@@ -41,6 +42,8 @@ function App() {
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
 
+        <Text className="text-2xl font-bold text-slate-900">Image</Text>
+        <ImageBlock />
 
         <Text className="card-title text-4xl font-bold text-slate-900">Actions</Text>
         <SwapBlock />
