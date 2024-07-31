@@ -35,12 +35,16 @@ import StatsBlock from './blocks/dataDisplay/stats';
 import MaskBlock from './blocks/layout/mask';
 import IndicatorBlock from './blocks/layout/indicator';
 import ImageBlock from './blocks/image/image';
+import ViewBlock from './blocks/view';
 
 function App() {
   return (
     <Page className="bg-slate-100" topInset={true} title="teste">
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
+
+        <Text className="text-2xl font-bold text-slate-900">View</Text>
+        <ViewBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Image</Text>
         <ImageBlock />
