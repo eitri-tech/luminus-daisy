@@ -125,6 +125,8 @@ export default function CarouselImageBlock() {
                     itemClassName="w-full"
                 />
 
+                <div className='mt-2 mb-2'></div>
+
                 <Text>A carousel with bullets</Text>
                 <CarouselImage
                     images={images}
@@ -132,6 +134,7 @@ export default function CarouselImageBlock() {
                     showBullets={true}
                 />
 
+                <div className='mt-2 mb-2'></div>
 
                 <Text>A carousel with counter</Text>
                 <CarouselImage
