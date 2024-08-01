@@ -35,6 +35,7 @@ import StatsBlock from './blocks/dataDisplay/stats';
 import MaskBlock from './blocks/layout/mask';
 import IndicatorBlock from './blocks/layout/indicator';
 import ImageBlock from './blocks/image/image';
+import CarouselImageBlock from './blocks/image/carouselImage';
 import ViewBlock from './blocks/view';
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Image</Text>
         <ImageBlock />
+        <CarouselImageBlock />
 
         <Text className="card-title text-4xl font-bold text-slate-900">Actions</Text>
         <SwapBlock />

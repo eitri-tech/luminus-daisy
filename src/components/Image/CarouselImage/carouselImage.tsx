@@ -1,4 +1,4 @@
-import { Component } from "react";
+import {Component} from "react";
 import CommonProps from "../../commonProps";
 
 interface CarouselImageProps extends CommonProps {
@@ -26,12 +26,12 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         this.state = {
             currentIndex: 0,
             startBulletIndex: 0,
-            endBulletIndex: Math.min(5, props.images.length)
+            endBulletIndex: Math.min(5, props.images.length),
         };
     }
 
     updateBulletRange = (newIndex: number) => {
-        const { images } = this.props;
+        const {images} = this.props;
         let startBulletIndex = this.state.startBulletIndex;
         let endBulletIndex = this.state.endBulletIndex;
 
@@ -53,7 +53,7 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         this.setState((prevState: CarouselImageState) => {
             const newIndex = prevState.currentIndex === 0 ? this.props.images.length - 1 : prevState.currentIndex - 1;
             this.updateBulletRange(newIndex);
-            return { currentIndex: newIndex };
+            return {currentIndex: newIndex};
         });
     };
 
@@ -61,13 +61,8 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         this.setState((prevState: CarouselImageState) => {
             const newIndex = prevState.currentIndex === this.props.images.length - 1 ? 0 : prevState.currentIndex + 1;
             this.updateBulletRange(newIndex);
-            return { currentIndex: newIndex };
+            return {currentIndex: newIndex};
         });
-    };
-
-    handleBulletClick = (index: number) => {
-        this.updateBulletRange(index);
-        this.setState({ currentIndex: index });
     };
 
     handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
@@ -78,13 +73,13 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         const prevIndex = Math.floor(scrollLeft / itemWidth);
 
         if (scrollLeft % itemWidth === 0) {
-            this.setState({ currentIndex: prevIndex });
+            this.setState({currentIndex: prevIndex});
         }
     }
 
     render() {
-        const { className = "", id, images, itemClassName, enableNavigationButtons } = this.props;
-        const { currentIndex, startBulletIndex, endBulletIndex } = this.state;
+        const {className = "", id, images, itemClassName, enableNavigationButtons} = this.props;
+        const {currentIndex, startBulletIndex, endBulletIndex} = this.state;
 
         if (!images?.length) {
             console.warn("CarouselImage: No images provided");
@@ -120,7 +115,6 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
                         {images?.slice(startBulletIndex, endBulletIndex).map((_, index: number) => (
                             <div
                                 key={startBulletIndex + index}
-                                onClick={() => this.handleBulletClick(startBulletIndex + index)}
                                 className={`
                                     w-2.5
                                     h-2.5
