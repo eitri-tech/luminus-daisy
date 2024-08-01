@@ -5,6 +5,8 @@ interface CarouselImageProps extends CommonProps {
     images: ImageProps[];
     itemClassName?: string;
     enableNavigationButtons?: boolean;
+    showBullets?: boolean;
+    showCounter?: boolean;
 }
 
 interface ImageProps {
@@ -78,8 +80,21 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
     }
 
     render() {
-        const {className = "", id, images, itemClassName, enableNavigationButtons} = this.props;
-        const {currentIndex, startBulletIndex, endBulletIndex} = this.state;
+        const {
+            className = "",
+            id,
+            images,
+            itemClassName,
+            enableNavigationButtons,
+            showBullets,
+            showCounter,
+        } = this.props;
+
+        const {
+            currentIndex,
+            startBulletIndex,
+            endBulletIndex
+        } = this.state;
 
         if (!images?.length) {
             console.warn("CarouselImage: No images provided");
@@ -89,11 +104,14 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
             <div
                 data-e="CarouselImage"
                 id={id}
-                className={`flex flex-col`}
+                className={`flex flex-col items-center`}
             >
-                <div className="badge badge-neutral">
-                    {currentIndex + 1}/{images.length}
-                </div>
+
+                {showCounter && (
+                    <div className="badge badge-neutral">
+                        {currentIndex + 1}/{images.length}
+                    </div>
+                )}
                 <div
                     className={`carousel ${className}`}
                     onScroll={(e) => this.handleScroll(e)}
@@ -112,7 +130,7 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
                 </div>
                 <div className="flex justify-center overflow-x-auto w-full mt-2">
                     <div className="flex">
-                        {images?.slice(startBulletIndex, endBulletIndex).map((_, index: number) => (
+                        {showBullets && images?.slice(startBulletIndex, endBulletIndex).map((_, index: number) => (
                             <div
                                 key={startBulletIndex + index}
                                 className={`

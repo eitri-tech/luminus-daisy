@@ -124,6 +124,21 @@ export default function CarouselImageBlock() {
                     images={images}
                     itemClassName="w-full"
                 />
+
+                <Text>A carousel with bullets</Text>
+                <CarouselImage
+                    images={images}
+                    itemClassName="w-full"
+                    showBullets={true}
+                />
+
+
+                <Text>A carousel with counter</Text>
+                <CarouselImage
+                    images={images}
+                    itemClassName="w-full"
+                    showCounter={true}
+                />
             </View>
         </View>
     );
