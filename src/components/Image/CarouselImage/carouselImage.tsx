@@ -4,6 +4,7 @@ import CommonProps from "../../commonProps";
 interface CarouselImageProps extends CommonProps {
     images: ImageProps[];
     itemClassName?: string;
+    enableNavigationButtons?: boolean;
 }
 
 interface ImageProps {
@@ -69,8 +70,20 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         this.setState({ currentIndex: index });
     };
 
+    handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+        const carousel = e.target as HTMLDivElement;
+        const items = carousel.getElementsByClassName("carousel-item");
+        const itemWidth = items[0].clientWidth;
+        const scrollLeft = carousel.scrollLeft;
+        const prevIndex = Math.floor(scrollLeft / itemWidth);
+
+        if (scrollLeft % itemWidth === 0) {
+            this.setState({ currentIndex: prevIndex });
+        }
+    }
+
     render() {
-        const { className = "", id, images, itemClassName } = this.props;
+        const { className = "", id, images, itemClassName, enableNavigationButtons } = this.props;
         const { currentIndex, startBulletIndex, endBulletIndex } = this.state;
 
         if (!images?.length) {
@@ -78,18 +91,56 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         }
 
         return (
-            <div data-e="CarouselImage" id={id} className={`carousel ${className}`}>
-                <span>{images?.length}</span>
-                {images?.map((image: ImageProps, index: number) => (
-                    <div
-                        key={`${index}-${image.alt}`}
-                        data-e="CarouselImageItem"
-                        className={`carousel-item ${itemClassName}`}
-                        onClick={image.onClick}
-                    >
-                        <img src={image.src} alt={image.alt} />
+            <div
+                data-e="CarouselImage"
+                id={id}
+                className={`flex flex-col ${className}`}
+            >
+                <div className="badge badge-ghost">
+                    {currentIndex + 1}/{images.length}
+                </div>
+                <div
+                    className="carousel"
+                    onScroll={(e) => this.handleScroll(e)}
+                >
+                    {images?.map((image: ImageProps, index: number) => (
+                        <div
+                            id={`carousel-item-id-${index}`}
+                            key={`${index}-${image.alt}`}
+                            data-e="CarouselImageItem"
+                            className={`carousel-item ${itemClassName}`}
+                            onClick={image.onClick}
+                            onScroll={() => console.log("scroll")}
+                        >
+                            <img src={image.src} alt={image.alt} onScroll={() => console.log("scroll2")} />
+                        </div>
+                    ))}
+                </div>
+                <div className="flex justify-center overflow-x-auto w-full mt-2">
+                    <div className="flex">
+                        {images?.slice(startBulletIndex, endBulletIndex).map((_, index: number) => (
+                            <div
+                                key={startBulletIndex + index}
+                                onClick={() => this.handleBulletClick(startBulletIndex + index)}
+                                className={`
+                                    w-2.5
+                                    h-2.5
+                                    rounded-full
+                                    mx-1
+                                    cursor-pointer
+                                    transition-colors
+                                    ${startBulletIndex + index === currentIndex ? "bg-black" : "bg-gray-300"}
+                                `}
+                            ></div>
+                        ))}
                     </div>
-                ))}
+                </div>
+                {enableNavigationButtons && (
+                    <div className="flex justify-between mt-4">
+                        <button onClick={this.handlePrevClick} className="btn btn-primary">❮</button>
+                        <button onClick={this.handleNextClick} className="btn btn-primary">❯</button>
+                    </div>
+                )}
             </div>
         );
     }
