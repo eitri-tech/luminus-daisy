@@ -94,13 +94,13 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
             <div
                 data-e="CarouselImage"
                 id={id}
-                className={`flex flex-col ${className}`}
+                className={`flex flex-col`}
             >
-                <div className="badge badge-ghost">
+                <div className="badge badge-neutral">
                     {currentIndex + 1}/{images.length}
                 </div>
                 <div
-                    className="carousel"
+                    className={`carousel ${className}`}
                     onScroll={(e) => this.handleScroll(e)}
                 >
                     {images?.map((image: ImageProps, index: number) => (
@@ -110,9 +110,8 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
                             data-e="CarouselImageItem"
                             className={`carousel-item ${itemClassName}`}
                             onClick={image.onClick}
-                            onScroll={() => console.log("scroll")}
                         >
-                            <img src={image.src} alt={image.alt} onScroll={() => console.log("scroll2")} />
+                            <img src={image.src} alt={image.alt} />
                         </div>
                     ))}
                 </div>
