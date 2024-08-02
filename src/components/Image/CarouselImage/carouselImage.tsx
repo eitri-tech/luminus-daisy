@@ -1,12 +1,15 @@
 import {Component} from "react";
 import CommonProps from "../../commonProps";
 
+const BULLET_LENGTH_DEFAULT: number = 5;
+const BULLET_WIDTH: number = 1.125;
+
 interface CarouselImageProps extends CommonProps {
     images: ImageProps[];
     itemClassName?: string;
-    enableNavigationButtons?: boolean;
     showBullets?: boolean;
     showCounter?: boolean;
+    bullets?: number;
 }
 
 interface ImageProps {
@@ -17,8 +20,88 @@ interface ImageProps {
 
 interface CarouselImageState {
     currentIndex: number;
-    startBulletIndex: number;
-    endBulletIndex: number;
+}
+
+interface CounterProps {
+    currentIndex: number;
+    images: ImageProps[];
+    showCounter?: boolean;
+}
+
+interface BulletsProps {
+    currentIndex: number;
+    images: ImageProps[];
+    bullets: number;
+    showBullets: boolean;
+}
+
+class Counter extends Component<CounterProps> {
+
+    render() {
+        const {currentIndex, images, showCounter = false} = this.props;
+
+        if (!showCounter) {
+            return <></>;
+        }
+
+        return (
+            <div className="badge badge-neutral">
+                {currentIndex + 1}/{images?.length}
+            </div>
+        );
+    }
+}
+
+class Bullets extends Component<BulletsProps> {
+
+    paginationSlide = (index: number) => {
+        const {
+            images,
+            bullets = BULLET_LENGTH_DEFAULT
+        } = this.props;
+        const imageLength: number = images?.length;
+
+        if (imageLength > bullets) {
+            if (index > bullets - 1) {
+                return Math.min(index - (Math.floor(bullets / 2)), imageLength - bullets) * (BULLET_WIDTH)
+            }
+        }
+
+        return 0
+    }
+
+    render() {
+        const {currentIndex, images, bullets, showBullets = false} = this.props;
+
+        if (!showBullets) {
+            return <></>;
+        }
+
+        return (
+            <div className="flex justify-center overflow-x-auto w-full mt-2">
+                <div className="relative overflow-hidden h-10" style={{width: `${bullets * BULLET_WIDTH}rem`}}>
+                    <div className="flex absolute top-0 left-0 transition-transform" style={{
+                        transform: `translateX(-${this.paginationSlide(currentIndex)}rem)`
+                    }}>
+                        {images?.map((_, index: number) => (
+                            <div
+                                key={index}
+                                className={`
+                                    w-2.5
+                                    h-2.5
+                                    rounded-full
+                                    mx-1
+                                    cursor-pointer
+                                    transition-colors
+                                    ${index === currentIndex ? "bg-black" : "bg-gray-300"}
+                                `}
+                            ></div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default class CarouselImage extends Component<CarouselImageProps, CarouselImageState> {
@@ -27,45 +110,8 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
         super(props);
         this.state = {
             currentIndex: 0,
-            startBulletIndex: 0,
-            endBulletIndex: Math.min(5, props.images.length),
         };
     }
-
-    updateBulletRange = (newIndex: number) => {
-        const {images} = this.props;
-        let startBulletIndex = this.state.startBulletIndex;
-        let endBulletIndex = this.state.endBulletIndex;
-
-        if (newIndex >= endBulletIndex) {
-            startBulletIndex = newIndex - 4;
-            endBulletIndex = newIndex + 1;
-        } else if (newIndex < startBulletIndex) {
-            startBulletIndex = newIndex;
-            endBulletIndex = newIndex + 5;
-        }
-
-        this.setState({
-            startBulletIndex: Math.max(0, startBulletIndex),
-            endBulletIndex: Math.min(images.length, endBulletIndex)
-        });
-    };
-
-    handlePrevClick = () => {
-        this.setState((prevState: CarouselImageState) => {
-            const newIndex = prevState.currentIndex === 0 ? this.props.images.length - 1 : prevState.currentIndex - 1;
-            this.updateBulletRange(newIndex);
-            return {currentIndex: newIndex};
-        });
-    };
-
-    handleNextClick = () => {
-        this.setState((prevState: CarouselImageState) => {
-            const newIndex = prevState.currentIndex === this.props.images.length - 1 ? 0 : prevState.currentIndex + 1;
-            this.updateBulletRange(newIndex);
-            return {currentIndex: newIndex};
-        });
-    };
 
     handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
         const carousel = e.target as HTMLDivElement;
@@ -85,15 +131,13 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
             id,
             images,
             itemClassName,
-            enableNavigationButtons,
             showBullets,
             showCounter,
+            bullets = BULLET_LENGTH_DEFAULT
         } = this.props;
 
         const {
             currentIndex,
-            startBulletIndex,
-            endBulletIndex
         } = this.state;
 
         if (!images?.length) {
@@ -107,11 +151,11 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
                 className={`flex flex-col items-center`}
             >
 
-                {showCounter && (
-                    <div className="badge badge-neutral">
-                        {currentIndex + 1}/{images.length}
-                    </div>
-                )}
+                <Counter
+                    showCounter={showCounter}
+                    currentIndex={currentIndex}
+                    images={images}
+                />
                 <div
                     className={`carousel ${className}`}
                     onScroll={(e) => this.handleScroll(e)}
@@ -128,30 +172,12 @@ export default class CarouselImage extends Component<CarouselImageProps, Carouse
                         </div>
                     ))}
                 </div>
-                <div className="flex justify-center overflow-x-auto w-full mt-2">
-                    <div className="flex">
-                        {showBullets && images?.slice(startBulletIndex, endBulletIndex).map((_, index: number) => (
-                            <div
-                                key={startBulletIndex + index}
-                                className={`
-                                    w-2.5
-                                    h-2.5
-                                    rounded-full
-                                    mx-1
-                                    cursor-pointer
-                                    transition-colors
-                                    ${startBulletIndex + index === currentIndex ? "bg-black" : "bg-gray-300"}
-                                `}
-                            ></div>
-                        ))}
-                    </div>
-                </div>
-                {enableNavigationButtons && (
-                    <div className="flex justify-between mt-4">
-                        <button onClick={this.handlePrevClick} className="btn btn-primary">❮</button>
-                        <button onClick={this.handleNextClick} className="btn btn-primary">❯</button>
-                    </div>
-                )}
+                <Bullets
+                    showBullets={!!showBullets}
+                    currentIndex={currentIndex}
+                    images={images}
+                    bullets={bullets}
+                />
             </div>
         );
     }
