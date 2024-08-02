@@ -55,7 +55,6 @@ export { default as TextInput } from './components/DataInput/TextInput/textInput
  */
 export { default as Page } from './components/Page/page';
 export { default as View } from './components/View/view';
-export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
 
 /**
@@ -69,9 +68,14 @@ export { default as Browser } from './components/Mockup/Browser/browser';
 export { default as Divider } from './components/Layout/Divider/divider';
 export { default as Artboard } from './components/Layout/Artboard/artboard';
 export { default as Mask } from './components/Layout/Mask/mask';
-
-
 export { default as Indicator } from './components/Layout/Indicator/indicator';
+
+
+/**
+ * Image
+ */
+export { default as CarouselImage } from './components/Image/CarouselImage/carouselImage';
+export { default as Image } from './components/Image/image';
 
 
 
