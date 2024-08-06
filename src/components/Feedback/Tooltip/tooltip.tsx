@@ -2,7 +2,7 @@ import {Component} from "react";
 import CommonProps from "../../commonProps";
 
 interface TooltipProps extends CommonProps {
-    dataTip: string;
+    tip?: string;
 }
 
 class Tooltip extends Component<TooltipProps> {
@@ -11,16 +11,20 @@ class Tooltip extends Component<TooltipProps> {
         const {
             id,
             className = '',
-            dataTip,
+            tip,
             children,
         } = this.props;
+
+        if(!tip) {
+            return children;
+        }
 
         return (
             <div
                 id={id}
                 data-e="Tooltip"
                 className={`tooltip ${className}`}
-                data-tip={dataTip}
+                data-tip={tip}
             >
                 {children}
             </div>

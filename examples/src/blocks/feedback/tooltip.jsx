@@ -9,13 +9,19 @@ export default function TooltipBlock() {
                 <Text render="h3">Tooltip</Text>
 
                 <Text render="p">Display a basic tooltip</Text>
-                <Tooltip dataTip="foo:bar">
+                <Tooltip tip="foo:bar">
                     <button className="btn">Hover me</button>
                 </Tooltip>
 
+                <Text render="p">Display a empty</Text>
+                <Tooltip>
+                    <button className="btn">Empty</button>
+                </Tooltip>
+
+
                 <Text render="p">Display a forced open</Text>
                 <Tooltip
-                    dataTip="foo:bar"
+                    tip="foo:bar"
                     content=""
                     className="tooltip-open tooltip-right"
                 >
@@ -24,7 +30,7 @@ export default function TooltipBlock() {
 
                 <Text render="p">Display a top</Text>
                 <Tooltip
-                    dataTip="foo:bar"
+                    tip="foo:bar"
                     className="tooltip-top"
                 >
                     <button className="btn">Top</button>
@@ -32,7 +38,7 @@ export default function TooltipBlock() {
 
                 <Text render="p">Display a right</Text>
                 <Tooltip
-                    dataTip="foo:bar"
+                    tip="foo:bar"
                     className="tooltip-right"
                 >
                     <button className="btn">Right</button>
@@ -40,7 +46,7 @@ export default function TooltipBlock() {
 
                 <Text render="p">Display a bottom</Text>
                 <Tooltip
-                    dataTip="foo:bar"
+                    tip="foo:bar"
                     className="tooltip-bottom"
                 >
                     <button className="btn">Bottom</button>
@@ -48,7 +54,7 @@ export default function TooltipBlock() {
 
                 <Text render="p">Display a left</Text>
                 <Tooltip
-                    dataTip="foo:bar"
+                    tip="foo:bar"
                     className="tooltip-left"
                 >
                     <button className="btn">Left</button>
@@ -58,7 +64,7 @@ export default function TooltipBlock() {
                 <Text render="p">Display a colors</Text>
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-primary"
                     >
                         <Text className="text-primary">primary</Text>
@@ -67,7 +73,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-secondary"
                     >
                         <Text className="text-secondary">secondary</Text>
@@ -78,7 +84,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-success"
                     >
                         <Text className="text-success">success</Text>
@@ -87,7 +93,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-accent"
                     >
                         <Text className="text-accent">accent</Text>
@@ -96,7 +102,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-info"
                     >
                         <Text className="text-info">info</Text>
@@ -105,7 +111,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-warning"
                     >
                         <Text className="text-warning">warning</Text>
@@ -114,7 +120,7 @@ export default function TooltipBlock() {
 
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="tooltip-error"
                     >
                         <Text className="text-error">error</Text>
@@ -124,7 +130,7 @@ export default function TooltipBlock() {
                 <Text render="p">Responsive tooltip. only show for large screen</Text>
                 <div className="mt-5">
                     <Tooltip
-                        dataTip="foo:bar"
+                        tip="foo:bar"
                         className="lg:tooltip"
                     >
                         <button className="btn">Hover me</button>
