@@ -6,17 +6,20 @@ const { umdWrapper } = require("esbuild-plugin-umd-wrapper");
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  format: 'iife',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.dev.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
+  globalName: 'luminus',
   minify: false,
   sourcemap: 'inline',
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })
@@ -30,17 +33,21 @@ esbuild.build({
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
-  minify: true,
+  globalName: 'luminus',
+  minify: false,
+  minifySyntax: false,
+  minifyWhitespace: true,
   sourcemap: false,
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })

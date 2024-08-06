@@ -9,16 +9,18 @@ export class WindowMetrics {
     const { EITRI } = window
     if (EITRI) {
       const { superAppData } = EITRI.miniAppConfigs
-      const { safeAreaInsets, platform } = superAppData
-      const { top, bottom } = safeAreaInsets
-      const windowComponent = window.document.querySelector(".w")
-      if (windowComponent) {
-        if (platform === "android") {
-          const topValue = top / window.devicePixelRatio
-          const bottomValue = bottom / window.devicePixelRatio
-          return { top: topValue, bottom: bottomValue }
+      if(superAppData){
+        const { safeAreaInsets, platform } = superAppData
+        const { top, bottom } = safeAreaInsets
+        const windowComponent = window.document.querySelector(".w")
+        if (windowComponent) {
+          if (platform === "android") {
+            const topValue = top / window.devicePixelRatio
+            const bottomValue = bottom / window.devicePixelRatio
+            return { top: topValue, bottom: bottomValue }
+          }
+          return { top, bottom }
         }
-        return { top, bottom }
       }
     }
     return { top: 0, bottom: 0 }
