@@ -1,5 +1,6 @@
 import React from "react";
 import {TextInput, View, Text} from "luminus-daisy";
+import DocBlock from "../docBlock"
 
 export default function TextInputBlock() {
 
@@ -9,94 +10,86 @@ export default function TextInputBlock() {
         <View className="bg-white p-4 ">
             <View className="prose prose-slate mb-4 rounded-sm container max-w-5xl m-auto">
                 <Text render="h1">Text Input</Text>
-                <Text render="p">A simple text input</Text>
-                <TextInput />
+                
+                <DocBlock title="A simple text input" code="<TextInput />">
+                    <TextInput />
+                </DocBlock>
 
-                <Text render="p">Text input with placeholder</Text>
-                <TextInput className="input-bordered" placeholder="Enter your name" />
+                <DocBlock title="Text input with placeholder">
+                    <TextInput className="input-bordered" placeholder="Enter your name" />
+                </DocBlock>
 
-                <Text render="p">Text input with onChange</Text>
-                <Text render="p" className="text-sm m-0 p-0">Value: {inputValue}</Text>
-                <TextInput className="input-bordered" onChange={(value) => setInputValue(value)} />
+                <DocBlock title="Text input with onChange">
+                    <Text render="p" className="text-sm m-0 p-0">Value: {inputValue}</Text>
+                    <TextInput className="input-bordered" onChange={(value) => setInputValue(value)} />
+                </DocBlock>
 
-                <Text render="p">Text input with disabled</Text>
-                <TextInput disabled className="input-bordered" placeholder="You can't touch this" />
+                <DocBlock title="Text input with disabled">
+                    <TextInput disabled className="input-bordered" placeholder="You can't touch this" />
+                </DocBlock>
 
-                <Text render="p">Text input with readonly</Text>
-                <TextInput readOnly className="input-bordered" value={"ReadOnly Value"} />
+                <DocBlock title="Text input with readonly">
+                    <TextInput readOnly className="input-bordered" value={"ReadOnly Value"} />
+                </DocBlock>
 
-                <Text render="p">Text input with full width</Text>
-                <TextInput className="input-bordered w-full" />
+                <DocBlock title="Text input with full width">
+                    <TextInput className="input-bordered w-full" />
+                </DocBlock>
 
-                <Text render="p">Text input with border</Text>
-                <TextInput className="input-bordered" />
+                <DocBlock title="Text input with border">
+                    <TextInput className="input-bordered" />
+                </DocBlock>
 
-                <Text render="p">Text input no background (ghost)</Text>
-                <TextInput className="input-ghost" />
+                <DocBlock title="Text input no background (ghost)">
+                    <TextInput className="input-ghost" />
+                </DocBlock>
 
-                <Text render="p">Text input with form-control and labels</Text>
-                <label className="form-control w-full max-w-xs">
-                    <div className="label">
-                        <span className="label-text">What is your name?</span>
-                        <span className="label-text-alt">Top Right label</span>
-                    </div>
-                    <TextInput className="input-bordered" placeholder="Type here" />
-                    <div className="label">
-                        <span className="label-text-alt">Bottom Left label</span>
-                        <span className="label-text-alt">Bottom Right label</span>
-                    </div>
-                </label>
+                <DocBlock title="Text input with form-control and labels">
+                    <label className="form-control w-full max-w-xs">
+                        <div className="label">
+                            <span className="label-text">What is your name?</span>
+                            <span className="label-text-alt">Top Right label</span>
+                        </div>
+                        <TextInput className="input-bordered" placeholder="Type here" />
+                        <div className="label">
+                            <span className="label-text-alt">Bottom Left label</span>
+                            <span className="label-text-alt">Bottom Right label</span>
+                        </div>
+                    </label>
+                </DocBlock>
 
-                <Text render="p">Text input with colors</Text>
-                <TextInput className="input-primary input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-secondary input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-accent input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-info input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-success input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-warning input-bordered" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-error input-bordered" />
+                <DocBlock title="Text input with colors">
+                    <TextInput className="input-primary input-bordered mb-4" />
+                    <TextInput className="input-secondary input-bordered mb-4" />
+                    <TextInput className="input-accent input-bordered mb-4" />
+                    <TextInput className="input-info input-bordered mb-4" />
+                    <TextInput className="input-success input-bordered mb-4" />
+                    <TextInput className="input-warning input-bordered mb-4" />
+                    <TextInput className="input-error input-bordered mb-4" />
+                </DocBlock>
 
-                <Text render="p">Text input with sizes</Text>
-                <TextInput className="input-bordered input-xs" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered input-sm" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered input-md" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered input-lg" />
+                <DocBlock title="Text input with sizes">
+                    <TextInput className="input-bordered input-xs mb-4" />
+                    <TextInput className="input-bordered input-sm mb-4" />
+                    <TextInput className="input-bordered input-md mb-4" />
+                    <TextInput className="input-bordered input-lg mb-4" />
+                </DocBlock>
 
-                <Text render="p">With input types</Text>
-                <TextInput className="input-bordered" type="text" placeholder="Text" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="email" placeholder="Email" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="password" placeholder="Password" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="number" placeholder="Number" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="date" placeholder="Date" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="time" placeholder="Time" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="tel" placeholder="Phone" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="url" placeholder="URL" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="search" placeholder="Search" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="color" placeholder="Color" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="month" placeholder="Month" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="week" placeholder="Week" />
-                <div className="mt-2 mb-2"></div>
-                <TextInput className="input-bordered" type="datetime-local" placeholder="Datetime-local" />
+                <DocBlock title="With input types">
+                    <TextInput className="input-bordered mb-4" type="text" placeholder="Text" />
+                    <TextInput className="input-bordered mb-4" type="email" placeholder="Email" />
+                    <TextInput className="input-bordered mb-4" type="password" placeholder="Password" />
+                    <TextInput className="input-bordered mb-4" type="number" placeholder="Number" />
+                    <TextInput className="input-bordered mb-4" type="date" placeholder="Date" />
+                    <TextInput className="input-bordered mb-4" type="time" placeholder="Time" />
+                    <TextInput className="input-bordered mb-4" type="tel" placeholder="Phone" />
+                    <TextInput className="input-bordered mb-4" type="url" placeholder="URL" />
+                    <TextInput className="input-bordered mb-4" type="search" placeholder="Search" />
+                    <TextInput className="input-bordered mb-4" type="color" placeholder="Color" />
+                    <TextInput className="input-bordered mb-4" type="month" placeholder="Month" />
+                    <TextInput className="input-bordered mb-4" type="week" placeholder="Week" />
+                    <TextInput className="input-bordered mb-4" type="datetime-local" placeholder="Datetime-local" />
+                </DocBlock>
 
                 <Text render="p">With icons</Text>
                 <TextInput
@@ -116,7 +109,7 @@ export default function TextInputBlock() {
                         </svg>
                     }
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     type="email"
                     placeholder="Email"
@@ -133,7 +126,7 @@ export default function TextInputBlock() {
                         </svg>
                     }
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     type="text"
                     placeholder="Username"
@@ -148,7 +141,7 @@ export default function TextInputBlock() {
                         </svg>
                     }
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     type="password"
                     placeholder="Password"
@@ -165,7 +158,7 @@ export default function TextInputBlock() {
                         </svg>
                     }
                 />
-                <div className="mt-2 mb-2"></div>
+                
 
                 <Text render="p">With label inside</Text>
                 <TextInput
@@ -174,13 +167,13 @@ export default function TextInputBlock() {
                     placeholder="Daisy"
                     labelInsideLeft="Name"
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     type="email"
                     placeholder="daisy@site.com"
                     labelInsideLeft="Email"
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     placeholder="Search"
                     iconInsideRight={
@@ -190,7 +183,7 @@ export default function TextInputBlock() {
                         </span>
                     }
                 />
-                <div className="mt-2 mb-2"></div>
+                
                 <TextInput
                     placeholder="Search"
                     iconInsideRight={
