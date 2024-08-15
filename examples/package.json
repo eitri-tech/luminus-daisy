@@ -17,7 +17,9 @@
   "dependencies": {
     "luminus-daisy": "file:../",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-element-to-jsx-string": "^15.0.0",
+    "react-syntax-highlighter": "^15.5.0"
   },
   "devDependencies": {
     "@eslint/js": "9.6.0",
