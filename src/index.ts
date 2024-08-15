@@ -61,6 +61,7 @@ export { default as Text } from './components/Text/text';
  * Mockup
  */
 export { default as Browser } from './components/Mockup/Browser/browser';
+export { default as Code } from './components/Mockup/Code/code';
 
 /**
  * Layout
