@@ -9,7 +9,7 @@ interface TextInputState {
 class MaskedTextInput extends Component<TextInputProps, TextInputState> {
     private inputRef: RefObject<HTMLInputElement>;
 
-    private MASK_PATTERN: string = "9"
+    private MASK_PATTERN_NUMBER: string = "9"
 
     constructor(props: TextInputProps) {
         super(props);
@@ -37,8 +37,12 @@ class MaskedTextInput extends Component<TextInputProps, TextInputState> {
             let j = 0;
             let tempMasked = "";
 
-            for (let i = 0; i < currentMask.length && j < unmaskedValue.length; i++) {
-                if (currentMask[i] === this.MASK_PATTERN) {
+            for (let i = 0; i < currentMask.length; i++) {
+                if (j >= unmaskedValue.length) {
+                    break;
+                }
+    
+                if (currentMask[i] === this.MASK_PATTERN_NUMBER) {
                     tempMasked += unmaskedValue[j];
                     j++;
                 } else {
@@ -46,10 +50,7 @@ class MaskedTextInput extends Component<TextInputProps, TextInputState> {
                 }
             }
 
-            if (j === unmaskedValue.length) {
-                masked = tempMasked;
-                break;
-            }
+            masked = tempMasked;
         }
 
         return masked;
