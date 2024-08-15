@@ -1,11 +1,7 @@
-import React, {Component, InputHTMLAttributes} from "react";
+import {Component} from "react";
+import MaskedTextInput from "./maskInput";
+import {InputVariant, TextInputProps} from "./InputInterface";
 
-interface TextInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    iconInsideLeft?: string;
-    iconInsideRight?: string;
-    labelInsideRight?: string;
-    labelInsideLeft?: string;
-}
 
 class TextInput extends Component<TextInputProps> {
     render() {
@@ -16,10 +12,28 @@ class TextInput extends Component<TextInputProps> {
             iconInsideRight,
             labelInsideLeft,
             labelInsideRight,
+            mask,
+            variant = InputVariant.text,
             ...rest
         } = this.props;
 
         const classNameInput = "input input-bordered flex items-center gap-2";
+
+        if(variant === InputVariant.mask) {
+            return (
+                <MaskedTextInput
+                    data-e={"MaskedTextInput"}
+                    id={id}
+                    className={className}
+                    iconInsideLeft={iconInsideLeft}
+                    iconInsideRight={iconInsideRight}
+                    labelInsideLeft={labelInsideLeft}
+                    labelInsideRight={labelInsideRight}
+                    mask={mask}
+                    {...rest}
+                />
+            );
+        }
 
         return (
             <label

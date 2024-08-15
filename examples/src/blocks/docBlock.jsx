@@ -17,7 +17,7 @@ export default function docBlock(props) {
         <View className="flex flex-col w-full gap-4">
             <View className="w-full">
                 <Text render="h3">{props.title}</Text>
-                <Text render="h5">Example:</Text>
+                <Text render="h5">Example: {props?.subtitle}</Text>
                 {props.children}
             </View>
             <View className="w-full">

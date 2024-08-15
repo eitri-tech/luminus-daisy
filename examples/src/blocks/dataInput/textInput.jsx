@@ -80,15 +80,21 @@ export default function TextInputBlock() {
                     <TextInput className="input-bordered mb-4" type="email" placeholder="Email" />
                     <TextInput className="input-bordered mb-4" type="password" placeholder="Password" />
                     <TextInput className="input-bordered mb-4" type="number" placeholder="Number" />
-                    <TextInput className="input-bordered mb-4" type="date" placeholder="Date" />
-                    <TextInput className="input-bordered mb-4" type="time" placeholder="Time" />
-                    <TextInput className="input-bordered mb-4" type="tel" placeholder="Phone" />
-                    <TextInput className="input-bordered mb-4" type="url" placeholder="URL" />
-                    <TextInput className="input-bordered mb-4" type="search" placeholder="Search" />
-                    <TextInput className="input-bordered mb-4" type="color" placeholder="Color" />
-                    <TextInput className="input-bordered mb-4" type="month" placeholder="Month" />
-                    <TextInput className="input-bordered mb-4" type="week" placeholder="Week" />
-                    <TextInput className="input-bordered mb-4" type="datetime-local" placeholder="Datetime-local" />
+                    <TextInput className="input-bordered mb-4" type="tel" mask="(99) 99999-9999" />
+                    {/* <TextInput className="input-bordered mb-4" type="date" placeholder="Date" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="time" placeholder="Time" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="tel" placeholder="Phone" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="url" placeholder="URL" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="search" placeholder="Search" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="color" placeholder="Color" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="month" placeholder="Month" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="week" placeholder="Week" /> */}
+                    {/* <TextInput className="input-bordered mb-4" type="datetime-local" placeholder="Datetime-local" /> */}
+                </DocBlock>
+
+                <DocBlock title="With input variants" subtitle="Mask">
+                    <TextInput className="input-bordered mb-4" variant="mask" type="tel" mask="(99) 99999-9999" />
+                    <TextInput className="input-bordered mb-4" variant="mask" mask="999.999.999-99" />
                 </DocBlock>
 
                 <Text render="p">With icons</Text>
