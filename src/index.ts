@@ -62,6 +62,7 @@ export { default as Text } from './components/Text/text';
  */
 export { default as Browser } from './components/Mockup/Browser/browser';
 export { default as Code } from './components/Mockup/Code/code';
+export { default as Header } from './components/Mockup/Header/header';
 
 /**
  * Layout

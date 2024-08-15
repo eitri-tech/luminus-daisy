@@ -1,11 +1,11 @@
 import {Component} from "react";
 import CommonProps from "../../commonProps";
 
-interface BrowserProps extends CommonProps {
+interface CodeProps extends CommonProps {
     
 }
 
-export default class Code extends Component<BrowserProps> {
+export default class Code extends Component<CodeProps> {
     render() {
         const {
             children,

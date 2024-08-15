@@ -20,7 +20,18 @@ export interface PageProps {
    *  <Page topInset={true}>
    * ```
    */
-  topInset?: boolean
+  topInset?: boolean | number | "auto"
+
+  /**
+   * When activated, it controls the color of top spacing in mobile devices.
+   *
+   * Example:
+   *
+   * ```jsx
+  *  <Page topInset={true} topInsetColor="#fff">
+  * ```
+  */
+ topInsetColor?: string
 
   /**
    * When activated, it controls the bottom spacing to prevent content from being covered by the gesture bar on mobile devices.
@@ -32,7 +43,18 @@ export interface PageProps {
    * ```
    */
 
-  bottomInset?: boolean
+  bottomInset?: boolean | number | "auto"
+
+  /**
+   * When activated, it controls the color of bottom spacing in mobile devices.
+   *
+   * Example:
+   *
+   * ```jsx
+  *  <Page bottomInset={true} bottomInsetColor="#fff">
+  * ```
+  */
+ bottomInsetColor?: string
 
   /**
    * Determina a cor da viewport onde a aplicação irá rodar
