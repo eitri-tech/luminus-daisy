@@ -21,6 +21,7 @@ export { default as Carousel } from './components/DataDisplay/Carousel/carousel'
 export { default as Accordion } from './components/DataDisplay/Accordion/accordion';
 export { default as Stats } from './components/DataDisplay/Stats/stats';
 export { default as Stat } from './components/DataDisplay/Stats/stat';
+export { default as Collapse } from './components/DataDisplay/Collapse/collapse';
 
 /**
  * Feedback
