@@ -7,7 +7,7 @@ class AvatarGroup extends Component<AvatarGroupProps> {
   render() {
     const { children, className = "", id } = this.props;
     return (
-      <div data-e="AvatarGroup" id={id} className={`avatar-group ${className}`}>
+      <div data-e="AvatarGroup" id={id} className={`avatar-group -space-x-6 rtl:space-x-reverse ${className}`}>
         {children}
       </div>
     );

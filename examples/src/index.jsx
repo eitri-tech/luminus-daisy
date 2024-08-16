@@ -38,10 +38,11 @@ import ImageBlock from './blocks/image/image';
 import CarouselImageBlock from './blocks/image/carouselImage';
 import ViewBlock from './blocks/view';
 import CollapseBlock from './blocks/dataDisplay/collapse';
+import AvatarBlock from './blocks/dataDisplay/avatar';
 
 function App() {
   return (
-    <Page topInset={40} bottomInset={40} topInsetColor="#000" bottomInsetColor="#000" title="teste">
+    <Page topInset={40} bottomInset={40} topInsetColor="#000" bottomInsetColor="#000" title="Eitri - Luminus DaisyUI">
       <Header>
         <View>
           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
@@ -79,6 +80,7 @@ function App() {
         <MaskBlock />
         <IndicatorBlock />
         <CollapseBlock />
+        <AvatarBlock />
 
         <div className="divider"></div>
 
