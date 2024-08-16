@@ -37,6 +37,7 @@ import IndicatorBlock from './blocks/layout/indicator';
 import ImageBlock from './blocks/image/image';
 import CarouselImageBlock from './blocks/image/carouselImage';
 import ViewBlock from './blocks/view';
+import CollapseBlock from './blocks/dataDisplay/collapse';
 
 function App() {
   return (
@@ -77,6 +78,7 @@ function App() {
         <StatsBlock />
         <MaskBlock />
         <IndicatorBlock />
+        <CollapseBlock />
 
         <div className="divider"></div>
 
