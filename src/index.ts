@@ -23,6 +23,7 @@ export { default as Stats } from './components/DataDisplay/Stats/stats';
 export { default as Stat } from './components/DataDisplay/Stats/stat';
 export { default as Collapse } from './components/DataDisplay/Collapse/collapse';
 export { default as Chat } from './components/DataDisplay/Chat/chat';
+export { default as Timeline } from './components/DataDisplay/Timeline/timeline';
 
 /**
  * Feedback
@@ -62,6 +63,8 @@ export { default as TextInput } from './components/DataInput/TextInput/textInput
 export { default as Page } from './components/Page/page';
 export { default as View } from './components/View/view';
 export { default as Text } from './components/Text/text';
+export { default as TimeText } from './components/Text/timeText';
+
 
 /**
  * Mockup

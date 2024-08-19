@@ -1,5 +1,5 @@
 import React from 'react';
-import {Chat, View, Text} from "luminus-daisy"
+import {Chat, View, Text, TimeText} from "luminus-daisy"
 import DocBlock from '../docBlock';
 
 export default function ChatBlock() {
@@ -66,7 +66,7 @@ export default function ChatBlock() {
                             />
                             <Chat.Header>
                                 Obi-Wan Kenobi
-                                <time className="text-xs opacity-50">{" "}12:45</time>
+                                <TimeText className="text-xs opacity-50">{" "}12:45</TimeText>
                             </Chat.Header>
                             <Chat.Bubble>
                                 <Text render="p">You were the chosen one!</Text>
@@ -82,7 +82,7 @@ export default function ChatBlock() {
                             />
                             <Chat.Header>
                                 Anakin
-                                <time className="text-xs opacity-50">{" "}12:46</time>
+                                <TimeText className="text-xs opacity-50">{" "}12:46</TimeText>
                             </Chat.Header>
                             <Chat.Bubble>
                                 <Text render="p">I hate you</Text>
@@ -99,7 +99,7 @@ export default function ChatBlock() {
                         <Chat.Start>
                             <Chat.Header>
                                 Obi-Wan Kenobi
-                                <time className="text-xs opacity-50">{" "}2 hours ago</time>
+                                <TimeText className="text-xs opacity-50">{" "}2 hours ago</TimeText>
                             </Chat.Header>
                             <Chat.Bubble>
                                 <Text render="p">You were the chosen one!</Text>
@@ -112,7 +112,7 @@ export default function ChatBlock() {
                         <Chat.Start>
                             <Chat.Header>
                             Obi-Wan Kenobi
-                                <time className="text-xs opacity-50">{" "}2 hours ago</time>
+                                <TimeText className="text-xs opacity-50">{" "}2 hours ago</TimeText>
                             </Chat.Header>
                             <Chat.Bubble>
                                 <Text render="p">I loved you</Text>

@@ -44,6 +44,7 @@ import AvatarBlock from './blocks/dataDisplay/avatar';
 import SkeletonBlock from './blocks/feedback/skeleton';
 import StackBlock from './blocks/layout/stack';
 import ChatBlock from './blocks/dataDisplay/chat';
+import TimelineBlock from './blocks/dataDisplay/timeline';
 
 function App() {
   return (
@@ -87,6 +88,7 @@ function App() {
         <CollapseBlock />
         <AvatarBlock />
         <ChatBlock />
+        <TimelineBlock />
 
         <div className="divider"></div>
 
