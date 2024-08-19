@@ -42,6 +42,7 @@ import ViewBlock from './blocks/view';
 import CollapseBlock from './blocks/dataDisplay/collapse';
 import AvatarBlock from './blocks/dataDisplay/avatar';
 import SkeletonBlock from './blocks/feedback/skeleton';
+import StackBlock from './blocks/layout/stack';
 
 function App() {
   return (
@@ -114,6 +115,7 @@ function App() {
         <Text className="text-2xl font-bold text-slate-900">Layout</Text>
         <DividerBlock />
         <ArtboardBlock />
+        <StackBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
