@@ -41,6 +41,7 @@ import CarouselImageBlock from './blocks/image/carouselImage';
 import ViewBlock from './blocks/view';
 import CollapseBlock from './blocks/dataDisplay/collapse';
 import AvatarBlock from './blocks/dataDisplay/avatar';
+import SkeletonBlock from './blocks/feedback/skeleton';
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
         <AlertBlock />
         <ProgressBlock />
         <TooltipBlock />
+        <SkeletonBlock />
 
         <div className="divider"></div>
 

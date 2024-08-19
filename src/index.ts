@@ -30,6 +30,9 @@ export { default as Alert } from './components/Feedback/Alert/alert';
 export { default as Progress } from './components/Feedback/Progress/progress';
 export { default as ProgressRadial } from './components/Feedback/Progress/progressRadial';
 export { default as Tooltip } from './components/Feedback/Tooltip/tooltip';
+export { default as Skeleton } from './components/Feedback/Skeleton/skeleton';
+export { default as SkeletonCircle } from './components/Feedback/Skeleton/skeletonCircle';
+export { default as SkeletonLine } from './components/Feedback/Skeleton/skeletonLine';
 
 
 /**
