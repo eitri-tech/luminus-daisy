@@ -22,6 +22,7 @@ export { default as Accordion } from './components/DataDisplay/Accordion/accordi
 export { default as Stats } from './components/DataDisplay/Stats/stats';
 export { default as Stat } from './components/DataDisplay/Stats/stat';
 export { default as Collapse } from './components/DataDisplay/Collapse/collapse';
+export { default as Chat } from './components/DataDisplay/Chat/chat';
 
 /**
  * Feedback

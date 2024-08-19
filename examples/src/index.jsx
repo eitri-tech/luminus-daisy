@@ -43,6 +43,7 @@ import CollapseBlock from './blocks/dataDisplay/collapse';
 import AvatarBlock from './blocks/dataDisplay/avatar';
 import SkeletonBlock from './blocks/feedback/skeleton';
 import StackBlock from './blocks/layout/stack';
+import ChatBlock from './blocks/dataDisplay/chat';
 
 function App() {
   return (
@@ -85,6 +86,7 @@ function App() {
         <IndicatorBlock />
         <CollapseBlock />
         <AvatarBlock />
+        <ChatBlock />
 
         <div className="divider"></div>
 
