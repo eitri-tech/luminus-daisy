@@ -9,6 +9,7 @@ export { default as Button } from './components/Actions/Button/button';
 export { default as Dropdown } from './components/Actions/Dropdown/dropdown';
 export { default as Swap } from './components/Actions/Swap/swap';
 export { default as Modal } from './components/Actions/Modal/modal';
+export { default as ThemeController } from './components/Actions/ThemeController/themeController';
 
 
 /**
