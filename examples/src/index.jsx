@@ -19,7 +19,7 @@ import TooltipBlock from './blocks/feedback/tooltip';
 import ToastBlock from './blocks/feedback/toast';
 
 import SwapBlock from './blocks/actions/swap';
-import CheckboxBlock from './blocks/dataInput/checbox';
+import CheckboxBlock from './blocks/dataInput/checkbox';
 import RatingBlock from './blocks/dataInput/rating';
 import RadioBlock from './blocks/dataInput/radio';
 import RangeBlock from './blocks/dataInput/range';
@@ -54,6 +54,7 @@ import DiffBlock from './blocks/dataDisplay/diff';
 import KbdBlock from './blocks/dataDisplay/kbd';
 import HeroBlock from './blocks/layout/hero';
 import ThemeControllerBlock from './blocks/actions/themeController';
+import CountdownBlock from './blocks/dataDisplay/countdown';
 
 function App() {
   return (
@@ -103,6 +104,7 @@ function App() {
         <KbdBlock />
         <CardBlock />
         <LoadingBlock />
+        <CountdownBlock />
 
         <div className="divider"></div>
 

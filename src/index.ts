@@ -28,6 +28,7 @@ export { default as Timeline } from './components/DataDisplay/Timeline/timeline'
 export { default as Diff } from './components/DataDisplay/Diff/diff';
 export { default as Kbd } from './components/DataDisplay/Kbd/kbd';
 export { default as Card } from './components/DataDisplay/Card/card';
+export { default as Countdown } from './components/DataDisplay/Countdown/Countdown';
 
 /**
  * Feedback
