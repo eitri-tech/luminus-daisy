@@ -1,5 +1,5 @@
 /**
- * Accepted values for Window properties
+ * Accepted values for Page properties
  *
  * > Note that some properties are inherited from other sets.
  *
@@ -12,29 +12,26 @@ export interface PageProps {
   title?: string
 
   /**
-   * This option should be used when there is a form component; when you touch the element, it triggers focus on the contained form component.
-   *
-   * Example:
-   *
-   * ```jsx
-   * <Window sendFocusToInput>
-   *  <Text>Acima de um input</Text>
-   *  <Input />
-   * </Window>
-   * ```
-   */
-  sendFocusToInput?: boolean
-
-  /**
    * When activated, it controls the top spacing to prevent content from being covered by the gesture bar on mobile devices.
    *
    * Example:
    *
    * ```jsx
-   *  <Window topInset={true}>
+   *  <Page topInset={true}>
    * ```
    */
-  topInset?: boolean
+  topInset?: boolean | number | "auto"
+
+  /**
+   * When activated, it controls the color of top spacing in mobile devices.
+   *
+   * Example:
+   *
+   * ```jsx
+  *  <Page topInset={true} topInsetColor="#fff">
+  * ```
+  */
+ topInsetColor?: string
 
   /**
    * When activated, it controls the bottom spacing to prevent content from being covered by the gesture bar on mobile devices.
@@ -42,18 +39,29 @@ export interface PageProps {
    * Example:
    *
    * ```jsx
-   *  <Window bottomInset={true}>
+   *  <Page bottomInset={true}>
    * ```
    */
 
-  bottomInset?: boolean
+  bottomInset?: boolean | number | "auto"
+
+  /**
+   * When activated, it controls the color of bottom spacing in mobile devices.
+   *
+   * Example:
+   *
+   * ```jsx
+  *  <Page bottomInset={true} bottomInsetColor="#fff">
+  * ```
+  */
+ bottomInsetColor?: string
 
   /**
    * Determina a cor da viewport onde a aplicação irá rodar
    * Example:
    *
    * ```jsx
-   *  <Window viewportColor="primary-100">
+   *  <Page viewportColor="primary-100">
    * ```
    */
   viewportColor?: string
@@ -65,7 +73,7 @@ export interface PageProps {
    * Example:
    *
    * ```jsx
-   *  <Window statusBarTextColor="white">
+   *  <Page statusBarTextColor="white">
    * ```
    */
   statusBarTextColor?: "white" | "black"
