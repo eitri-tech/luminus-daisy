@@ -50,6 +50,7 @@ import TimelineBlock from './blocks/dataDisplay/timeline';
 import DiffBlock from './blocks/dataDisplay/diff';
 import KbdBlock from './blocks/dataDisplay/kbd';
 import HeroBlock from './blocks/layout/hero';
+import ThemeControllerBlock from './blocks/actions/themeController';
 
 function App() {
   return (
@@ -80,6 +81,7 @@ function App() {
         <DropdownBlock />
         <ModalBlock />
         <ButtonBlock />
+        <ThemeControllerBlock />
 
         <div className="divider"></div>
 
