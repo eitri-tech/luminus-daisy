@@ -1,98 +1,116 @@
-import React, { Component } from 'react';
+import {Component} from 'react';
 import CommonProps from '../../commonProps';
-
-interface CardProps extends CommonProps {
-  name:string
-}
+import Image from '../../Image/image';
 
 interface CardImageProps extends CommonProps {
-  src: string;
-  alt: string;
-}
-
-interface CardBodyProps extends CommonProps {
-  children: React.ReactNode;
-}
-
-interface CardTitleProps extends CommonProps {
-  children: React.ReactNode;
-}
-
-interface CardTextProps extends CommonProps {
-  children: React.ReactNode;
-}
-
-interface CardActionsProps extends CommonProps {
-  children: React.ReactNode;
-}
-
-class CardBody extends Component<CardBodyProps> {
-  render() {
-    const { id,  className = "", children } = this.props;
-
-    return (
-      <div id={id} className={className}>
-        {children}
-      </div>
-    );
-  }
-}
-
-class CardTitle extends Component<CardTitleProps> {
-  render() {
-    const { id, className = "", children } = this.props;
-
-    return (
-      <h2 id={id} className={`card-title ${className}`}>
-        {children}
-      </h2>
-    );
-  }
-}
-class CardText extends Component<CardTextProps> {
-  render() {
-    const { id, className = "", children } = this.props;
-
-    return <p id={id} className={className}>{children}</p>;
-  }
+    src: string
+    alt: string
 }
 
 class CardImage extends Component<CardImageProps> {
-  render() {
-    const { id, className = "", src, alt } = this.props;
+    render() {
+        const {
+            className = "",
+            src,
+            alt
+        } = this.props;
 
-    return (
-      <div>
-        <img src={src} id={id} alt={alt} className={className} />
-      </div>
-    );
-  }
+        return (
+            <figure
+                className={`card-image ${className}`}
+                data-e="CardImage"
+            >
+                <Image
+                    src={src}
+                    alt={alt}
+                />
+            </figure>
+        );
+    }
 }
 
-class CardActions extends Component<CardActionsProps> {
-  render() {
-    const { id, className = "", children } = this.props;
+class CardBody extends Component<CommonProps> {
+    render() {
+        const {
+            id,
+            className = "",
+            children
+        } = this.props;
 
-    return <div id={id} className={className}>{children}</div>;
-  }
+        return (
+            <div
+                id={id}
+                className={`card-body ${className}`}
+                data-e="CardBody"
+            >
+                {children}
+            </div>
+        );
+    }
 }
 
-class Card extends Component<CardProps> {
-  static readonly Title = CardTitle
-  static readonly Image = CardImage
-  static readonly Text =  CardText
-  static readonly Body =  CardBody
-  static readonly Actions =  CardActions
+class CardTitle extends Component<CommonProps> {
+    render() {
+        const {id,
+            className = "",
+            children
+        } = this.props;
 
-  render() {
-    const { id, className = "", children, name } = this.props;
-
-    return (
-      <div id={id} data-e="Card" name={name} className={className}>
-        {children}
-      </div>
-    );
-  }
+        return (
+            <h2
+                id={id}
+                className={`card-title ${className}`}
+                data-e="CardTitle"
+            >
+                {children}
+            </h2>
+        );
+    }
 }
 
-export default Card ;
+class CardActions extends Component<CommonProps> {
+    render() {
+        const {
+            id,
+            className = "",
+            children
+        } = this.props;
+
+        return (
+            <div
+                id={id}
+                className={`card-actions ${className}`}
+                data-e="CardActions"
+            >
+                {children}
+            </div>
+        );
+    }
+}
+
+class Card extends Component<CommonProps> {
+    static readonly Title = CardTitle
+    static readonly Body = CardBody
+    static readonly Actions = CardActions
+    static readonly Image = CardImage
+
+    render() {
+        const {
+            id,
+            className = "",
+            children
+        } = this.props;
+
+        return (
+            <div
+                id={id}
+                data-e="Card"
+                className={`card ${className}`}
+            >
+                {children}
+            </div>
+        );
+    }
+}
+
+export default Card;
