@@ -31,6 +31,7 @@ import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
 import ArtboardBlock from './blocks/layout/artboard';
 
 import BrowserBlock from './blocks/mockup/browser';
+import PhoneBlock from './blocks/mockup/phone';
 
 import AccordionBlock from './blocks/dataDisplay/accordion';
 import StatsBlock from './blocks/dataDisplay/stats';
@@ -125,6 +126,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
+        <PhoneBlock />
 
       </View>
     </Page>
