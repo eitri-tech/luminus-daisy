@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Page, Text, Header } from "luminus-daisy"
-import { createRoot } from 'react-dom/client';
+import {  View, Page, Text, Header  } from "luminus-daisy"
+import {  createRoot  } from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';
-import ButtonBlock from "./blocks/button"
+import ButtonBlock from "./blocks/button";
+import LoadingBlock from "./blocks/feedback/loading";
 import BadgeBlock from './blocks/badge';
 import AlertBlock from './blocks/alert';
 import CarouselBlock from './blocks/carousel';
@@ -101,6 +102,7 @@ function App() {
         <DiffBlock />
         <KbdBlock />
         <CardBlock />
+        <LoadingBlock />
 
         <div className="divider"></div>
 

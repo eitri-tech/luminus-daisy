@@ -33,6 +33,7 @@ export { default as Card } from './components/DataDisplay/Card/card';
  * Feedback
  */
 export { default as Alert } from './components/Feedback/Alert/alert';
+export { default as Loading } from './components/Feedback/Loading/loading';
 export { default as Progress } from './components/Feedback/Progress/progress';
 export { default as ProgressRadial } from './components/Feedback/Progress/progressRadial';
 export { default as Tooltip } from './components/Feedback/Tooltip/tooltip';
