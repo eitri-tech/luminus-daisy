@@ -15,6 +15,7 @@ import LinkBlock from './blocks/link';
 import StepsBlock from './blocks/navigation/steps';
 
 import TooltipBlock from './blocks/feedback/tooltip';
+import ToastBlock from './blocks/feedback/toast';
 
 import SwapBlock from './blocks/actions/swap';
 import CheckboxBlock from './blocks/dataInput/checbox';
@@ -103,6 +104,7 @@ function App() {
         <ProgressBlock />
         <TooltipBlock />
         <SkeletonBlock />
+        <ToastBlock />
 
         <div className="divider"></div>
 
