@@ -25,6 +25,7 @@ export { default as Collapse } from './components/DataDisplay/Collapse/collapse'
 export { default as Chat } from './components/DataDisplay/Chat/chat';
 export { default as Timeline } from './components/DataDisplay/Timeline/timeline';
 export { default as Diff } from './components/DataDisplay/Diff/diff';
+export { default as Kbd } from './components/DataDisplay/Kbd/kbd';
 
 /**
  * Feedback
