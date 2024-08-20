@@ -1,6 +1,6 @@
 import React from 'react';
-import {View, Page, Text, Header} from "luminus-daisy"
-import {createRoot} from 'react-dom/client';
+import { View, Page, Text, Header } from "luminus-daisy"
+import { createRoot } from 'react-dom/client';
 import "./index.css"
 import IntroBlock from './blocks/intro';
 import ButtonBlock from "./blocks/button"
@@ -26,6 +26,8 @@ import FileInputBlock from './blocks/dataInput/fileInput';
 import ToggleBlock from './blocks/dataInput/toggle';
 import TextareaBlock from './blocks/dataInput/textarea';
 import TextInputBlock from './blocks/dataInput/textInput';
+
+import CardBlock from './blocks/dataDisplay/card';
 
 import DividerBlock from './blocks/layout/divider';
 import BreadcrumbsBlock from './blocks/navigation/breadcrumbs';
@@ -98,6 +100,7 @@ function App() {
         <TimelineBlock />
         <DiffBlock />
         <KbdBlock />
+        <CardBlock />
 
         <div className="divider"></div>
 
