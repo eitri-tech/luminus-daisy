@@ -1,5 +1,5 @@
 import React from "react";
-import {Phone, View, Text, Toast} from "luminus-daisy";
+import {View, Text, Toast} from "luminus-daisy";
 import DocBlock from "../docBlock"
 
 export default function ToastBlock() {
