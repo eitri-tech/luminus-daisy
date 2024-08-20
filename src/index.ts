@@ -72,6 +72,7 @@ export { default as TimeText } from './components/Text/timeText';
 export { default as Browser } from './components/Mockup/Browser/browser';
 export { default as Code } from './components/Mockup/Code/code';
 export { default as Header } from './components/Mockup/Header/header';
+export { default as Phone } from './components/Mockup/Phone/phone';
 
 /**
  * Layout
