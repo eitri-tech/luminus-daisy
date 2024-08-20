@@ -46,6 +46,7 @@ import SkeletonBlock from './blocks/feedback/skeleton';
 import StackBlock from './blocks/layout/stack';
 import ChatBlock from './blocks/dataDisplay/chat';
 import TimelineBlock from './blocks/dataDisplay/timeline';
+import DiffBlock from './blocks/dataDisplay/diff';
 import HeroBlock from './blocks/layout/hero';
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
         <AvatarBlock />
         <ChatBlock />
         <TimelineBlock />
+        <DiffBlock />
 
         <div className="divider"></div>
 
