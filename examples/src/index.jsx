@@ -45,6 +45,7 @@ import SkeletonBlock from './blocks/feedback/skeleton';
 import StackBlock from './blocks/layout/stack';
 import ChatBlock from './blocks/dataDisplay/chat';
 import TimelineBlock from './blocks/dataDisplay/timeline';
+import HeroBlock from './blocks/layout/hero';
 
 function App() {
   return (
@@ -120,6 +121,7 @@ function App() {
         <DividerBlock />
         <ArtboardBlock />
         <StackBlock />
+        <HeroBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
