@@ -90,6 +90,7 @@ export { default as Mask } from './components/Layout/Mask/mask';
 export { default as Indicator } from './components/Layout/Indicator/indicator';
 export { default as Stack } from './components/Layout/Stack/stack';
 export { default as Hero } from './components/Layout/Hero/hero';
+export { default as Drawer } from './components/Layout/Drawer/drawer';
 
 
 /**

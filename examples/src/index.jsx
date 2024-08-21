@@ -55,6 +55,7 @@ import KbdBlock from './blocks/dataDisplay/kbd';
 import HeroBlock from './blocks/layout/hero';
 import ThemeControllerBlock from './blocks/actions/themeController';
 import CountdownBlock from './blocks/dataDisplay/countdown';
+import DrawerBlock from './blocks/layout/drawer';
 
 function App() {
   return (
@@ -138,6 +139,7 @@ function App() {
         <ArtboardBlock />
         <StackBlock />
         <HeroBlock />
+        <DrawerBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Mockup</Text>
         <BrowserBlock />
