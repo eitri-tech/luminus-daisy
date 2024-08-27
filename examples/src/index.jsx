@@ -57,6 +57,7 @@ import ThemeControllerBlock from './blocks/actions/themeController';
 import CountdownBlock from './blocks/dataDisplay/countdown';
 import AnimatorBlock from './blocks/dataDisplay/animator';
 import HTMLRenderBlock from './blocks/others/htmlrender';
+import VideoBlock from './blocks/others/video';
 
 function App() {
   return (
@@ -148,6 +149,7 @@ function App() {
 
         <Text className="text-2xl font-bold text-slate-900">Others</Text>
         <HTMLRenderBlock />
+        <VideoBlock />
 
       </View>
     </Page>
