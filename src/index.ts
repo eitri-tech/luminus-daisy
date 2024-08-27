@@ -99,6 +99,11 @@ export { default as Hero } from './components/Layout/Hero/hero';
 export { default as CarouselImage } from './components/Image/CarouselImage/carouselImage';
 export { default as Image } from './components/Image/image';
 
+/**
+ * Others
+ */
+export { default as HTMLRender } from './components/Others/HtmlRender/HTMLRender';
+
 
 
 // export { default as Card } from './Card';
