@@ -103,6 +103,7 @@ export { default as Image } from './components/Image/image';
  * Others
  */
 export { default as HTMLRender } from './components/Others/HtmlRender/HTMLRender';
+export { default as Video } from './components/Others/Video/video';
 
 
 

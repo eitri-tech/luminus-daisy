@@ -57,6 +57,7 @@ import ThemeControllerBlock from './blocks/actions/themeController';
 import CountdownBlock from './blocks/dataDisplay/countdown';
 import AnimatorBlock from './blocks/dataDisplay/animator';
 import HTMLRenderBlock from './blocks/others/htmlrender';
+import VideoBlock from './blocks/others/video';
 
 function App() {
   return (
@@ -74,7 +75,7 @@ function App() {
       </Header>
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
-
+{/* 
         <Text className="text-2xl font-bold text-slate-900">View</Text>
         <ViewBlock />
 
@@ -147,7 +148,8 @@ function App() {
         <PhoneBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Others</Text>
-        <HTMLRenderBlock />
+        <HTMLRenderBlock /> */}
+        <VideoBlock />
 
       </View>
     </Page>
