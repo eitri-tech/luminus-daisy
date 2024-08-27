@@ -75,7 +75,7 @@ function App() {
       </Header>
       <IntroBlock />
       <View className="p-4 container max-w-5xl m-auto">
-{/* 
+
         <Text className="text-2xl font-bold text-slate-900">View</Text>
         <ViewBlock />
 
@@ -148,7 +148,7 @@ function App() {
         <PhoneBlock />
 
         <Text className="text-2xl font-bold text-slate-900">Others</Text>
-        <HTMLRenderBlock /> */}
+        <HTMLRenderBlock />
         <VideoBlock />
 
       </View>
