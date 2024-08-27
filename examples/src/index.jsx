@@ -55,6 +55,7 @@ import KbdBlock from './blocks/dataDisplay/kbd';
 import HeroBlock from './blocks/layout/hero';
 import ThemeControllerBlock from './blocks/actions/themeController';
 import CountdownBlock from './blocks/dataDisplay/countdown';
+import AnimatorBlock from './blocks/dataDisplay/animator';
 
 function App() {
   return (
@@ -105,6 +106,7 @@ function App() {
         <CardBlock />
         <LoadingBlock />
         <CountdownBlock />
+        <AnimatorBlock />
 
         <div className="divider"></div>
 
