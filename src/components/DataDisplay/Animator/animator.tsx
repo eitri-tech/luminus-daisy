@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import CommonProps from "../../commonProps";
 import {Player} from "@lottiefiles/react-lottie-player"
 

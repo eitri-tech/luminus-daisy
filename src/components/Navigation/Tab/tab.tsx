@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import CommonProps from '../../commonProps';
 
 interface TabProps extends CommonProps {}

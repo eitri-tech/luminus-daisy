@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import CommonProps from "../../commonProps";
 
 export default class Kbd extends Component<CommonProps> {

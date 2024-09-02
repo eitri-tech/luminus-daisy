@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import MaskedTextInput from "./maskInput";
 import {InputVariant, TextInputProps} from "./InputInterface";
 

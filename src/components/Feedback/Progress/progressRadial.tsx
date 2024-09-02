@@ -1,4 +1,4 @@
-import {Component, CSSProperties} from 'react';
+import React, {Component, CSSProperties} from 'react';
 import CommonProps from '../../commonProps';
 
 interface ProgressRadialProps extends CommonProps {

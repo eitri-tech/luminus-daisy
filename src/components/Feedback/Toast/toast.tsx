@@ -1,4 +1,4 @@
-import {Component} from "react";
+import React, {Component} from "react";
 import CommonProps from "../../commonProps";
 
 class ToastAlert extends Component<CommonProps> {
