@@ -16,7 +16,7 @@ class View extends Component<ViewProps> {
     }
 
     return (
-      <div id={id} data-e="View" className={className} onClick={handleClick}>
+      <div id={id} data-e="View" className={`${className} ${onClick ? 'cursor-pointer' : ''}`} onClick={handleClick}>
         {children}
       </div>
     );
