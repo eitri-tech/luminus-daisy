@@ -22,12 +22,18 @@ export default function ImageBlock() {
                 <Image
                     src={imageDefault}
                 />
-
                 <Text render="p">A image with onLoad</Text>
                 <Image
                     src={image}
                     onLoad={() => loadImage()}
                     loading="lazy"
+                />
+                <Text render="p">A image with pinch zoom</Text>
+                <Image 
+                    pinchZoom
+                    zoomMaxScale={10}
+                    className="w-1/2"
+                    src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTAyL3Jhd3BpeGVsX29mZmljZV81Ml9pbGx1c3RyYXRpb25fc2t5bGluZV9jYXJfb25fdGhlX3JvYWRfbGFuZHNjYV9kMWYxYjAxYi04NTZiLTQzMDgtODZhOC1lZDQ1N2E2NjEzYTZfMS5qcGc.jpg" 
                 />
             </View>
         </View>
