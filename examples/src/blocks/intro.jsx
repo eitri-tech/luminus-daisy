@@ -1,8 +1,53 @@
 import React from 'react';
-import { Badge, View, Text } from "luminus-daisy"
+import { Badge, View, Text, Stories } from "luminus-daisy"
 import { Link } from 'react-router-dom'
 
 export default function IntroBlock() {
+
+  const stories = [
+    {
+      color: "orange",
+      name: "Genéricos",
+      image: "https://cdn.ultrafarma.com.br/static/produtos/99697/large-638083673048870565-99697.jpg",
+      steps: [
+        {},
+        {},
+        {},
+        {},
+        {},
+      ]
+    },
+    {
+      color: "lightgreen",
+      name: "Gripe?",
+      image: "https://farmagora.vteximg.com.br/arquivos/ids/201238-800-800/700420_0.jpg",
+      steps: [
+        {},
+        {},
+        {},
+        {},
+      ]
+    },
+    {
+      color: "lightgreen",
+      name: "Contra dor",
+      image: "https://farmagora.vteximg.com.br/arquivos/ids/204696-800-800/7898040329587_1.jpg",
+      steps: [
+        {},
+        {},
+      ]
+    },
+    {
+      color: "lightgreen",
+      name: "Dental",
+      image: "https://www.natashopping.com.br/lojas/supermercadonata/produtos/19980/imagens/creme-dental-maxima-protecao-neutracucar-colgate-90g-100x100.jpg",
+      steps: [
+        {},
+        {},
+        {},
+      ]
+    }
+  ]
 
   return (
     <View className="bg-white p-4 flex flex-col row-auto ">
@@ -11,6 +56,24 @@ export default function IntroBlock() {
         <Text render="h4" className="font-bold">Luminus is a suite of visual components for building interfaces.</Text>
         <Text render="p">It is the official library used by Eitri for building Eitri-apps.</Text>
         <Badge className="badge-accent badge-outline">Versão 1.0</Badge>
+        <Stories>
+          {
+            stories.map((story, index) => (
+              <Stories.Item 
+                key={`story_${index}`} 
+                name={story.name} 
+                counterColor={story.color} 
+                image={story.image}
+                >
+                {
+                  story.steps.map((step, stepIndex) => (
+                    <Stories.Step key={`step_${stepIndex}_${index}`} />
+                  ))
+                }
+              </Stories.Item>
+            ))
+          }
+        </Stories>
       </View>
       <View className="flex flex-col">
         <Link to="/button" className="btn-primary">Botão</Link>

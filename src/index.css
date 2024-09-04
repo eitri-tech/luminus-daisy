@@ -2,3 +2,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+ /* Esconde a barra de rolagem em navegadores baseados no WebKit */
+ .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Esconde a barra de rolagem no Firefox */
+  .scrollbar-hide {
+    scrollbar-width: none;
+  }
+
+  /* Esconde a barra de rolagem no IE e Edge */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+  }

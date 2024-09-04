@@ -50,6 +50,7 @@ export { default as Toast } from './components/Feedback/Toast/toast';
  */
 export { default as Tab } from './components/Navigation/Tab/tab';
 export { default as Link } from './components/Navigation/Link/link';
+export { default as Stories } from './components/Navigation/Stories/stories';
 export { default as Steps } from './components/Navigation/Steps/steps';
 export { default as Breadcrumbs } from './components/Navigation/Breadcrumbs/breadcrumbs';
 
