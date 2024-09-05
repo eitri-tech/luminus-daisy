@@ -104,6 +104,7 @@ export { default as Image } from './components/Image/image';
  */
 export { default as HTMLRender } from './components/Others/HtmlRender/HTMLRender';
 export { default as Video } from './components/Others/Video/video';
+export { default as FullScreen } from './components/Others/Fullscreen/fullscreen';
 
 
 
