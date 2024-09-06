@@ -9,6 +9,7 @@ export default function IntroBlock() {
       color: "orange",
       name: "Genéricos",
       image: "https://cdn.ultrafarma.com.br/static/produtos/99697/large-638083673048870565-99697.jpg",
+      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Genericos",
       steps: [
         {},
         {},
@@ -21,6 +22,7 @@ export default function IntroBlock() {
       color: "lightgreen",
       name: "Gripe?",
       image: "https://farmagora.vteximg.com.br/arquivos/ids/201238-800-800/700420_0.jpg",
+      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Gripe",
       steps: [
         {},
         {},
@@ -32,6 +34,7 @@ export default function IntroBlock() {
       color: "lightgreen",
       name: "Contra dor",
       image: "https://farmagora.vteximg.com.br/arquivos/ids/204696-800-800/7898040329587_1.jpg",
+      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Contra-dor",
       steps: [
         {},
         {},
@@ -41,6 +44,7 @@ export default function IntroBlock() {
       color: "lightgreen",
       name: "Dental",
       image: "https://www.natashopping.com.br/lojas/supermercadonata/produtos/19980/imagens/creme-dental-maxima-protecao-neutracucar-colgate-90g-100x100.jpg",
+      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Dental",
       steps: [
         {},
         {},
@@ -59,11 +63,12 @@ export default function IntroBlock() {
         <Stories>
           {
             stories.map((story, index) => (
-              <Stories.Item 
+              <Stories.Item
                 key={`story_${index}`} 
                 name={story.name} 
                 counterColor={story.color} 
                 image={story.image}
+                fullScreenImage={story.fullScreenImage}
                 >
                 {
                   story.steps.map((step, stepIndex) => (

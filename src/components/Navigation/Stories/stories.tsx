@@ -1,6 +1,8 @@
 import React, {Component, createRef} from "react";
 import CommonProps from "../../commonProps";
 import MathHelper from "./MathHelper";
+import View from "../../View/view";
+import FullScreen from "../../Others/Fullscreen/fullscreen";
 
 interface StoriesProps extends CommonProps {
 
@@ -11,14 +13,26 @@ interface StoryProps extends CommonProps {
     name?: string;
     counterColor?: string;
     dataContent?: string;
+    fullScreenImage?: string;
+}
+
+interface StoryState {
+    isFullScreen: boolean;
 }
 
 interface StoryItemProps extends CommonProps {
     dataContent?: string;
 }
 
-class Story extends Component<StoryProps> {
+class Story extends Component<StoryProps, StoryState> {
     svgRef = createRef<SVGSVGElement>();
+
+    constructor(props: StoryProps) {
+        super(props);
+        this.state = {
+            isFullScreen: false,
+        };
+    }
 
     generateSemiCircles(){
         const { counterColor = "red" } = this.props
@@ -47,22 +61,34 @@ class Story extends Component<StoryProps> {
 
     
     render() {
-        const {children, image, name} = this.props;
+        const {children, image, name, fullScreenImage} = this.props;
+        const { isFullScreen } = this.state;
         let childrenCount = 1
         if(Array.isArray(children)){
             childrenCount = children.length
         }
         return (
             <div className="mr-2">
+                <View onClick={this.toggleFullScreen}>
                 <div style={{width: 86, height: 86}} className="relative flex flex-col justify-center items-center scrollbar-hide">
                     <svg ref={this.svgRef} style={{transform: "rotate(-72deg)"}} className="absolute z-0 top-0 bottom-0 left-0 right-0 story-circles  " data-segments={childrenCount} data-radius="40" data-stroke-width="3" />
                     <div style={{width: 70, height: 70, backgroundImage: `url(${image})`}} className="relative z-20 overflow-hidden rounded-full bg-center bg-no-repeat bg-cover">
                     </div>
                 </div>
+                </View>
                 <span className="block text-center line-clamp-1 text-xs">{name}</span>
+                {isFullScreen && (
+                    <FullScreen enabled={true}>
+                        <img src={fullScreenImage} alt="FullscreenImage" style={{ width: "100%", height: "100%" }} />
+                    </FullScreen>
+                )}
             </div>
         );
     }
+
+    toggleFullScreen = () => {
+        this.setState(prevState => ({ isFullScreen: !prevState.isFullScreen }));
+    };
 }
 
 class StoryItem extends Component<StoryItemProps> {
