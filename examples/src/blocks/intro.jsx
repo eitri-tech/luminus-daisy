@@ -9,46 +9,23 @@ export default function IntroBlock() {
       color: "orange",
       name: "Genéricos",
       image: "https://cdn.ultrafarma.com.br/static/produtos/99697/large-638083673048870565-99697.jpg",
-      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Genericos",
       steps: [
-        {},
-        {},
-        {},
-        {},
-        {},
-      ]
-    },
-    {
-      color: "lightgreen",
-      name: "Gripe?",
-      image: "https://farmagora.vteximg.com.br/arquivos/ids/201238-800-800/700420_0.jpg",
-      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Gripe",
-      steps: [
-        {},
-        {},
-        {},
-        {},
-      ]
-    },
-    {
-      color: "lightgreen",
-      name: "Contra dor",
-      image: "https://farmagora.vteximg.com.br/arquivos/ids/204696-800-800/7898040329587_1.jpg",
-      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Contra-dor",
-      steps: [
-        {},
-        {},
-      ]
-    },
-    {
-      color: "lightgreen",
-      name: "Dental",
-      image: "https://www.natashopping.com.br/lojas/supermercadonata/produtos/19980/imagens/creme-dental-maxima-protecao-neutracucar-colgate-90g-100x100.jpg",
-      fullScreenImage: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Dental",
-      steps: [
-        {},
-        {},
-        {},
+        {
+          id: "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+          content: "https://cdn.83io.com.br/library/luminus-ui/media/story_03.mp4",
+          contentType: "video",
+          cta: () => {
+            alert("Video Action");
+          }
+        },
+        // {
+        //   id: "a987fb5a-4d04-451c-b5a2-e8860950e10a",
+        //   content: "https://placehold.co/600x1400/3355cc/FFFFFF/jpg?text=Ibuprofeno",
+        //   contentType: "image",
+        //   cta: () => {
+        //     alert("Image Action");
+        //   }
+        // },
       ]
     }
   ]
@@ -72,7 +49,13 @@ export default function IntroBlock() {
                 >
                 {
                   story.steps.map((step, stepIndex) => (
-                    <Stories.Step key={`step_${stepIndex}_${index}`} />
+                    <Stories.Step
+                        key={`step_${stepIndex}_${index}`}
+                        id={step.id}
+                        content={step.content}
+                        contentType={step.contentType}
+                        cta={step.cta}
+                    />
                   ))
                 }
               </Stories.Item>

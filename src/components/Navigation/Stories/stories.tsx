@@ -3,6 +3,7 @@ import CommonProps from "../../commonProps";
 import MathHelper from "./MathHelper";
 import View from "../../View/view";
 import FullScreen from "../../Others/Fullscreen/fullscreen";
+import Video from "../../Others/Video/video";
 
 interface StoriesProps extends CommonProps {
 
@@ -13,15 +14,23 @@ interface StoryProps extends CommonProps {
     name?: string;
     counterColor?: string;
     dataContent?: string;
-    fullScreenImage?: string;
 }
 
 interface StoryState {
     isFullScreen: boolean;
 }
 
+enum StoryItemContentType {
+    image = "image",
+    video = "video",
+}
+
 interface StoryItemProps extends CommonProps {
     dataContent?: string;
+    id?: string;
+    content?: string;
+    contentType?: StoryItemContentType;
+    cta?: () => void;
 }
 
 class Story extends Component<StoryProps, StoryState> {
@@ -61,7 +70,7 @@ class Story extends Component<StoryProps, StoryState> {
 
     
     render() {
-        const {children, image, name, fullScreenImage} = this.props;
+        const {children, image, name} = this.props;
         const { isFullScreen } = this.state;
         let childrenCount = 1
         if(Array.isArray(children)){
@@ -77,11 +86,7 @@ class Story extends Component<StoryProps, StoryState> {
                 </div>
                 </View>
                 <span className="block text-center line-clamp-1 text-xs">{name}</span>
-                {isFullScreen && (
-                    <FullScreen enabled={true}>
-                        <img src={fullScreenImage} alt="FullscreenImage" style={{ width: "100%", height: "100%" }} />
-                    </FullScreen>
-                )}
+                {isFullScreen && children}
             </div>
         );
     }
@@ -93,9 +98,39 @@ class Story extends Component<StoryProps, StoryState> {
 
 class StoryItem extends Component<StoryItemProps> {
     render() {
+        const { id, contentType, content, cta } = this.props;
         return (
-            <span>Step</span>
+            <FullScreen enabled={true}>
+                <div className="relative flex justify-center items-center w-full h-full">
+                    {this.buildContent(contentType, content)}
+                    <p className="absolute top-5 text-center text-yellow-300 text-2xl font-bold">
+                        {contentType}-{id}
+                    </p>
+                    <button onClick={cta} className="absolute bottom-11 left-1 bg-black bg-opacity-100 text-yellow-300 px-4 py-2 rounded">
+                        Action
+                    </button>
+                    <button className="absolute bottom-11 right-1 bg-black bg-opacity-100 text-yellow-300 px-4 py-2 rounded">
+                        Next Story
+                    </button>
+                </div>
+            </FullScreen>
         );
+    }
+
+    buildContent(contentType: StoryItemContentType, content: string) {
+        switch (contentType) {
+            case StoryItemContentType.image:
+                return <img src={content} alt="content" id={this.props.id} className="w-full h-auto"/>
+            case StoryItemContentType.video:
+                return <Video
+                    source={content}
+                    className="w-auto h-auto object-fill min-h-full"
+                    autoPlay
+                    muted
+                    type="video/mp4"
+                    loop
+                />
+        }
     }
 }
 
