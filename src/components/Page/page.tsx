@@ -114,7 +114,7 @@ class Page extends Component<PageProps, PageState> {
       <div
         id="page"
         data-e="Page"
-        className="flex flex-col justify-between h-screen"
+        className="bg-base-100 flex flex-col justify-between h-screen"
         {...rest}
       >
         <div id="topbar-offset" style={{height: topBarOffset, zIndex: 3000, background: topInsetColor}} />

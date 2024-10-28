@@ -57,12 +57,12 @@ import VideoBlock from './blocks/others/video';
 function App() {
   return (
     <Page topInset={40} bottomInset={40} topInsetColor="#000" bottomInsetColor="#000" title="Eitri - Luminus DaisyUI">
-      <Header>
+      <Header className="bg-secondary text-primary-content">
         <View>
           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </View>
         <View>
-          <Text className="text-2xl font-bold">MyApp</Text>
+          <Text className="text-2xl font-bold text-current">MyApp</Text>
         </View>
         <View>
           <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>

@@ -27,10 +27,21 @@ class Button extends Component<ButtonProps> {
   };
 
   render() {
-    const { children, className = "", id } = this.props;
+    const { 
+      children, 
+      className = "", 
+      ...rest 
+    } = this.props;
 
     return (
-      <button data-e="Button" id={id} type="button" data-element="Button" onClick={this.clickHandle} className={`btn ${className}`}>
+      <button 
+        data-e="Button" 
+        type="button" 
+        data-element="Button" 
+        onClick={this.clickHandle} 
+        className={`btn ${className}`} 
+        {...rest}
+      >
         {children}
       </button>
     );

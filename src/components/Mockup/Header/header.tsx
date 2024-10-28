@@ -14,7 +14,7 @@ export default class Header extends Component<HeaderProps> {
         } = this.props
 
         return (
-            <div id={id} className={`bg-primary p-4 flex flex-row justify-between items-center ${className}`}>
+            <div id={id} className={`p-4 flex flex-row justify-between items-center ${className}`}>
                 {children}
             </div>
         );

@@ -17,8 +17,6 @@ class TextInput extends Component<TextInputProps> {
             ...rest
         } = this.props;
 
-        const classNameInput = "input input-bordered flex items-center gap-2";
-
         if(variant === InputVariant.mask) {
             return (
                 <MaskedTextInput
@@ -36,20 +34,11 @@ class TextInput extends Component<TextInputProps> {
         }
 
         return (
-            <label
-                data-e="TextInput"
-                id={`${id}-label`}
-                className={`${classNameInput} ${className}`}
-            >
-                {iconInsideLeft && <span>{iconInsideLeft}</span>}
-                {labelInsideLeft && <label className="label">{labelInsideLeft}</label>}
-                <input
-                    className="grow"
+               <input
+                    data-e="TextInput"
+                    className={`input input-bordered ${className}`}
                     {...rest}
                 />
-                {labelInsideRight && <label className="label">{labelInsideRight}</label>}
-                {iconInsideRight && <span>{iconInsideRight}</span>}
-            </label>
         );
     }
 }

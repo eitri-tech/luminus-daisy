@@ -29,7 +29,7 @@ export default function CarouselBlock() {
   }
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white prose prose-slate">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md  prose prose-slate">
         <Text render="h3" className="mb-2">Carousel</Text>
         <Text render="p" className="mb-4">Index showed: {index}</Text>
         <Text render="p" className="mb-4">Clicked Item: {clicked}</Text>

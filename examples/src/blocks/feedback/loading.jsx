@@ -4,7 +4,7 @@ import DocBlock from "../docBlock"
 
 export default function LoadingBlock() {
     return (
-        <View className="bg-white p-4">
+        <View className=" p-4">
             <View className="prose prose-slate">
                 <Text render="h3">Loading</Text>
 

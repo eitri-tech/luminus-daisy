@@ -4,7 +4,7 @@ import DocBlock from "../docBlock"
 
 export default function CardBlock() {
     return (
-        <View className="bg-white p-4">
+        <View className=" p-4">
             <View className="mb-4 rounded-sm container max-w-5xl m-auto">
                 <Text render="h3">Card</Text>
                 <Text render="p">This is an example of a card component using DaisyUI.</Text>

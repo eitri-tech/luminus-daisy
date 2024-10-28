@@ -7,9 +7,10 @@ export default function TextInputBlock() {
     const [inputValue, setInputValue] = React.useState("");
 
     return (
-        <View className="bg-white p-4 ">
+        <View className="p-4 ">
             <View className="prose prose-slate mb-4 rounded-sm container max-w-5xl m-auto">
                 <Text render="h1">Text Input</Text>
+                <TextInput />
                 
                 <DocBlock title="A simple text input" code="<TextInput />">
                     <TextInput />
