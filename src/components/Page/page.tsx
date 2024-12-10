@@ -2,11 +2,29 @@ import React, { Component } from "react";
 import { WindowMetrics } from "../../utilities/WindowMetrics";
 import { PageProps } from "./types";
 
+/**
+ * State for the Page component.
+ * Used to store the offsets of the top and bottom bars.
+ */
 interface PageState {
+
+  /**
+   * The offset of the top bar.
+   * Used to calculate the height of the top bar (Like notch or status bar).
+   */
   topBarOffset: number;
+
+  /**
+   * The offset of the bottom bar.
+   * Used to calculate the height of the bottom bar (Like bottom menu or gesture navigation).
+   */
   bottomBarOffset: number;
 }
 
+/**
+ * Use the Page component to create a page.
+ * It is the main component of the experience.
+ */
 class Page extends Component<PageProps, PageState> {
 
   constructor(props: PageProps) {
@@ -17,6 +35,9 @@ class Page extends Component<PageProps, PageState> {
     };
   }
 
+  /**
+   * @ignore
+   */
   async componentDidMount() {
     await this.calcInsets();
     this.updateViewportColor();
@@ -24,6 +45,9 @@ class Page extends Component<PageProps, PageState> {
     this.updateTitle();
   }
 
+  /**
+   * @ignore
+   */
   async componentDidUpdate(prevProps: PageProps) {
     if (
       prevProps.topInset !== this.props.topInset ||
@@ -45,6 +69,9 @@ class Page extends Component<PageProps, PageState> {
     }
   }
 
+  /**
+   * @ignore
+   */
   async calcInsets() {
     try {
       
