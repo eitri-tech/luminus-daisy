@@ -1,8 +1,8 @@
 import React from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import {  View, Page, Text, Header  } from "luminus-daisy"
-import {  createRoot  } from 'react-dom/client';
 import "./index.css"
+import { HashRouter, Routes, Route, Link } from 'react-router-dom'
+import {  View, Page, Text, Badge, Divider  } from "luminus-daisy"
+import {  createRoot  } from 'react-dom/client';
 import IntroBlock from './blocks/intro';
 import ButtonBlock from "./blocks/button";
 import LoadingBlock from "./blocks/feedback/loading";
@@ -53,74 +53,85 @@ import CountdownBlock from './blocks/dataDisplay/countdown';
 import AnimatorBlock from './blocks/dataDisplay/animator';
 import HTMLRenderBlock from './blocks/others/htmlrender';
 import VideoBlock from './blocks/others/video';
+import Menu from './blocks/menu';
 
 function App() {
   return (
-    <Page topInset={40} bottomInset={40} topInsetColor="#000" bottomInsetColor="#000" title="Eitri - Luminus DaisyUI">
-      <Header className="bg-secondary text-primary-content">
-        <View>
-          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-        </View>
-        <View>
-          <Text className="text-2xl font-bold text-current">MyApp</Text>
-        </View>
-        <View>
-          <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-        </View>
-      </Header>
+    <Page title="Eitri - Luminus DaisyUI">
       <HashRouter>
-      <Routes>
-        <Route path="/" element={<IntroBlock />} />
-        <Route path="/button" element={<ButtonBlock />} />
-        <Route path="/loading" element={<LoadingBlock />} />
-        <Route path="/badge" element={<BadgeBlock />} />
-        <Route path="/alert" element={<AlertBlock />} />
-        <Route path="/carousel" element={<CarouselBlock />} />
-        <Route path="/dropdown" element={<DropdownBlock />} />
-        <Route path="/modal" element={<ModalBlock />} />
-        <Route path="/tab" element={<TabBlock />} />
-        <Route path="/progress" element={<ProgressBlock />} />
-        <Route path="/link" element={<LinkBlock />} />
-        <Route path="/steps" element={<StepsBlock />} />
-        <Route path="/tooltip" element={<TooltipBlock />} />
-        <Route path="/toast" element={<ToastBlock />} />
-        <Route path="/swap" element={<SwapBlock />} />
-        <Route path="/checkbox" element={<CheckboxBlock />} />
-        <Route path="/rating" element={<RatingBlock />} />
-        <Route path="/radio" element={<RadioBlock />} />
-        <Route path="/range" element={<RangeBlock />} />
-        <Route path="/fileinput" element={<FileInputBlock />} />
-        <Route path="/toggle" element={<ToggleBlock />} />
-        <Route path="/textarea" element={<TextareaBlock />} />
-        <Route path="/textinput" element={<TextInputBlock />} />
-        <Route path="/card" element={<CardBlock />} />
-        <Route path="/divider" element={<DividerBlock />} />
-        <Route path="/breadcrumbs" element={<BreadcrumbsBlock />} />
-        <Route path="/artboard" element={<ArtboardBlock />} />
-        <Route path="/browser" element={<BrowserBlock />} />
-        <Route path="/phone" element={<PhoneBlock />} />
-        <Route path="/accordion" element={<AccordionBlock />} />
-        <Route path="/stats" element={<StatsBlock />} />
-        <Route path="/mask" element={<MaskBlock />} />
-        <Route path="/indicator" element={<IndicatorBlock />} />
-        <Route path="/image" element={<ImageBlock />} />
-        <Route path="/carouselimage" element={<CarouselImageBlock />} />
-        <Route path="/view" element={<ViewBlock />} />
-        <Route path="/collapse" element={<CollapseBlock />} />
-        <Route path="/avatar" element={<AvatarBlock />} />
-        <Route path="/skeleton" element={<SkeletonBlock />} />
-        <Route path="/stack" element={<StackBlock />} />
-        <Route path="/chat" element={<ChatBlock />} />
-        <Route path="/timeline" element={<TimelineBlock />} />
-        <Route path="/diff" element={<DiffBlock />} />
-        <Route path="/kbd" element={<KbdBlock />} />
-        <Route path="/hero" element={<HeroBlock />} />
-        <Route path="/themecontroller" element={<ThemeControllerBlock />} />
-        <Route path="/countdown" element={<CountdownBlock />} />
-        <Route path="/animator" element={<AnimatorBlock />} />
-        <Route path="/htmlrender" element={<HTMLRenderBlock />} />
-        <Route path="/video" element={<VideoBlock />} />
-      </Routes>
+      <View className="bg-neutral-300">
+      <View className="w-full max-w-7xl mx-auto bg-neutral">
+        <View className="w-full border-b border-neutral-300">
+        <View className="p-4">
+          <Link to="/">
+            <Text render="h1">Luminus 2</Text>
+          </Link>
+          <Text render="h4" className="font-bold">Luminus is a suite of visual components for building interfaces.</Text>
+          <Text render="p">It is the official library used by Eitri for building Eitri-apps.</Text>
+          <Badge className="badge-accent">Version 2.0</Badge>
+          </View>
+        </View>
+        <View className="flex">
+          <View className="flex flex-col w-1/5 p-4 border-r border-neutral-300">
+            <Menu />
+          </View>
+          <View className="p-4 w-4/5 flex-grow">
+            <Routes>
+              <Route path="/" element={<IntroBlock />} />
+              <Route path="/button" element={<ButtonBlock />} />
+              <Route path="/loading" element={<LoadingBlock />} />
+              <Route path="/badge" element={<BadgeBlock />} />
+              <Route path="/alert" element={<AlertBlock />} />
+              <Route path="/carousel" element={<CarouselBlock />} />
+              <Route path="/dropdown" element={<DropdownBlock />} />
+              <Route path="/modal" element={<ModalBlock />} />
+              <Route path="/tab" element={<TabBlock />} />
+              <Route path="/progress" element={<ProgressBlock />} />
+              <Route path="/link" element={<LinkBlock />} />
+              <Route path="/steps" element={<StepsBlock />} />
+              <Route path="/tooltip" element={<TooltipBlock />} />
+              <Route path="/toast" element={<ToastBlock />} />
+              <Route path="/swap" element={<SwapBlock />} />
+              <Route path="/checkbox" element={<CheckboxBlock />} />
+              <Route path="/rating" element={<RatingBlock />} />
+              <Route path="/radio" element={<RadioBlock />} />
+              <Route path="/range" element={<RangeBlock />} />
+              <Route path="/fileinput" element={<FileInputBlock />} />
+              <Route path="/toggle" element={<ToggleBlock />} />
+              <Route path="/textarea" element={<TextareaBlock />} />
+              <Route path="/textinput" element={<TextInputBlock />} />
+              <Route path="/card" element={<CardBlock />} />
+              <Route path="/divider" element={<DividerBlock />} />
+              <Route path="/breadcrumbs" element={<BreadcrumbsBlock />} />
+              <Route path="/artboard" element={<ArtboardBlock />} />
+              <Route path="/browser" element={<BrowserBlock />} />
+              <Route path="/phone" element={<PhoneBlock />} />
+              <Route path="/accordion" element={<AccordionBlock />} />
+              <Route path="/stats" element={<StatsBlock />} />
+              <Route path="/mask" element={<MaskBlock />} />
+              <Route path="/indicator" element={<IndicatorBlock />} />
+              <Route path="/image" element={<ImageBlock />} />
+              <Route path="/carouselimage" element={<CarouselImageBlock />} />
+              <Route path="/view" element={<ViewBlock />} />
+              <Route path="/collapse" element={<CollapseBlock />} />
+              <Route path="/avatar" element={<AvatarBlock />} />
+              <Route path="/skeleton" element={<SkeletonBlock />} />
+              <Route path="/stack" element={<StackBlock />} />
+              <Route path="/chat" element={<ChatBlock />} />
+              <Route path="/timeline" element={<TimelineBlock />} />
+              <Route path="/diff" element={<DiffBlock />} />
+              <Route path="/kbd" element={<KbdBlock />} />
+              <Route path="/hero" element={<HeroBlock />} />
+              <Route path="/themecontroller" element={<ThemeControllerBlock />} />
+              <Route path="/countdown" element={<CountdownBlock />} />
+              <Route path="/animator" element={<AnimatorBlock />} />
+              <Route path="/htmlrender" element={<HTMLRenderBlock />} />
+              <Route path="/video" element={<VideoBlock />} />
+            </Routes>
+          </View>
+        </View>
+      </View>
+      </View>
       </HashRouter>
     </Page>
   );
