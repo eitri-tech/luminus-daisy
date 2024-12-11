@@ -5,7 +5,7 @@ export default function Menu() {
 
   return (
     <View className="prose">
-          <Text render="h2">Component index</Text>
+          <Text render="h2">Components</Text>
 
           <Text render="h3">Actions</Text>
           <View className="flex gap-2 flex-col">

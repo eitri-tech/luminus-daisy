@@ -57,18 +57,16 @@ import Menu from './blocks/menu';
 
 function App() {
   return (
-    <Page title="Eitri - Luminus DaisyUI">
+    <Page title="Eitri 2.0 - The Eitri Component Library">
       <HashRouter>
-      <View className="bg-neutral-300">
+      <View className="pt-4 bg-gradient-to-tr from-lime-600 to-cyan-500">
       <View className="w-full max-w-7xl mx-auto bg-neutral">
         <View className="w-full border-b border-neutral-300">
         <View className="p-4">
           <Link to="/">
-            <Text render="h1">Luminus 2</Text>
+            <Text render="h1">Luminus 2 - The Eitri Component Library</Text>
           </Link>
-          <Text render="h4" className="font-bold">Luminus is a suite of visual components for building interfaces.</Text>
-          <Text render="p">It is the official library used by Eitri for building Eitri-apps.</Text>
-          <Badge className="badge-accent">Version 2.0</Badge>
+          <Text render="p">Luminus is a suite of visual components for building interfaces.</Text>
           </View>
         </View>
         <View className="flex">
