@@ -8,6 +8,12 @@ import ColorUtils from '../../utilities/ColorUtils';
  */
 interface ViewProps extends CommonProps { 
   onClick?: () => void;
+  width?: number | string;
+  height?: number | string;
+  minWidth?: number | string;
+  maxWidth?: number | string;
+  minHeight?: number | string;
+  maxHeight?: number | string;
 }
 
 /**
@@ -35,8 +41,30 @@ class View extends Component<ViewProps> {
       classNameText = "";
     }
 
+    const {
+      width,
+      height,
+      minWidth,
+      maxWidth,
+      minHeight,
+      maxHeight,
+    } = this.props;
+
     return (
-      <div id={id} data-e="View" className={`${classNameText} ${className} ${onClick ? 'cursor-pointer' : ''}`} onClick={handleClick}>
+      <div 
+        id={id}
+        data-e="View"
+        className={`${classNameText}${className} ${onClick ? 'cursor-pointer' : ''}`}
+        onClick={handleClick}
+        style={{
+          width,
+          height,
+          minWidth,
+          maxWidth,
+          minHeight,
+          maxHeight,
+        }}
+      >
         {children}
       </div>
     );
