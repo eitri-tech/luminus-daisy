@@ -21,7 +21,7 @@ interface TextProps extends CommonProps {
  */
 class Text extends Component<TextProps> {
 
-  static prepareTextClassNames(renderTag: string): string{
+  static prepareTextClassNames(renderTag: string): string | undefined{
 
     if(renderTag === "h1"){
       return "text-4xl leading-relaxed font-bold mb-4 mt-2";
