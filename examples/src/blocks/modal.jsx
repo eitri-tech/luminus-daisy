@@ -4,7 +4,7 @@ import { View, Text, Modal, Button } from "luminus-daisy"
 export default function ModalBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white prose prose-slate">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md  prose prose-slate">
         <Text render="h3">Modal</Text>
         <View className="flex gap-2">
           <Button className='btn-primary' linkToModal="modal1">Open modal</Button>

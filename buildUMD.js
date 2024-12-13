@@ -2,21 +2,27 @@
 const esbuild = require('esbuild');
 const postcss = require('esbuild-postcss');
 const tscPlugin = require('esbuild-plugin-tsc');
-const { umdWrapper } = require("esbuild-plugin-umd-wrapper");
+const {umdWrapper} = require("esbuild-plugin-umd-wrapper");
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  format: 'iife',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.dev.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
+  globalName: 'luminus',
   minify: false,
   sourcemap: 'inline',
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
+  define: {
+    'process.env.NODE_ENV': "'development'",
+  },
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })
@@ -30,17 +36,24 @@ esbuild.build({
 
 esbuild.build({
   entryPoints: ['src/index.ts'],
+  platform: 'browser',
+  target: 'es2020',
   bundle: true,
   outfile: 'dist/luminusdaisy.umd.js',
   format: 'umd',
-  globalName: 'luminusdaisy',
-  minify: true,
+  globalName: 'luminus',
+  minify: false,
+  minifySyntax: false,
+  minifyWhitespace: true,
   sourcemap: false,
   jsxFactory: 'React.createElement',
   jsxFragment: 'React.Fragment',
+  define: {
+    'process.env.NODE_ENV': "'production'",
+  },
   plugins: [
     tscPlugin(),
-    umdWrapper(),
+    umdWrapper({libraryName: "luminus"}),
     postcss({
       config: './postcss.config.js',
     })

@@ -9,6 +9,7 @@ export { default as Button } from './components/Actions/Button/button';
 export { default as Dropdown } from './components/Actions/Dropdown/dropdown';
 export { default as Swap } from './components/Actions/Swap/swap';
 export { default as Modal } from './components/Actions/Modal/modal';
+export { default as ThemeController } from './components/Actions/ThemeController/themeController';
 
 
 /**
@@ -21,13 +22,27 @@ export { default as Carousel } from './components/DataDisplay/Carousel/carousel'
 export { default as Accordion } from './components/DataDisplay/Accordion/accordion';
 export { default as Stats } from './components/DataDisplay/Stats/stats';
 export { default as Stat } from './components/DataDisplay/Stats/stat';
+export { default as Collapse } from './components/DataDisplay/Collapse/collapse';
+export { default as Chat } from './components/DataDisplay/Chat/chat';
+export { default as Timeline } from './components/DataDisplay/Timeline/timeline';
+export { default as Diff } from './components/DataDisplay/Diff/diff';
+export { default as Kbd } from './components/DataDisplay/Kbd/kbd';
+export { default as Card } from './components/DataDisplay/Card/card';
+export { default as Countdown } from './components/DataDisplay/Countdown/Countdown';
+export { default as Animator } from './components/DataDisplay/Animator/animator';
 
 /**
  * Feedback
  */
 export { default as Alert } from './components/Feedback/Alert/alert';
+export { default as Loading } from './components/Feedback/Loading/loading';
 export { default as Progress } from './components/Feedback/Progress/progress';
 export { default as ProgressRadial } from './components/Feedback/Progress/progressRadial';
+export { default as Tooltip } from './components/Feedback/Tooltip/tooltip';
+export { default as Skeleton } from './components/Feedback/Skeleton/skeleton';
+export { default as SkeletonCircle } from './components/Feedback/Skeleton/skeletonCircle';
+export { default as SkeletonLine } from './components/Feedback/Skeleton/skeletonLine';
+export { default as Toast } from './components/Feedback/Toast/toast';
 
 
 /**
@@ -48,19 +63,24 @@ export { default as Range } from './components/DataInput/Range/range';
 export { default as FileInput } from './components/DataInput/FileInput/fileInput';
 export { default as Toggle } from './components/DataInput/Toggle/toggle';
 export { default as Textarea } from './components/DataInput/Textarea/Textarea';
+export { default as TextInput } from './components/DataInput/TextInput/textInput';
 
 /**
  * Others
  */
 export { default as Page } from './components/Page/page';
 export { default as View } from './components/View/view';
-export { default as Image } from './components/Image/image';
 export { default as Text } from './components/Text/text';
+export { default as TimeText } from './components/Text/timeText';
+
 
 /**
  * Mockup
  */
 export { default as Browser } from './components/Mockup/Browser/browser';
+export { default as Code } from './components/Mockup/Code/code';
+export { default as Header } from './components/Mockup/Header/header';
+export { default as Phone } from './components/Mockup/Phone/phone';
 
 /**
  * Layout
@@ -68,9 +88,23 @@ export { default as Browser } from './components/Mockup/Browser/browser';
 export { default as Divider } from './components/Layout/Divider/divider';
 export { default as Artboard } from './components/Layout/Artboard/artboard';
 export { default as Mask } from './components/Layout/Mask/mask';
-
-
 export { default as Indicator } from './components/Layout/Indicator/indicator';
+export { default as Stack } from './components/Layout/Stack/stack';
+export { default as Hero } from './components/Layout/Hero/hero';
+
+
+/**
+ * Image
+ */
+export { default as CarouselImage } from './components/Image/CarouselImage/carouselImage';
+export { default as Image } from './components/Image/image';
+
+/**
+ * Others
+ */
+export { default as HTMLRender } from './components/Others/HtmlRender/HTMLRender';
+export { default as Video } from './components/Others/Video/video';
+export { default as FullScreen } from './components/Others/Fullscreen/fullscreen';
 
 
 

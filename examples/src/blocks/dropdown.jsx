@@ -4,7 +4,7 @@ import { View, Text, Dropdown } from "luminus-daisy"
 export default function DropdownBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white prose prose-slate">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md  prose prose-slate">
         <Text render="h3">Dropdown</Text>
         <Dropdown>
           <Dropdown.Button>Click</Dropdown.Button>

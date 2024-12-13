@@ -4,7 +4,7 @@ import { Alert, View, Text, Button } from "luminus-daisy"
 export default function AlertBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white block w-100">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md  block w-100">
       <View className="prose prose-slate">
         <Text render="h3">Alert</Text>
         </View>

@@ -4,7 +4,7 @@ import { View, Text, Tab } from "luminus-daisy"
 export default function TabBlock() {
 
   return (
-    <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white w-full">
+    <View className="border-solid p-4 my-4 shadow-lg rounded-md  w-full">
         <View className="prose prose-slate">
           <Text render="h3">Tabs</Text>
           </View>

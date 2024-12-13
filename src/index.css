@@ -2,3 +2,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*:focus, *:focus-visible {
+    outline: none;
+    outline-color: transparent;
+    outline-style: none;
+}

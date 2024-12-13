@@ -2,21 +2,42 @@ import React, { Component } from "react";
 import { WindowMetrics } from "../../utilities/WindowMetrics";
 import { PageProps } from "./types";
 
+/**
+ * State for the Page component.
+ * Used to store the offsets of the top and bottom bars.
+ */
 interface PageState {
-  paddingTop: number;
-  paddingBottom: number;
+
+  /**
+   * The offset of the top bar.
+   * Used to calculate the height of the top bar (Like notch or status bar).
+   */
+  topBarOffset: number;
+
+  /**
+   * The offset of the bottom bar.
+   * Used to calculate the height of the bottom bar (Like bottom menu or gesture navigation).
+   */
+  bottomBarOffset: number;
 }
 
+/**
+ * Use the Page component to create a page.
+ * It is the main component of the experience.
+ */
 class Page extends Component<PageProps, PageState> {
 
   constructor(props: PageProps) {
     super(props);
     this.state = {
-      paddingTop: 0,
-      paddingBottom: 0,
+      topBarOffset: 0,
+      bottomBarOffset: 0,
     };
   }
 
+  /**
+   * @ignore
+   */
   async componentDidMount() {
     await this.calcInsets();
     this.updateViewportColor();
@@ -24,6 +45,9 @@ class Page extends Component<PageProps, PageState> {
     this.updateTitle();
   }
 
+  /**
+   * @ignore
+   */
   async componentDidUpdate(prevProps: PageProps) {
     if (
       prevProps.topInset !== this.props.topInset ||
@@ -45,12 +69,34 @@ class Page extends Component<PageProps, PageState> {
     }
   }
 
+  /**
+   * @ignore
+   */
   async calcInsets() {
     try {
+      
+      const { topInset, bottomInset} = this.props;
       const { top, bottom } = await WindowMetrics.getInsets();
+
+      let topResult: number = 0;
+      if(Number.isInteger(topInset)){
+        topResult = Number(topInset)
+      }
+      if((typeof topInset === "boolean" && topInset) || topInset === "auto"){
+        topResult = top
+      }
+
+      let bottomResult: number = 0;
+      if(Number.isInteger(bottomInset)){
+        bottomResult = Number(bottomInset)
+      }
+      if((typeof bottomInset === "boolean" && bottomInset) || bottomInset === "auto"){
+        bottomResult = bottom
+      }
+
       this.setState({
-        paddingTop: this.props.topInset ? top : 0,
-        paddingBottom: this.props.bottomInset ? bottom : 0,
+        topBarOffset: topResult,
+        bottomBarOffset: bottomResult,
       });
     } catch (error) {
       console.error("Error calculating insets:", error);
@@ -83,17 +129,26 @@ class Page extends Component<PageProps, PageState> {
   }
 
   render() {
-    const { paddingTop, paddingBottom } = this.state;
-    const { children, ...rest } = this.props;
+    const { topBarOffset, bottomBarOffset } = this.state;
+    const { children, topInsetColor = "transparent", bottomInsetColor = "transparent", ...rest } = this.props;
+
+    delete rest.topInset
+    delete rest.bottomInset
+    delete rest.statusBarTextColor
+    delete rest.viewportColor
 
     return (
       <div
         id="page"
         data-e="Page"
-        style={{ paddingTop, paddingBottom }}
+        className="bg-base-100 flex flex-col justify-between h-screen"
         {...rest}
       >
+        <div id="topbar-offset" style={{height: topBarOffset, zIndex: 3000, background: topInsetColor}} />
+        <div className="overflow-y-auto overflow-x-hidden flex-1">
         {children}
+        </div>
+        <div id="bottombar-offset" style={{height: bottomBarOffset, zIndex: 3000, background: bottomInsetColor}} />
       </div>
     );
   }

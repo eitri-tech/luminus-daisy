@@ -3,7 +3,7 @@ import {Steps, View, Text} from "luminus-daisy";
 
 export default function StepsBlock() {
     return (
-        <View className="border-solid p-4 my-4 shadow-lg rounded-md bg-white">
+        <View className="border-solid p-4 my-4 shadow-lg rounded-md ">
             <View className="prose prose-slate">
                 <Text render="h3">Steps</Text>
 

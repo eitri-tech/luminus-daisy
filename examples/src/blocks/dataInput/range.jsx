@@ -6,7 +6,7 @@ export default function RangeBlock() {
     const [range, setRange] = React.useState(0);
 
     return (
-        <View className="bg-white p-4 ">
+        <View className=" p-4 ">
             <View className="prose prose-slate mb-4 rounded-sm container max-w-5xl m-auto">
                 <Text render="h1">Range</Text>
 
