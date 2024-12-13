@@ -1,6 +1,6 @@
 {
   "name": "luminus-daisy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "DaisyUI Implementation of Luminus-UI",
   "main": "dist/index.js",
   "module": "dist/index.js",
