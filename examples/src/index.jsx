@@ -54,6 +54,7 @@ import AnimatorBlock from './blocks/dataDisplay/animator';
 import HTMLRenderBlock from './blocks/others/htmlrender';
 import VideoBlock from './blocks/others/video';
 import Menu from './blocks/menu';
+import Select from './blocks/dataInput/select';
 
 function App() {
   return (
@@ -69,11 +70,11 @@ function App() {
           <Text render="p">Luminus is a suite of visual components for building interfaces.</Text>
           </View>
         </View>
-        <View className="flex">
-          <View className="flex flex-col w-1/5 p-4 border-r border-neutral-300">
+        <View className="flex md:flex-row flex-col">
+          <View className="flex flex-col w-full md:w-1/5 p-4 border-r border-neutral-300">
             <Menu />
           </View>
-          <View className="p-4 w-4/5 flex-grow">
+          <View className="p-4 w-full md:w-4/5 flex-grow">
             <Routes>
               <Route path="/" element={<IntroBlock />} />
               <Route path="/button" element={<ButtonBlock />} />
@@ -98,6 +99,7 @@ function App() {
               <Route path="/toggle" element={<ToggleBlock />} />
               <Route path="/textarea" element={<TextareaBlock />} />
               <Route path="/textinput" element={<TextInputBlock />} />
+              <Route path="/select" element={<Select />} />
               <Route path="/card" element={<CardBlock />} />
               <Route path="/divider" element={<DividerBlock />} />
               <Route path="/breadcrumbs" element={<BreadcrumbsBlock />} />

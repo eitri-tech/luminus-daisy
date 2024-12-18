@@ -31,6 +31,7 @@ export default function Menu() {
             <Link to="/toggle" className=''>Toggle</Link>
             <Link to="/textarea" className=''>Textarea</Link>
             <Link to="/textinput" className=''>Textinput</Link>
+            <Link to="/select" className=''>Select</Link>
           </View>
 
           <Text render="h3">Images</Text>

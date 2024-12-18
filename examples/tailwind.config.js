@@ -95,7 +95,7 @@ module.exports = {
           },
       }
     ],
-    darkTheme: "beta",
+    darkTheme: false,
   },
   plugins: [
     require('daisyui'),
