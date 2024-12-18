@@ -24,7 +24,14 @@ class SelectItem extends Component<SelectItemProps> {
 
 class Select extends Component<SelectProps> {
 
-    // const [label, setLabel] = useState("");
+    private readonly inputRef: { current: HTMLInputElement | null };
+
+    private selectValue: string | undefined;
+
+    constructor(props: SelectProps) {
+        super(props);
+        this.inputRef = React.createRef();
+    }
 
     static readonly Item = SelectItem;
 
@@ -37,6 +44,7 @@ class Select extends Component<SelectProps> {
             useNativeControls,
             menuClassName,
             onChange,
+            value,
             ...rest
         } = this.props;
 
@@ -56,6 +64,7 @@ class Select extends Component<SelectProps> {
                     id={id}
                     data-e="Select"
                     onChange={onChange}
+                    value={value}
                     className={`select select-ghost w-full max-w-xs ${className}`}
                     {...rest}
                 >
@@ -64,13 +73,24 @@ class Select extends Component<SelectProps> {
             );
         }
 
+        const optionSelected = (element: any) => {
+            if(onChange){
+                onChange({target: { value: element.props.value}})
+                this.selectValue = element.props.children
+            }
+            if(this.inputRef.current){
+                this.inputRef.current?.focus()
+                this.inputRef.current?.blur()
+            }
+        }
+
         const composeChildren = () => {
             if (Array.isArray(children)) {
                 return children.map((child, index) => {
                     return (
                         <li key={`${id}-${index}`}>
                             <a
-                                onClick={()=>{ onChange && onChange({target: { value: child.props.value}})}}>
+                                onClick={()=>{ optionSelected(child)  }}>
                                 {child.props.children}
                             </a>
                         </li>
@@ -80,6 +100,20 @@ class Select extends Component<SelectProps> {
             return children
         }
 
+        if(rest.disabled){
+            return (
+                <input
+                    ref={this.inputRef}
+                    type="text"
+                    readOnly
+                    disabled
+                    tabIndex={0}
+                    value={this.selectValue || placeholder || ""} 
+                    className={`select select-bordered bg-base-100 cursor-pointer ${className}`}
+                />
+            )
+        }
+
         return (
             <div
                 id={id}
@@ -87,13 +121,17 @@ class Select extends Component<SelectProps> {
                 className="dropdown w-full"
             >
                 <input
-                      type="text"
-                      readOnly
-                      tabIndex={0}
-                      value={placeholder}
-                      className={`select select-bordered bg-base-100 cursor-pointer ${className}`}
-                    />
-                <ul tabIndex={0} className={`block menu dropdown-content bg-base-100 rounded-box z-[1] w-full shadow ${menuClassName}`}>
+                    ref={this.inputRef}
+                    type="text"
+                    readOnly
+                    tabIndex={0}
+                    value={this.selectValue || placeholder || ""} 
+                    className={`select select-bordered bg-base-100 cursor-pointer ${className}`}
+                />
+                <ul 
+                    tabIndex={0} 
+                    className={`block menu dropdown-content bg-base-100 rounded-box z-[1] w-full shadow ${menuClassName}`}
+                >
                     {composeChildren()}
                 </ul>
             </div>
