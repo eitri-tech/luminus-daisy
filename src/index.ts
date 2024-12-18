@@ -64,6 +64,7 @@ export { default as FileInput } from './components/DataInput/FileInput/fileInput
 export { default as Toggle } from './components/DataInput/Toggle/toggle';
 export { default as Textarea } from './components/DataInput/Textarea/Textarea';
 export { default as TextInput } from './components/DataInput/TextInput/textInput';
+export { default as Select } from './components/DataInput/Select/select';
 
 /**
  * Others
