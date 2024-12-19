@@ -1,5 +1,6 @@
-import React, {Component} from "react";
+import React, {Component, ReactElement} from "react";
 import { SelectProps, SelectItemProps } from "./SelectInterface";
+import { EventUtils } from "../../../utilities/EventUtils";
 
 class SelectItem extends Component<SelectItemProps> {
     render() {
@@ -73,10 +74,14 @@ class Select extends Component<SelectProps> {
             );
         }
 
-        const optionSelected = (element: any) => {
+        const optionSelected = (element: ReactElement) => {
             if(onChange){
-                onChange({target: { value: element.props.value}})
+
+                const optionForEvent: HTMLSelectElement = window.document.createElement("select");
+                optionForEvent.value = element.props.value;
+                const syntheticEvent = EventUtils.createOnChangeEvent(optionForEvent, element.props.value )
                 this.selectValue = element.props.children
+                onChange(syntheticEvent as React.ChangeEvent<HTMLSelectElement>);
             }
             if(this.inputRef.current){
                 this.inputRef.current?.focus()

@@ -6,6 +6,7 @@ export default function SelectBlock() {
 
     const [inputValue, setInputValue] = React.useState("Selecione um valor");
     const [disabled, setDisabled] = React.useState(false);
+    const [useNative, setUseNative] = React.useState(false)
 
     const onChange = evt => {
         setInputValue(`Opção escolhida foi ${evt.target.value}`);
@@ -22,6 +23,7 @@ export default function SelectBlock() {
                         onChange={onChange}
                         className="w-full"
                         disabled={disabled}
+                        useNativeControls={useNative}
                     >
                         <Select.Item value="1">Opção 1</Select.Item>
                         <Select.Item value="2">Opção 2</Select.Item>
@@ -38,7 +40,16 @@ export default function SelectBlock() {
                         />
                         <Text render="p">Disabled</Text>
                     </View>
+                    <View  className="flex gap-2">
+                        <Checkbox
+                            onChange={() => { 
+                                setUseNative(!disabled)
+                            }} 
+                        />
+                        <Text render="p">Use Native</Text>
+                    </View>
                 </View>
+                
             </View>
         </View>
     );
