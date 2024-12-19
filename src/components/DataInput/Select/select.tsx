@@ -51,7 +51,7 @@ class Select extends Component<SelectProps> {
 
         if(useNativeControls) {
 
-            const firstItem = <SelectItem disabled selected>{placeholder}</SelectItem>
+            const firstItem = <SelectItem>{placeholder}</SelectItem>
 
             const composeChildren = () => {
                 if (Array.isArray(children)) {

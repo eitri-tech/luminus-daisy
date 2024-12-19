@@ -6,7 +6,7 @@ export default function SelectBlock() {
 
     const [inputValue, setInputValue] = React.useState("Selecione um valor");
     const [disabled, setDisabled] = React.useState(false);
-    const [useNative, setUseNative] = React.useState(false)
+    const [useNative, setUseNative] = React.useState(true)
 
     const onChange = evt => {
         setInputValue(`Opção escolhida foi ${evt.target.value}`);
